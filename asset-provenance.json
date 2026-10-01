@@ -76,9 +76,9 @@
         "game-sharing.json"
       ],
       "regions": [],
-      "sha256": "sha256:65e6d0637e2a5161579b8a289b89a89bf3b2446a71e270cf40dab149f3e6a9be",
+      "sha256": "sha256:a61f9343bf531fc6bd5ffc76cbd1f278b41fa8b7e3276daf989f5ac59cd55717",
       "shipped": true,
-      "size": 1626965,
+      "size": 1691602,
       "source": {},
       "status": "present",
       "transformations": [],
@@ -86,7 +86,21 @@
         "game-sharing.json"
       ],
       "used": true,
-      "usedBy": []
+      "usedBy": [],
+      "versions": {
+        "sha256:65e6d0637e2a5161579b8a289b89a89bf3b2446a71e270cf40dab149f3e6a9be": {
+          "generator": {},
+          "inputs": [],
+          "license": {},
+          "origin": "unknown",
+          "regions": [],
+          "sha256": "sha256:65e6d0637e2a5161579b8a289b89a89bf3b2446a71e270cf40dab149f3e6a9be",
+          "size": 1626965,
+          "source": {},
+          "transformations": [],
+          "usedBy": []
+        }
+      }
     },
     "assets/template/audio_v2/runtime/bomb_pop.ogg": {
       "declaredUseEvidence": [],
@@ -2041,6 +2055,24 @@
       "useEvidence": [],
       "used": false,
       "usedBy": []
+    },
+    "outputs/english-screens.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "unknown",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:c4e31d596debeb7475930f7590c7aa31888362d8f93b6ff42d80305f601dd99a",
+      "shipped": true,
+      "size": 231156,
+      "source": {},
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
     }
   },
   "discoveries": {},
@@ -2068,11 +2100,29 @@
         "sha256": "sha256:dc78cf86c906c5c17a7829b9ed6e635f2abe1b66c2a4a80979a02a65f739baa0",
         "size": 50156,
         "sourcePaths": []
+      },
+      {
+        "contentMatches": [],
+        "path": "share/941e8dac4197f98b0c441d052a11dfc58eecac5a7f4cc75694ed03a14c5994e1.png",
+        "sha256": "sha256:941e8dac4197f98b0c441d052a11dfc58eecac5a7f4cc75694ed03a14c5994e1",
+        "size": 37009,
+        "sourcePaths": [
+          "assets/share/favicon.png"
+        ]
+      },
+      {
+        "contentMatches": [],
+        "path": "share/a61f9343bf531fc6bd5ffc76cbd1f278b41fa8b7e3276daf989f5ac59cd55717.png",
+        "sha256": "sha256:a61f9343bf531fc6bd5ffc76cbd1f278b41fa8b7e3276daf989f5ac59cd55717",
+        "size": 1691602,
+        "sourcePaths": [
+          "assets/share/og.png"
+        ]
       }
     ],
-    "pckSha256": "sha256:4a2d50955af62a011b7cf0761d9f2b0c485df44707bc1de1261fe5e54c87a218",
-    "profile": "preview",
-    "sourceFingerprint": "sha256:4dbdae9455e2098255e3314cb8fe114c9eaa1e8f2ab8dd571159dc4643032035"
+    "pckSha256": "sha256:189bc00a08963a422d2e7cfa4aaaadd552557ee8e2b98c04abfd7bd19fca3890",
+    "profile": "release",
+    "sourceFingerprint": "sha256:b3601354031fe235d7f115352b3511e89e4a3d975315779e21a30654fa7b7b97"
   },
   "procedures": {},
   "summary": {
@@ -2099,14 +2149,14 @@
       "used": 0
     },
     "exportedHostMedia": {
-      "paths": 3,
-      "uniqueHashes": 3,
+      "paths": 5,
+      "uniqueHashes": 5,
       "unmatchedSourcePaths": 3
     },
     "files": {
       "downloaded": 0,
-      "retained": 99,
-      "shipped": 50,
+      "retained": 100,
+      "shipped": 51,
       "used": 9
     },
     "origins": {
@@ -2141,8 +2191,8 @@
         "used": 6
       },
       "unknown": {
-        "retained": 4,
-        "shipped": 4,
+        "retained": 5,
+        "shipped": 5,
         "used": 3
       }
     },

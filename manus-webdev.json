@@ -1,4 +1,7 @@
 {
   "version": 1,
-  "projectId": "wdp_a2f877068c41ffdad34e25cd"
+  "projectId": "wdp_a2f877068c41ffdad34e25cd",
+  "managedGit": {
+    "baseCommit": "4389443ba3219a428bb19ad03a7cdb8693eb952a"
+  }
 }
