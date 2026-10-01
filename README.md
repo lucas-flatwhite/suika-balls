@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/images/suika-balls.png" alt="비치볼 머지 > suika-balls" width="100%">
+</p>
+
 # suika-balls — 비치볼 머지
 
 🏓 → ⛳ → 🎾 → ⚾ → 🏐 → ⚽ → 🏀 → 🏖️ Drop, bounce, and merge sports balls until you build the biggest one of all.
