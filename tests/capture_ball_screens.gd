@@ -21,7 +21,10 @@ func _initialize() -> void:
 func _run() -> void:
 	game = load("res://scenes/main.tscn").instantiate()
 	root.add_child(game)
-	await frames(20)
+	await frames(4)
+	# 선택: BM_LANG=en|ko 로 캡처 언어 지정
+	if OS.get_environment("BM_LANG") != "": game.set_language(OS.get_environment("BM_LANG"))
+	await frames(16)
 	await shot("title")
 	game.start_stage(0)
 	await frames(10)

@@ -151,5 +151,9 @@
  "mobile.enter_portrait": "세로 화면으로",
  "loader.overlay_loading": "불러오는 중...",
  "loader.loading_notice": "아직 불러오는 중이에요. 기다리거나 다시 시도할 수 있어요.",
- "loader.stalled_notice": "불러오기가 멈춘 것 같아요. 기다리거나 다시 시도할 수 있어요."
+ "loader.stalled_notice": "불러오기가 멈춘 것 같아요. 기다리거나 다시 시도할 수 있어요.",
+ "ui.sound_btn_on": "소리 켬",
+ "ui.sound_btn_off": "소리 끔",
+ "ui.language_switch": "English",
+ "ui.language_label": "언어"
 }

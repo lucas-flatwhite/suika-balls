@@ -1,12 +1,13 @@
 #!/bin/sh
 # 게임에 쓰인 한글 글자만 담은 Jua(OFL) 부분 글꼴을 Google Fonts에서 다시 받습니다.
-# 문구(localization/ko.json, 스크립트)를 바꾼 뒤 실행하세요. 네트워크 필요.
+# 문구(localization/ko.json·en.json, 스크립트)를 바꾼 뒤 실행하세요. 네트워크 필요.
 set -e
 cd "$(dirname "$0")/.."
 python3 - <<'PY' > /tmp/bm_font_text.txt
 import json, glob, urllib.parse
 chars = set(chr(c) for c in range(32, 127)) | set("·←→…!?“”‘’–—×★♪")
-for v in json.load(open('localization/ko.json', encoding='utf-8')).values(): chars |= set(v)
+for name in ('ko', 'en'):
+    for v in json.load(open('localization/%s.json' % name, encoding='utf-8')).values(): chars |= set(v)
 for f in glob.glob('scripts/**/*.gd', recursive=True) + glob.glob('data/**/*.gd', recursive=True):
     chars |= {ch for ch in open(f, encoding='utf-8').read() if '\uac00' <= ch <= '\ud7a3'}
 # 2인 대전 이름 입력에 흔히 쓰는 음절

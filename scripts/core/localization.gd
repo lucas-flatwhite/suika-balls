@@ -16,13 +16,25 @@ var bold_font: Font
 var title_font: Font = TITLE_FONT
 var heading_font: Font = HEADING_FONT
 
+const SUPPORTED := ["ko", "en"]
+const Balls := preload("res://data/balls.gd")
+
 func _init() -> void:
-    # 한국어 단일 언어. 없는 키는 키 이름을 그대로 보여 누락을 드러냅니다.
-    dictionaries.ko = JSON.parse_string(FileAccess.get_file_as_string("res://localization/ko.json"))
-    TranslationServer.set_locale(locale)
+    # 한국어(기본)와 영어. 영어에 없는 키(개발용 Tweak 문구)는 한국어로, 그래도 없으면 키 이름을 보여 줍니다.
+    for code in SUPPORTED:
+        dictionaries[code] = JSON.parse_string(FileAccess.get_file_as_string("res://localization/%s.json" % code))
+    set_locale(locale)
     font = UI_REGULAR
     medium_font = UI_MEDIUM
     bold_font = UI_BOLD
+
+static func normalize(code: String) -> String:
+    return "en" if code.to_lower().begins_with("en") else "ko"
+
+func set_locale(code: String) -> void:
+    locale = normalize(code)
+    Balls.locale = locale
+    TranslationServer.set_locale(locale)
 
 func font_for_weight(weight := 400) -> Font:
     if weight >= 600: return bold_font
@@ -30,7 +42,7 @@ func font_for_weight(weight := 400) -> Font:
     return font
 
 func t(key: String, placeholders: Dictionary = {}) -> String:
-    var text: String = dictionaries.ko.get(key, key)
+    var text: String = dictionaries[locale].get(key, dictionaries.ko.get(key, key))
     for name in placeholders:
         text = text.replace("{" + String(name) + "}", str(placeholders[name]))
     return text

@@ -9,9 +9,9 @@ var saved := true
 ## True only when the settings file carries a valid language choice.
 var locale_saved := false
 
-## First-launch language: Simplified Chinese for any zh* OS/browser locale, else English.
-static func detect_locale(_os_locale: String) -> String:
-    return "ko"
+## 첫 실행 언어: 저장된 선택이 없으면 OS/브라우저 언어가 ko*이면 한국어, 그 밖에는 영어.
+static func detect_locale(os_locale: String) -> String:
+    return "ko" if os_locale.to_lower().begins_with("ko") else "en"
 
 func load_data() -> void:
     locale_saved = false
@@ -29,7 +29,7 @@ func apply_detected_locale(os_locale: String) -> void:
 func set_value(key: String, value: Variant, persist := true) -> bool:
     if not DEFAULTS.has(key): return false
     if key == "locale":
-        if value != "ko": return false
+        if not value in ["ko", "en"]: return false
     elif key == "name":
         if not value is String: return false
         value = value.strip_edges().replace("\n", " ").left(20)

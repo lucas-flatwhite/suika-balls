@@ -4,20 +4,22 @@
 
 수박게임처럼 위에서 공을 떨어뜨리고, **같은 공 2개가 닿으면 한 단계 더 큰 공**으로 합쳐지는 2D 물리 퍼즐 웹게임입니다. 해변 테마, 스포츠 공 10종, 최종 목표는 비치볼. Godot 4.7 웹 빌드로 모바일·PC 브라우저에서 설치 없이 플레이합니다.
 
+**언어: 한국어 / English** — 처음엔 브라우저 언어(한국어면 한국어, 그 밖엔 영어)를 따르고, 시작 화면 왼쪽 위 버튼이나 일시정지 메뉴에서 바꾸면 선택이 저장됩니다.
+
 ## 공 10단계
 
-| 단계 | 공 | 지름(용기 폭 대비) | 합체 점수 |
-|---|---|---|---|
-| 1 | 탁구공 | 8% | 1 |
-| 2 | 골프공 | 10% | 3 |
-| 3 | 테니스공 | 13% | 6 |
-| 4 | 야구공 | 16% | 10 |
-| 5 | 소프트볼 | 20% | 15 |
-| 6 | 배구공 | 25% | 21 |
-| 7 | 축구공 | 30% | 28 |
-| 8 | 농구공 | 36% | 36 |
-| 9 | 짐볼 | 44% | 45 |
-| 10 | 비치볼 | 54% | 55 |
+| 단계 | 공 | English | 지름(용기 폭 대비) | 합체 점수 |
+|---|---|---|---|---|
+| 1 | 탁구공 | Ping Pong Ball | 8% | 1 |
+| 2 | 골프공 | Golf Ball | 10% | 3 |
+| 3 | 테니스공 | Tennis Ball | 13% | 6 |
+| 4 | 야구공 | Baseball | 16% | 10 |
+| 5 | 소프트볼 | Softball | 20% | 15 |
+| 6 | 배구공 | Volleyball | 25% | 21 |
+| 7 | 축구공 | Soccer Ball | 30% | 28 |
+| 8 | 농구공 | Basketball | 36% | 36 |
+| 9 | 짐볼 | Gym Ball | 44% | 45 |
+| 10 | 비치볼 | Beach Ball | 54% | 55 |
 
 이름·크기·점수·반발력·밀도·마찰·색은 모두 [`data/balls.gd`](data/balls.gd) 한 파일에서 수정합니다.
 
@@ -39,6 +41,7 @@
 
 - 공·용기(볼 카트)·해변 배경은 이미지 없이 코드로 그립니다(`scripts/ball_art.gd`, `scripts/vfx/cart_art.gd`, `scripts/ui/beach_background.gd`).
 - 효과음은 파일 없이 실시간 합성합니다(`scripts/game_audio.gd`).
+- 문구: `localization/ko.json`, `localization/en.json` (키·자리표시자 일치는 `tests/test_ball_i18n.gd`로 검사).
 - 한글 글꼴: [Jua](https://fonts.google.com/specimen/Jua) (SIL OFL) 부분 글꼴. 문구를 바꾸면 `tools/subset_korean_font.sh`로 다시 만듭니다.
 
 ## 실행·테스트
@@ -46,6 +49,7 @@
 ```sh
 # 규칙 자동 테스트 (Godot 4.7)
 godot --headless --audio-driver Dummy --fixed-fps 60 --path . --script tests/test_ball_rules.gd
+godot --headless --audio-driver Dummy --fixed-fps 60 --path . --script tests/test_ball_i18n.gd
 # 웹 내보내기
 godot --headless --path . --export-release Web dist/index.html
 ```

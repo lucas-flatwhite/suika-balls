@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>비치볼 머지</title>
+		<title>비치볼 머지 · Beach Ball Merge</title>
 		<style>
 html, body, #canvas {
 	margin: 0;
@@ -81,7 +81,7 @@ body {
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="manus-game-loading-screen" content="1">
 <meta name="theme-color" content="#7fd6f2">
-<meta name="description" content="비치볼 머지: 같은 스포츠 공 2개를 붙여 더 큰 공으로! 해변에서 즐기는 물리 합체 퍼즐.">
+<meta name="description" content="비치볼 머지: 같은 스포츠 공 2개를 붙여 더 큰 공으로! 해변에서 즐기는 물리 합체 퍼즐. Beach Ball Merge: merge matching sports balls on the beach.">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="비치볼 머지">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -136,16 +136,16 @@ html,body{overscroll-behavior:none;overflow:hidden;width:100%;height:100%;margin
 @media (prefers-reduced-motion:reduce){#status[data-mushies-fade="true"]{animation:none}}
 </style>
 <script>
-const PLUSHIE_COPY={"en": {"app.title": "비치볼 머지", "app.tagline": "같은 공 두 개를 붙여 더 큰 공으로!", "loader.loading": "공을 준비하는 중…", "loader.downloading": "게임을 내려받는 중…", "loader.preparing": "해변을 꾸미는 중…", "loader.preparing_detail": "곧 시작해요.", "loader.progress_unknown": "내려받기 진행률을 알 수 없어요.", "loader.progress_detail": "{percent}% · {current} / {total}", "loader.progress_label": "게임 내려받기 진행률", "loader.error": "게임을 시작하지 못했어요.", "loader.error_detail": "인터넷 연결을 확인하고 다시 시도해 주세요.", "loader.retry": "다시 시도", "loader.no_canvas": "이 브라우저는 게임을 지원하지 않아요.", "loader.no_js": "게임을 하려면 JavaScript를 켜 주세요.", "mobile.rotate_title": "세로로 돌려 주세요", "mobile.rotate_body": "모바일에서는 세로 화면으로 플레이해요. 기기를 세로로 돌리면 이어서 할 수 있어요.", "mobile.enter_portrait": "세로 화면으로", "loader.overlay_loading": "불러오는 중...", "loader.loading_notice": "아직 불러오는 중이에요. 기다리거나 다시 시도할 수 있어요.", "loader.stalled_notice": "불러오기가 멈춘 것 같아요. 기다리거나 다시 시도할 수 있어요."}, "zh_CN": {"app.title": "비치볼 머지", "app.tagline": "같은 공 두 개를 붙여 더 큰 공으로!", "loader.loading": "공을 준비하는 중…", "loader.downloading": "게임을 내려받는 중…", "loader.preparing": "해변을 꾸미는 중…", "loader.preparing_detail": "곧 시작해요.", "loader.progress_unknown": "내려받기 진행률을 알 수 없어요.", "loader.progress_detail": "{percent}% · {current} / {total}", "loader.progress_label": "게임 내려받기 진행률", "loader.error": "게임을 시작하지 못했어요.", "loader.error_detail": "인터넷 연결을 확인하고 다시 시도해 주세요.", "loader.retry": "다시 시도", "loader.no_canvas": "이 브라우저는 게임을 지원하지 않아요.", "loader.no_js": "게임을 하려면 JavaScript를 켜 주세요.", "mobile.rotate_title": "세로로 돌려 주세요", "mobile.rotate_body": "모바일에서는 세로 화면으로 플레이해요. 기기를 세로로 돌리면 이어서 할 수 있어요.", "mobile.enter_portrait": "세로 화면으로", "loader.overlay_loading": "불러오는 중...", "loader.loading_notice": "아직 불러오는 중이에요. 기다리거나 다시 시도할 수 있어요.", "loader.stalled_notice": "불러오기가 멈춘 것 같아요. 기다리거나 다시 시도할 수 있어요."}};
-let plushieLocale = String((navigator.languages && navigator.languages[0]) || navigator.language || '').toLowerCase().startsWith('zh') ? 'zh_CN' : 'en';
+const PLUSHIE_COPY={"ko": {"app.title": "비치볼 머지", "app.tagline": "같은 공 두 개를 붙여 더 큰 공으로!", "loader.loading": "공을 준비하는 중…", "loader.downloading": "게임을 내려받는 중…", "loader.preparing": "해변을 꾸미는 중…", "loader.preparing_detail": "곧 시작해요.", "loader.progress_unknown": "내려받기 진행률을 알 수 없어요.", "loader.progress_detail": "{percent}% · {current} / {total}", "loader.progress_label": "게임 내려받기 진행률", "loader.error": "게임을 시작하지 못했어요.", "loader.error_detail": "인터넷 연결을 확인하고 다시 시도해 주세요.", "loader.retry": "다시 시도", "loader.no_canvas": "이 브라우저는 게임을 지원하지 않아요.", "loader.no_js": "게임을 하려면 JavaScript를 켜 주세요.", "mobile.rotate_title": "세로로 돌려 주세요", "mobile.rotate_body": "모바일에서는 세로 화면으로 플레이해요. 기기를 세로로 돌리면 이어서 할 수 있어요.", "mobile.enter_portrait": "세로 화면으로", "loader.overlay_loading": "불러오는 중...", "loader.loading_notice": "아직 불러오는 중이에요. 기다리거나 다시 시도할 수 있어요.", "loader.stalled_notice": "불러오기가 멈춘 것 같아요. 기다리거나 다시 시도할 수 있어요."}, "en": {"app.title": "Beach Ball Merge", "app.tagline": "Join two matching balls to make a bigger one!", "loader.loading": "Getting the balls ready…", "loader.downloading": "Downloading the game…", "loader.preparing": "Setting up the beach…", "loader.preparing_detail": "Almost ready to play.", "loader.progress_unknown": "Download progress is unavailable.", "loader.progress_detail": "{percent}% · {current} of {total}", "loader.progress_label": "Game download progress", "loader.error": "The game could not start.", "loader.error_detail": "Check your connection, then try again.", "loader.retry": "Try again", "loader.no_canvas": "Your browser does not support this game.", "loader.no_js": "Enable JavaScript to play.", "mobile.rotate_title": "Turn to portrait", "mobile.rotate_body": "On mobile, this game plays in portrait. Turn your device upright to continue.", "mobile.enter_portrait": "Use portrait mode", "loader.overlay_loading": "LOADING...", "loader.loading_notice": "Still loading. You can keep waiting or retry.", "loader.stalled_notice": "No recent loading progress. You can keep waiting or retry."}};
+let plushieLocale = String((navigator.languages && navigator.languages[0]) || navigator.language || '').toLowerCase().startsWith('ko') ? 'ko' : 'en';
 try { const saved = localStorage.getItem('plushie_locale'); if(saved in PLUSHIE_COPY) plushieLocale=saved; } catch {}
-function t(key, placeholders={}) { let value=PLUSHIE_COPY[plushieLocale][key] ?? PLUSHIE_COPY.en[key] ?? key; for(const [name,text] of Object.entries(placeholders)) value=value.replaceAll('{'+name+'}',String(text)); return value; }
-document.documentElement.lang='ko';
+function t(key, placeholders={}) { let value=PLUSHIE_COPY[plushieLocale][key] ?? PLUSHIE_COPY.ko[key] ?? key; for(const [name,text] of Object.entries(placeholders)) value=value.replaceAll('{'+name+'}',String(text)); return value; }
+document.documentElement.lang=plushieLocale;
 document.title=t('app.title');
 window.mushiesSetLocale = locale => {
  if (locale in PLUSHIE_COPY) plushieLocale=locale;
  document.title=t('app.title');
- document.documentElement.lang='ko';
+ document.documentElement.lang=plushieLocale;
  for (const [id,key] of Object.entries({'portrait-title':'mobile.rotate_title','portrait-body':'mobile.rotate_body','portrait-action':'mobile.enter_portrait'})) {
   const node=document.getElementById(id); if(node) node.textContent=t(key);
  }
@@ -479,10 +479,10 @@ document.addEventListener('DOMContentLoaded',()=>{
 	<body>
 <!-- mushies:mobile:start --><section id="portrait-guard" role="dialog" aria-modal="true" aria-labelledby="portrait-title" hidden><div><h1 id="portrait-title"></h1><p id="portrait-body"></p><button id="portrait-action" type="button"></button></div></section><!-- mushies:mobile:end -->
 <canvas id="canvas">
-			이 브라우저는 게임을 지원하지 않아요.
+			Your browser does not support this game.
 		</canvas>
 		<noscript>
-			게임을 하려면 JavaScript를 켜 주세요.
+			Enable JavaScript to play.
 		</noscript>
 		<div id="status">
 <!-- mushies:loader:start --><section id="mushies-loader" role="status" aria-live="polite" aria-atomic="true" hidden><div id="mushies-loader-ducks" aria-hidden="true"></div><div id="mushies-loader-card"><h1 id="mushies-loader-message"></h1><p id="mushies-loader-detail" hidden></p><div id="mushies-loader-progress" role="progressbar"></div><button id="mushies-loader-retry" type="button" hidden></button></div></section><!-- mushies:loader:end -->

@@ -113,9 +113,10 @@ func _ready() -> void:
     discovered.resize(Balls.count())
     discovered.fill(false)
     settings.load_data()
-    settings.values.locale = "ko"
-    locale.locale = "ko"
-    TranslationServer.set_locale("ko")
+    # 저장된 언어 선택 → 없으면 브라우저/OS 언어(ko*면 한국어, 그 밖은 영어).
+    settings.apply_detected_locale(OS.get_locale())
+    locale.set_locale(String(settings.values.locale))
+    _sync_web_locale()
     leaderboard.load_data()
     best.load_data()
     _create_walls()
@@ -607,12 +608,35 @@ func confirm_action() -> void:
     if _confirm_action == "restart": restart_game()
     else: return_title()
 
+## 한국어 ↔ 영어 전환. 진행 중인 판·점수·소리 설정은 그대로 두고 화면 문구만 다시 그립니다.
+func toggle_language() -> void:
+    set_language("en" if locale.locale == "ko" else "ko")
+
+func set_language(code: String) -> void:
+    var next := Localization.normalize(code)
+    settings.set_value("locale", next)
+    locale.set_locale(next)
+    _sync_web_locale()
+    if is_instance_valid(_resize_banner): _resize_banner.message = t("ui.resize_ended")
+    if is_instance_valid(_hud): _hud.rebuild()
+    if multiplayer_active() and _multiplayer_screen.has_method("refresh_language"):
+        _multiplayer_screen.refresh_language()
+    if is_instance_valid(audio) and not audio_muted: audio.play_ui("toggle")
+
+## Web 로더 문구와 다음 접속의 로딩 화면 언어를 게임 언어와 맞춥니다.
+func _sync_web_locale() -> void:
+    if not OS.has_feature("web"): return
+    var code := locale.locale
+    JavaScriptBridge.eval("try{localStorage.setItem('plushie_locale','%s')}catch(e){};if(window.mushiesSetLocale)window.mushiesSetLocale('%s');" % [code, code], true)
+
 func toggle_audio() -> void:
     setting("muted",not audio_muted)
     if not audio_muted: audio.play_ui("toggle")
 
 func setting(key: String, value: Variant) -> void:
-    if key == "locale": return
+    if key == "locale":
+        set_language(String(value))
+        return
     settings.set_value(key,value)
     _apply_presentation()
 

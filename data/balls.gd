@@ -8,25 +8,25 @@ extends RefCounted
 ## colors:   그리기용 대표 색(무늬 색은 scripts/ball_art.gd 에서 사용).
 
 const BALLS := [
-	{"key":"pingpong",   "name":"탁구공",   "diameter":0.08, "score":1,  "restitution":0.70, "density":0.0005, "friction":0.02, "air":0.01,
+	{"key":"pingpong",   "name":"탁구공", "name_en":"Ping Pong Ball",   "diameter":0.08, "score":1,  "restitution":0.70, "density":0.0005, "friction":0.02, "air":0.01,
 	 "colors":[Color("ff8f2e"), Color("ffd2a3")]},
-	{"key":"golf",       "name":"골프공",   "diameter":0.10, "score":3,  "restitution":0.45, "density":0.0030, "friction":0.05, "air":0.01,
+	{"key":"golf",       "name":"골프공", "name_en":"Golf Ball",   "diameter":0.10, "score":3,  "restitution":0.45, "density":0.0030, "friction":0.05, "air":0.01,
 	 "colors":[Color("fbfbf6"), Color("cfd3d6")]},
-	{"key":"tennis",     "name":"테니스공", "diameter":0.13, "score":6,  "restitution":0.60, "density":0.0012, "friction":0.30, "air":0.01,
+	{"key":"tennis",     "name":"테니스공", "name_en":"Tennis Ball", "diameter":0.13, "score":6,  "restitution":0.60, "density":0.0012, "friction":0.30, "air":0.01,
 	 "colors":[Color("d4ec2c"), Color("ffffff")]},
-	{"key":"baseball",   "name":"야구공",   "diameter":0.16, "score":10, "restitution":0.30, "density":0.0020, "friction":0.25, "air":0.01,
+	{"key":"baseball",   "name":"야구공", "name_en":"Baseball",   "diameter":0.16, "score":10, "restitution":0.30, "density":0.0020, "friction":0.25, "air":0.01,
 	 "colors":[Color("fbf8ef"), Color("d8322f")]},
-	{"key":"softball",   "name":"소프트볼", "diameter":0.20, "score":15, "restitution":0.25, "density":0.0018, "friction":0.25, "air":0.01,
+	{"key":"softball",   "name":"소프트볼", "name_en":"Softball", "diameter":0.20, "score":15, "restitution":0.25, "density":0.0018, "friction":0.25, "air":0.01,
 	 "colors":[Color("f3f22b"), Color("d42a2a")]},
-	{"key":"volleyball", "name":"배구공",   "diameter":0.25, "score":21, "restitution":0.45, "density":0.0008, "friction":0.15, "air":0.01,
+	{"key":"volleyball", "name":"배구공", "name_en":"Volleyball",   "diameter":0.25, "score":21, "restitution":0.45, "density":0.0008, "friction":0.15, "air":0.01,
 	 "colors":[Color("fdfdf8"), Color("2ab3b8"), Color("ff7f63")]},
-	{"key":"soccer",     "name":"축구공",   "diameter":0.30, "score":28, "restitution":0.40, "density":0.0010, "friction":0.20, "air":0.01,
+	{"key":"soccer",     "name":"축구공", "name_en":"Soccer Ball",   "diameter":0.30, "score":28, "restitution":0.40, "density":0.0010, "friction":0.20, "air":0.01,
 	 "colors":[Color("fbfbfb"), Color("1f2326")]},
-	{"key":"basketball", "name":"농구공",   "diameter":0.36, "score":36, "restitution":0.50, "density":0.0012, "friction":0.50, "air":0.01,
+	{"key":"basketball", "name":"농구공", "name_en":"Basketball",   "diameter":0.36, "score":36, "restitution":0.50, "density":0.0012, "friction":0.50, "air":0.01,
 	 "colors":[Color("ec7322"), Color("2a1a12")]},
-	{"key":"gymball",    "name":"짐볼",     "diameter":0.44, "score":45, "restitution":0.35, "density":0.0004, "friction":0.60, "air":0.01,
+	{"key":"gymball",    "name":"짐볼", "name_en":"Gym Ball",     "diameter":0.44, "score":45, "restitution":0.35, "density":0.0004, "friction":0.60, "air":0.01,
 	 "colors":[Color("9b5cf6"), Color("e7d8ff")]},
-	{"key":"beachball",  "name":"비치볼",   "diameter":0.54, "score":55, "restitution":0.30, "density":0.0002, "friction":0.10, "air":0.03,
+	{"key":"beachball",  "name":"비치볼", "name_en":"Beach Ball",   "diameter":0.54, "score":55, "restitution":0.30, "density":0.0002, "friction":0.10, "air":0.03,
 	 "colors":[Color("ef3e4a"), Color("ffffff"), Color("2f7fe0"), Color("ffc935"), Color("2fbf71")]},
 ]
 
@@ -58,8 +58,13 @@ static func last_tier() -> int:
 static func ball(tier: int) -> Dictionary:
 	return BALLS[clampi(tier, 0, BALLS.size() - 1)]
 
+## 현재 표시 언어("ko" 또는 "en"). Localization.set_locale()이 바꿉니다.
+static var locale := "ko"
+
 static func name_of(tier: int) -> String:
-	return String(ball(tier).name)
+	var data := ball(tier)
+	if locale == "en" and data.has("name_en"): return String(data.name_en)
+	return String(data.name)
 
 static func radius(tier: int) -> float:
 	return float(ball(tier).diameter) * CONTAINER_WIDTH * 0.5

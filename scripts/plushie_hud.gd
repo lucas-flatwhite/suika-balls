@@ -166,7 +166,14 @@ func _panel(parent: Node, rect: Rect2, color := CARD) -> VBoxContainer:
 	body.add_theme_constant_override("separation", int(12 * u))
 	body.alignment = BoxContainer.ALIGNMENT_CENTER
 	panel.add_child(body)
+	get_tree().process_frame.connect(func() -> void:
+		if is_instance_valid(panel): panel.size = Vector2(maxf(rect.size.x, panel.get_combined_minimum_size().x), 0), CONNECT_ONE_SHOT)
+	# 줄바꿈 문구는 처음엔 한 줄 폭으로 잡혀 패널을 넓힐 수 있어요. 최소 크기가 줄면 원래 폭으로 되돌립니다.
+	panel.minimum_size_changed.connect(func() -> void:
+		panel.set_deferred("size", Vector2(maxf(rect.size.x, panel.get_combined_minimum_size().x), 0)))
 	panel.resized.connect(func() -> void:
+		if panel.size.x > maxf(rect.size.x, panel.get_combined_minimum_size().x) + 0.5:
+			panel.set_deferred("size", Vector2(maxf(rect.size.x, panel.get_combined_minimum_size().x), 0))
 		panel.position = Vector2(rect.get_center().x - panel.size.x * 0.5, clampf(rect.get_center().y - panel.size.y * 0.5, 8, maxf(8, get_viewport_rect().size.y - panel.size.y - 8))))
 	return body
 
@@ -187,8 +194,11 @@ func _dim(parent: Control, alpha := 0.45) -> ColorRect:
 	parent.add_child(shade)
 	return shade
 
+func title_font_for_fit() -> Font:
+	return font if font != null else ThemeDB.fallback_font
+
 func _sound_text() -> String:
-	return "소리 끔" if game.audio_muted else "소리 켬"
+	return t("ui.sound_btn_off") if game.audio_muted else t("ui.sound_btn_on")
 
 # ------------------------------------------------------------ layout
 
@@ -334,8 +344,14 @@ func _build_title(view: Vector2) -> void:
 	var surface := _surface("title")
 	var width := minf(column.size.x - 24 * u, 470 * u)
 	var body := _panel(surface, Rect2(column.get_center().x - width * 0.5, column.position.y + 16 * u, width, column.size.y - 32 * u), Color(1, 1, 1, 0.90))
-	var title := _label(body, t("app.title"), 58 * u, Color("fff4b8"))
-	_outline(title, CORAL_DARK, int(12 * u))
+	# 제목 크기는 패널 폭에 맞춥니다(영어 제목이 더 길어요).
+	var title_size := 58 * u
+	var title_font: Font = title_font_for_fit()
+	var title_width := title_font.get_string_size(t("app.title"), HORIZONTAL_ALIGNMENT_LEFT, -1, int(title_size)).x + 24 * u
+	var room := width - 56 * u
+	if title_width > room: title_size = floorf(title_size * room / title_width)
+	var title := _label(body, t("app.title"), title_size, Color("fff4b8"))
+	_outline(title, CORAL_DARK, int(12 * u * title_size / (58 * u)))
 	_label(body, t("app.subtitle"), 19 * u, MUTED)
 	var strip := HBoxContainer.new()
 	strip.alignment = BoxContainer.ALIGNMENT_CENTER
@@ -380,18 +396,28 @@ func _build_title(view: Vector2) -> void:
 	sound.position = Vector2(column.end.x - 84 * u, column.position.y + 4 * u)
 	sound.reset_size()
 	_sound_buttons.append(sound)
+	# 언어 전환(한국어 ↔ English): 시작 화면 왼쪽 위.
+	var language := _icon_button(surface, t("ui.language_switch"), func() -> void: game.toggle_language())
+	language.name = "LanguageButton"
+	language.tooltip_text = t("ui.language_label")
+	language.custom_minimum_size = Vector2(84, 44) * u
+	language.add_theme_font_size_override("font_size", int(15 * u))
+	language.position = Vector2(column.position.x + 12 * u, column.position.y + 4 * u)
+	language.reset_size()
 
 func _build_pause(_view: Vector2) -> void:
 	var surface := _surface("pause")
 	_dim(surface)
 	var width := minf(column.size.x - 40 * u, 380 * u)
-	var body := _panel(surface, Rect2(column.get_center().x - width * 0.5, column.get_center().y - 160 * u, width, 320 * u))
+	var body := _panel(surface, Rect2(column.get_center().x - width * 0.5, column.get_center().y - 190 * u, width, 380 * u))
 	_label(body, t("ui.paused"), 36 * u, TEAL_DARK)
 	var resume := _button(body, t("ui.resume"), func() -> void: game.close_modal(), "primary", 58)
 	resume.name = "ResumeButton"
 	_button(body, t("ui.restart"), func() -> void: game.restart_game(), "secondary", 52)
 	var sound := _button(body, "", func() -> void: game.toggle_audio(), "secondary", 52)
 	_sound_buttons.append(sound)
+	var language := _button(body, "%s · %s" % [t("ui.language_label"), t("ui.language_switch")], func() -> void: game.toggle_language(), "secondary", 52)
+	language.name = "PauseLanguageButton"
 	_button(body, t("ui.title"), func() -> void: game.return_title(), "secondary", 52)
 
 func _build_debrief(_view: Vector2) -> void:

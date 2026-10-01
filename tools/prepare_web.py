@@ -154,9 +154,11 @@ def render_shell(source: str, installable: bool = True, loader_image=None) -> st
     # The cached loader face covers the template copy; Korean loader text uses the
     # device's Korean system font through the CSS fallback list below.
     font_css = font_styles(ui)
-    korean = json.loads((ROOT / 'localization' / 'ko.json').read_text())
-    ko_ui = {key: value for key, value in korean.items() if key.startswith(('loader.', 'mobile.')) or key in ('app.title', 'app.tagline')}
-    ui = {'en': ko_ui, 'zh_CN': ko_ui}
+    # Game locales: Korean (default) and English, matching localization/ko.json and en.json.
+    def loader_copy(name):
+        entries = json.loads((ROOT / 'localization' / f'{name}.json').read_text())
+        return {key: value for key, value in entries.items() if key.startswith(('loader.', 'mobile.')) or key in ('app.title', 'app.tagline')}
+    ui = {'ko': loader_copy('ko'), 'en': loader_copy('en')}
     mobile_css = (ROOT / 'ui/mobile/runtime.css').read_text()
     mobile_js = (ROOT / 'ui/mobile/runtime.js').read_text()
     loader_css = (ROOT / 'ui/mobile/loader.css').read_text()
@@ -166,12 +168,12 @@ def render_shell(source: str, installable: bool = True, loader_image=None) -> st
     tracker = '<!-- Manus analytics pending provisioning -->'
     if endpoint and website:
         tracker = f'<script defer src="{html.escape(endpoint, quote=True)}/script.js" data-website-id="{html.escape(website, quote=True)}"></script>'
-    source = re.sub(r'<title>.*?</title>', '<title>비치볼 머지</title>', source, flags=re.S)
+    source = re.sub(r'<title>.*?</title>', '<title>비치볼 머지 · Beach Ball Merge</title>', source, flags=re.S)
     head = f"""{START}
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="manus-game-loading-screen" content="1">
 <meta name="theme-color" content="#7fd6f2">
-<meta name="description" content="비치볼 머지: 같은 스포츠 공 2개를 붙여 더 큰 공으로! 해변에서 즐기는 물리 합체 퍼즐.">
+<meta name="description" content="비치볼 머지: 같은 스포츠 공 2개를 붙여 더 큰 공으로! 해변에서 즐기는 물리 합체 퍼즐. Beach Ball Merge: merge matching sports balls on the beach.">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="비치볼 머지">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -191,15 +193,15 @@ html,body {{ margin:0; width:100%; height:100%; overflow:hidden; background:#bfe
 </style>
 <script>
 const PLUSHIE_COPY={json.dumps(ui, ensure_ascii=False)};
-let plushieLocale = String((navigator.languages && navigator.languages[0]) || navigator.language || '').toLowerCase().startsWith('zh') ? 'zh_CN' : 'en';
+let plushieLocale = String((navigator.languages && navigator.languages[0]) || navigator.language || '').toLowerCase().startsWith('ko') ? 'ko' : 'en';
 try {{ const saved = localStorage.getItem('plushie_locale'); if(saved in PLUSHIE_COPY) plushieLocale=saved; }} catch {{}}
-function t(key, placeholders={{}}) {{ let value=PLUSHIE_COPY[plushieLocale][key] ?? PLUSHIE_COPY.en[key] ?? key; for(const [name,text] of Object.entries(placeholders)) value=value.replaceAll('{{'+name+'}}',String(text)); return value; }}
-document.documentElement.lang='ko';
+function t(key, placeholders={{}}) {{ let value=PLUSHIE_COPY[plushieLocale][key] ?? PLUSHIE_COPY.ko[key] ?? key; for(const [name,text] of Object.entries(placeholders)) value=value.replaceAll('{{'+name+'}}',String(text)); return value; }}
+document.documentElement.lang=plushieLocale;
 document.title=t('app.title');
 window.mushiesSetLocale = locale => {{
  if (locale in PLUSHIE_COPY) plushieLocale=locale;
  document.title=t('app.title');
- document.documentElement.lang='ko';
+ document.documentElement.lang=plushieLocale;
  for (const [id,key] of Object.entries({{'portrait-title':'mobile.rotate_title','portrait-body':'mobile.rotate_body','portrait-action':'mobile.enter_portrait'}})) {{
   const node=document.getElementById(id); if(node) node.textContent=t(key);
  }}

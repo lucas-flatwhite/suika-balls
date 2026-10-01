@@ -13,9 +13,9 @@
         "assets/template/fonts/display/noto_sans_sc_regular.tres"
       ],
       "regions": [],
-      "sha256": "sha256:7b4288e89e473286cc1a9ce8c50fa2a8a4a637be129e8a9c6eed721406080694",
+      "sha256": "sha256:988439d8d4f7fe4e8d1853e6695857d98fd0f7b768415edc433cc337f8f07a29",
       "shipped": true,
-      "size": 68004,
+      "size": 68412,
       "source": {},
       "status": "present",
       "transformations": [],
@@ -26,7 +26,21 @@
         "assets/template/fonts/display/noto_sans_sc_regular.tres"
       ],
       "used": true,
-      "usedBy": []
+      "usedBy": [],
+      "versions": {
+        "sha256:7b4288e89e473286cc1a9ce8c50fa2a8a4a637be129e8a9c6eed721406080694": {
+          "generator": {},
+          "inputs": [],
+          "license": {},
+          "origin": "unknown",
+          "regions": [],
+          "sha256": "sha256:7b4288e89e473286cc1a9ce8c50fa2a8a4a637be129e8a9c6eed721406080694",
+          "size": 68004,
+          "source": {},
+          "transformations": [],
+          "usedBy": []
+        }
+      }
     },
     "assets/share/favicon.png": {
       "declaredUseEvidence": [],
@@ -2056,9 +2070,9 @@
         "sourcePaths": []
       }
     ],
-    "pckSha256": "sha256:2eae58adcf3fa8d1e702965a5f9c08f46c86807c449055f1a92bca89a27566ac",
+    "pckSha256": "sha256:4a2d50955af62a011b7cf0761d9f2b0c485df44707bc1de1261fe5e54c87a218",
     "profile": "preview",
-    "sourceFingerprint": "sha256:ad1ffe217a7b9c8f0d6223d6808b0f0268efa8b520550bedd7b2c093c7b437c7"
+    "sourceFingerprint": "sha256:4dbdae9455e2098255e3314cb8fe114c9eaa1e8f2ab8dd571159dc4643032035"
   },
   "procedures": {},
   "summary": {
