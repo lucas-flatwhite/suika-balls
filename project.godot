@@ -1,0 +1,67 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="비치볼 머지"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="BeachBallMerge"
+run/main_scene="res://scenes/main.tscn"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+boot_splash/bg_color=Color(0.749, 0.918, 0.969, 1)
+boot_splash/show_image=false
+boot_splash/stretch_mode=0
+boot_splash/image="res://assets/template/ui/boot.png"
+config/icon="res://assets/share/favicon.png"
+
+[gui]
+
+
+[autoload]
+
+TuningBridge="*res://scripts/manus/preview/tuning_adapter.gd"
+
+ManusFontTheme="*res://autoload/manus_font_theme.gd"
+
+[display]
+
+window/size/viewport_width=1440
+window/size/viewport_height=900
+window/size/window_width_override=1440
+window/size/window_height_override=900
+window/handheld/orientation=6
+window/handheld/orientation.mobile=1
+
+[importer_defaults]
+
+; Managed delivery reimports textures without relying on workstation caches.
+texture={
+"compress/lossy_quality": 0.85,
+"compress/mode": 1
+}
+
+[physics]
+
+2d/default_gravity=1300.0
+2d/default_linear_damp=0.08
+2d/default_angular_damp=0.2
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.97, 0.93, 0.89, 1)
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/mushies_export/plugin.cfg")
+
+[editor]
+import/use_multiple_threads=false

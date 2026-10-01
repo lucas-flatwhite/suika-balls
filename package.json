@@ -1,0 +1,19 @@
+{
+  "name": "game-puzzle",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "verify": "python3 tools/verify.py",
+    "export": "mkdir -p dist && godot --headless --path . --export-release Web dist/index.html",
+    "test:grounding": "godot --headless --audio-driver Dummy --fixed-fps 60 --path . --script tests/test_grounding.gd",
+    "test:grounding-render": "godot --audio-driver Dummy --disable-vsync --fixed-fps 60 --path . --script tests/test_grounding_render.gd",
+    "dev": "node scripts/manus/runtime-command.cjs ./server.mjs",
+    "build": "node scripts/manus/runtime-command.cjs ./build.mjs",
+    "preview:build": "node scripts/manus/runtime-command.cjs ./preview-build.mjs",
+    "preview:status": "node scripts/manus/runtime-command.cjs ./preview-build.mjs --status",
+    "doctor": "node scripts/manus/runtime-command.cjs ./doctor.mjs",
+    "check": "node scripts/manus/runtime-command.cjs ./verify.mjs",
+    "inspect": "node scripts/manus/runtime-command.cjs ./inspect-file.mjs",
+    "assets:report": "node scripts/manus/runtime-command.cjs ./asset-provenance.mjs"
+  }
+}

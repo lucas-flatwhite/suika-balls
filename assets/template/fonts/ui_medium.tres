@@ -1,0 +1,10 @@
+[gd_resource type="FontVariation" load_steps=3 format=3]
+
+[ext_resource type="FontFile" path="res://assets/template/fonts/Nunito-VF.subset.woff2" id="1_body"]
+[ext_resource type="FontVariation" path="res://assets/template/fonts/display/noto_sans_sc_medium.tres" id="2_cjk"]
+
+[resource]
+resource_name = "UI medium: Nunito 500 -> Noto Sans SC 500"
+base_font = ExtResource("1_body")
+fallbacks = Array[Font]([ExtResource("2_cjk")])
+variation_opentype = {2003265652: 500}

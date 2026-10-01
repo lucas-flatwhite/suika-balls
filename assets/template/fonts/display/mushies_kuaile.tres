@@ -1,0 +1,9 @@
+[gd_resource type="FontVariation" load_steps=3 format=3]
+
+[ext_resource type="FontFile" path="res://assets/template/fonts/display/ZCOOLKuaiLe-Regular.subset.woff2" id="1_kuaile"]
+[ext_resource type="FontVariation" path="res://assets/template/fonts/display/noto_sans_sc_bold.tres" id="2_cjk"]
+
+[resource]
+resource_name = "ZCOOL KuaiLe display CJK -> Noto Sans SC Bold (Mushies)"
+base_font = ExtResource("1_kuaile")
+fallbacks = Array[Font]([ExtResource("2_cjk")])

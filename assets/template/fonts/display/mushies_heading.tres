@@ -1,0 +1,10 @@
+[gd_resource type="FontVariation" load_steps=3 format=3]
+
+[ext_resource type="FontFile" path="res://assets/template/fonts/display/Fredoka-VF.subset.woff2" id="1_fredoka"]
+[ext_resource type="FontVariation" path="res://assets/template/fonts/display/mushies_kuaile.tres" id="2_kuaile"]
+
+[resource]
+resource_name = "Mushies heading/numbers: Fredoka SemiBold -> ZCOOL KuaiLe -> Noto Sans SC"
+base_font = ExtResource("1_fredoka")
+fallbacks = Array[Font]([ExtResource("2_kuaile")])
+variation_opentype = {2003265652: 600, 2003072104: 100}

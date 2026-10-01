@@ -1,0 +1,7 @@
+[gd_resource type="FontVariation" load_steps=3 format=3]
+[ext_resource type="FontFile" path="res://assets/fonts/Jua-Subset.woff2" id="1_jua"]
+[ext_resource type="FontVariation" path="res://assets/template/fonts/ui_bold.tres" id="2_symbols"]
+[resource]
+resource_name = "비치볼 머지 화면 글꼴: Jua (한글) -> Nunito/Noto (기호)"
+base_font = ExtResource("1_jua")
+fallbacks = Array[Font]([ExtResource("2_symbols")])

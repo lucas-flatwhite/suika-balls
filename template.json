@@ -1,0 +1,47 @@
+{
+  "id": "game-puzzle",
+  "kind": "game",
+  "name": "Mushies \u2014 Local Puzzle",
+  "description": "A bilingual Godot plushie merge puzzle with continuous goals, Puff Bombs, offline standings and same-device two-player split-screen.",
+  "game_genre": "puzzle",
+  "version": "2026.09.12.3",
+  "engine": "godot",
+  "engineVersion": "4.7.2",
+  "mainScene": "scenes/main.tscn",
+  "capabilities": [
+    "static"
+  ],
+  "locales": [
+    "en",
+    "zh_CN"
+  ],
+  "inputDevices": [
+    "keyboard",
+    "mouse",
+    "touch",
+    "gamepad"
+  ],
+  "features": [
+    "2d",
+    "physics",
+    "keyboard",
+    "mouse",
+    "touch",
+    "gamepad",
+    "portrait",
+    "landscape",
+    "audio",
+    "local-leaderboard",
+    "localization",
+    "owner-tuning",
+    "contact-bombs",
+    "local-multiplayer"
+  ],
+  "source": {
+    "repository": "https://github.com/junnyboi/game-template-puzzle-merge",
+    "revision": "37eb5f72dcffc47bab6da99821defc3122257f18",
+    "loaderRevision": "832802e504e32ed8be22e5e245f21040c73da744",
+    "mobileUiRevision": "297bd208f429a3750fecdb73dd7de44c8696a580",
+    "tutorialRemovalRevision": "5613b41a8fc86aee87a150bfea4bec9cbfdbe4a7"
+  }
+}

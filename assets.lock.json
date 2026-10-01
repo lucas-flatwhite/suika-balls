@@ -1,0 +1,772 @@
+{
+  "version": 2,
+  "groups": {
+    "template": {
+      "name": "Template",
+      "order": 0
+    }
+  },
+  "bundles": {},
+  "assets": {
+    "assets/template/audio_v2/runtime/bomb_pop.ogg": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/1612ed4ea50d9b33117ffefa20093a1b62c9e4ead3583406a1fba555bc7090f5/Assets/Template/audio_v2/runtime/bomb_pop.ogg",
+      "sha256": "sha256:1612ed4ea50d9b33117ffefa20093a1b62c9e4ead3583406a1fba555bc7090f5",
+      "size": 12886,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/runtime/carriage_loop.ogg": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/e4f0fd2a1ed64c7834bf630fc87d823da0a3a2cfaa7624ec32056a9e308059f7/Assets/Template/audio_v2/runtime/carriage_loop.ogg",
+      "sha256": "sha256:e4f0fd2a1ed64c7834bf630fc87d823da0a3a2cfaa7624ec32056a9e308059f7",
+      "size": 26185,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/runtime/chain_bonus.ogg": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/7b468a8939190d5f2e9e94856ad7cd87f565c1b571505bca8fd515bc0ff5f057/Assets/Template/audio_v2/runtime/chain_bonus.ogg",
+      "sha256": "sha256:7b468a8939190d5f2e9e94856ad7cd87f565c1b571505bca8fd515bc0ff5f057",
+      "size": 10490,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/runtime/claw_close.ogg": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/2b7034097725f467cc6c4f3493b3ed051fe17add2d575b0dfa30bf90e4fff95f/Assets/Template/audio_v2/runtime/claw_close.ogg",
+      "sha256": "sha256:2b7034097725f467cc6c4f3493b3ed051fe17add2d575b0dfa30bf90e4fff95f",
+      "size": 9336,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/runtime/claw_open.ogg": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/8950f83d7cf63fec5a9b5daa3a7ff937fb398edd5341d1d88f71dd298c0e7f4a/Assets/Template/audio_v2/runtime/claw_open.ogg",
+      "sha256": "sha256:8950f83d7cf63fec5a9b5daa3a7ff937fb398edd5341d1d88f71dd298c0e7f4a",
+      "size": 9756,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/runtime/cotton_candy_circuit.ogg": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/8df88b0ac99d1aa45bb67f06b5eeca7ce0db7ad28dce7481b3f08eb50e066770/Assets/Template/audio_v2/runtime/cotton_candy_circuit.ogg",
+      "sha256": "sha256:8df88b0ac99d1aa45bb67f06b5eeca7ce0db7ad28dce7481b3f08eb50e066770",
+      "size": 2044032,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/runtime/danger.ogg": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/cc60ae27fca22df3a00a88353cb88b5a95e9d82ad832313539cf6a7e15c71aa5/Assets/Template/audio_v2/runtime/danger.ogg",
+      "sha256": "sha256:cc60ae27fca22df3a00a88353cb88b5a95e9d82ad832313539cf6a7e15c71aa5",
+      "size": 15361,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/runtime/discovery.ogg": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/b2d0930cdf36c0d5504cd202f4314adb71a07767f19eb238cce4c8d2aec7b2af/Assets/Template/audio_v2/runtime/discovery.ogg",
+      "sha256": "sha256:b2d0930cdf36c0d5504cd202f4314adb71a07767f19eb238cce4c8d2aec7b2af",
+      "size": 13227,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/runtime/dragon_arrival.ogg": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/465921608026171fd8ee2508f5db5f374ccda8bae3c58be29d356a9c1a0a1f1e/Assets/Template/audio_v2/runtime/dragon_arrival.ogg",
+      "sha256": "sha256:465921608026171fd8ee2508f5db5f374ccda8bae3c58be29d356a9c1a0a1f1e",
+      "size": 19066,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/runtime/game_over.ogg": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/f39df9bb75a41c2c829faceefc1a5cb3db2aafdbb2dab7ce09423ea1b3becc06/Assets/Template/audio_v2/runtime/game_over.ogg",
+      "sha256": "sha256:f39df9bb75a41c2c829faceefc1a5cb3db2aafdbb2dab7ce09423ea1b3becc06",
+      "size": 17484,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/runtime/impact_heavy.ogg": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/ee3e869f5d4ee68455c32e77aba7b171ed5bd031e328a5b1c5e2d0eb379de938/Assets/Template/audio_v2/runtime/impact_heavy.ogg",
+      "sha256": "sha256:ee3e869f5d4ee68455c32e77aba7b171ed5bd031e328a5b1c5e2d0eb379de938",
+      "size": 11734,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/runtime/impact_soft_a.ogg": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/3257d996ef012e83a6f1a11c89e5d36f2a4fb295ca795f8cb7a73688d7c8ebfd/Assets/Template/audio_v2/runtime/impact_soft_a.ogg",
+      "sha256": "sha256:3257d996ef012e83a6f1a11c89e5d36f2a4fb295ca795f8cb7a73688d7c8ebfd",
+      "size": 8414,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/runtime/impact_soft_b.ogg": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/a6b2f38c515a6c32dd194a17de97f6cd57151c3d0e4ae3d63f424233f296546f/Assets/Template/audio_v2/runtime/impact_soft_b.ogg",
+      "sha256": "sha256:a6b2f38c515a6c32dd194a17de97f6cd57151c3d0e4ae3d63f424233f296546f",
+      "size": 9158,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/runtime/merge_large.ogg": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/d95b138a376ad3b79dec9d27302314c122b93a40a6cedb158ab8c6d5d89742bb/Assets/Template/audio_v2/runtime/merge_large.ogg",
+      "sha256": "sha256:d95b138a376ad3b79dec9d27302314c122b93a40a6cedb158ab8c6d5d89742bb",
+      "size": 15120,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/runtime/merge_small.ogg": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/e91eac5fe7d7d03ea98ed8a5634bd4b98660bfd5b21b40d382f2b5f60eb8e0fa/Assets/Template/audio_v2/runtime/merge_small.ogg",
+      "sha256": "sha256:e91eac5fe7d7d03ea98ed8a5634bd4b98660bfd5b21b40d382f2b5f60eb8e0fa",
+      "size": 12096,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/runtime/release_whoosh.ogg": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/edbbe491867849cc19e34a3991a05119cdebe52f2a4b0cb630e4957cbd6ba440/Assets/Template/audio_v2/runtime/release_whoosh.ogg",
+      "sha256": "sha256:edbbe491867849cc19e34a3991a05119cdebe52f2a4b0cb630e4957cbd6ba440",
+      "size": 8560,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/runtime/restart.ogg": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/c6c821f336cd4d7ca011d181237d7ccac7675566e45a402f63a783bd0d5c4629/Assets/Template/audio_v2/runtime/restart.ogg",
+      "sha256": "sha256:c6c821f336cd4d7ca011d181237d7ccac7675566e45a402f63a783bd0d5c4629",
+      "size": 11948,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/runtime/ui_click.ogg": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/e9fa1c75f1311c8c8d597b17521bae1f84b6bf2ca62d20dca69ee7dc8cbcb4f7/Assets/Template/audio_v2/runtime/ui_click.ogg",
+      "sha256": "sha256:e9fa1c75f1311c8c8d597b17521bae1f84b6bf2ca62d20dca69ee7dc8cbcb4f7",
+      "size": 8199,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/runtime/ui_open.ogg": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/16a8519e5df0e129ce815b907191caeac4b8f72d0d03f39de212de05cc9160dd/Assets/Template/audio_v2/runtime/ui_open.ogg",
+      "sha256": "sha256:16a8519e5df0e129ce815b907191caeac4b8f72d0d03f39de212de05cc9160dd",
+      "size": 10572,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/runtime/wall_tap.ogg": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/54889bac26d85f413ea58aede6333ad505a6c6f69c0a4c4693d322f7fa66e2cc/Assets/Template/audio_v2/runtime/wall_tap.ogg",
+      "sha256": "sha256:54889bac26d85f413ea58aede6333ad505a6c6f69c0a4c4693d322f7fa66e2cc",
+      "size": 8810,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/source/bomb_pop.mp3": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/3bf23a6277428d2fdf1bede006d398a865c5cc6915f29d69d725e9ac30ff25c7/Assets/Template/audio_v2/source/bomb_pop.mp3",
+      "sha256": "sha256:3bf23a6277428d2fdf1bede006d398a865c5cc6915f29d69d725e9ac30ff25c7",
+      "size": 11963,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/source/carriage_loop.mp3": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/7e940cb96b9ed00bc16939b08e3dab8e94c2451a182e8dbe587c53ac88ec84f3/Assets/Template/audio_v2/source/carriage_loop.mp3",
+      "sha256": "sha256:7e940cb96b9ed00bc16939b08e3dab8e94c2451a182e8dbe587c53ac88ec84f3",
+      "size": 37242,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/source/chain_bonus.mp3": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/e5653b46e5c705abe2a4d9386190c87ec0eb3f31b21b4a2413f65da8f95626fb/Assets/Template/audio_v2/source/chain_bonus.mp3",
+      "sha256": "sha256:e5653b46e5c705abe2a4d9386190c87ec0eb3f31b21b4a2413f65da8f95626fb",
+      "size": 11328,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/source/claw_close.mp3": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/05562d094ecdb671d88cc23e7e81c7b18ec75bebc6637231d06f62ee65fe98f3/Assets/Template/audio_v2/source/claw_close.mp3",
+      "sha256": "sha256:05562d094ecdb671d88cc23e7e81c7b18ec75bebc6637231d06f62ee65fe98f3",
+      "size": 9239,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/source/claw_open.mp3": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/0c70920007237d5851f2b036d5ae82f10a2167f95b9105626daf3d6bf73d6ed7/Assets/Template/audio_v2/source/claw_open.mp3",
+      "sha256": "sha256:0c70920007237d5851f2b036d5ae82f10a2167f95b9105626daf3d6bf73d6ed7",
+      "size": 9239,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/source/cotton_candy_circuit.mp3": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/7cd143dccfc79ea593b85f6410e858564fc0785794c13e9422328b18f5072c29/Assets/Template/audio_v2/source/cotton_candy_circuit.mp3",
+      "sha256": "sha256:7cd143dccfc79ea593b85f6410e858564fc0785794c13e9422328b18f5072c29",
+      "size": 2815725,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/source/danger.mp3": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/efe2cdcb83236fd0a4fc36cd3445b539dd4879e535e2cb370d0ae65546d3f0b6/Assets/Template/audio_v2/source/danger.mp3",
+      "sha256": "sha256:efe2cdcb83236fd0a4fc36cd3445b539dd4879e535e2cb370d0ae65546d3f0b6",
+      "size": 17180,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/source/discovery.mp3": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/f54dd615a4e49095c81eeb7b828cd8c25c32844bb03dd67195c9ae17924cafb1/Assets/Template/audio_v2/source/discovery.mp3",
+      "sha256": "sha256:f54dd615a4e49095c81eeb7b828cd8c25c32844bb03dd67195c9ae17924cafb1",
+      "size": 17180,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/source/dragon_arrival.mp3": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/7baece04293961378136d69325118c1f4353eefc2f702590a8d8dced58b3ed26/Assets/Template/audio_v2/source/dragon_arrival.mp3",
+      "sha256": "sha256:7baece04293961378136d69325118c1f4353eefc2f702590a8d8dced58b3ed26",
+      "size": 29301,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/source/game_over.mp3": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/3b78dbb630ec178b5a6ca66a594a6707ce6fe3e254f321aeddb28a5c15366d30/Assets/Template/audio_v2/source/game_over.mp3",
+      "sha256": "sha256:3b78dbb630ec178b5a6ca66a594a6707ce6fe3e254f321aeddb28a5c15366d30",
+      "size": 23031,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/source/impact_heavy.mp3": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/18e8dfbc632ba40c8f1273b944a50b70a0231c42328d30d7b8ebba9a50fa3a8b/Assets/Template/audio_v2/source/impact_heavy.mp3",
+      "sha256": "sha256:18e8dfbc632ba40c8f1273b944a50b70a0231c42328d30d7b8ebba9a50fa3a8b",
+      "size": 12582,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/source/impact_soft_a.mp3": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/1d0d633c0e4e859b6c928fd0310fa1d5fde1a291390072069b7ad25c2de518d4/Assets/Template/audio_v2/source/impact_soft_a.mp3",
+      "sha256": "sha256:1d0d633c0e4e859b6c928fd0310fa1d5fde1a291390072069b7ad25c2de518d4",
+      "size": 9239,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/source/impact_soft_b.mp3": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/7c6abb44701dd53b1748f94c1cac9645bdd3c7ea851909dad10b3df29cc9a19e/Assets/Template/audio_v2/source/impact_soft_b.mp3",
+      "sha256": "sha256:7c6abb44701dd53b1748f94c1cac9645bdd3c7ea851909dad10b3df29cc9a19e",
+      "size": 9239,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/source/merge_large.mp3": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/21f1bf7850961bd3e28eb88b7373314c4c2a340faee0d1acd74b31d417363ae2/Assets/Template/audio_v2/source/merge_large.mp3",
+      "sha256": "sha256:21f1bf7850961bd3e28eb88b7373314c4c2a340faee0d1acd74b31d417363ae2",
+      "size": 18434,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/source/merge_small.mp3": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/e6cb3a62b7b87912d3ba90bd434de3a2da0f1308a34e8c62d51871a7fe300242/Assets/Template/audio_v2/source/merge_small.mp3",
+      "sha256": "sha256:e6cb3a62b7b87912d3ba90bd434de3a2da0f1308a34e8c62d51871a7fe300242",
+      "size": 12582,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/source/release_whoosh.mp3": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/2c2e1ca827dc645dc632ddb760c117f81a9d1d5387a4a95af28240b6dbaad591/Assets/Template/audio_v2/source/release_whoosh.mp3",
+      "sha256": "sha256:2c2e1ca827dc645dc632ddb760c117f81a9d1d5387a4a95af28240b6dbaad591",
+      "size": 8821,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/source/restart.mp3": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/785018882cfc3b4da757aa229f4f29d198e64fbcd7ae9b9ba74c6b1b613e5de5/Assets/Template/audio_v2/source/restart.mp3",
+      "sha256": "sha256:785018882cfc3b4da757aa229f4f29d198e64fbcd7ae9b9ba74c6b1b613e5de5",
+      "size": 15090,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/source/ui_click.mp3": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/614d8972ecca23afe97f264afc0b7049b8697f6c809bd3a74a186b11a33d2f0d/Assets/Template/audio_v2/source/ui_click.mp3",
+      "sha256": "sha256:614d8972ecca23afe97f264afc0b7049b8697f6c809bd3a74a186b11a33d2f0d",
+      "size": 8821,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/source/ui_open.mp3": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/17dcb75a3781f20d1f0cb33d395158d9e0561376dcdcd098c7581be4b1ab48f5/Assets/Template/audio_v2/source/ui_open.mp3",
+      "sha256": "sha256:17dcb75a3781f20d1f0cb33d395158d9e0561376dcdcd098c7581be4b1ab48f5",
+      "size": 10493,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/audio_v2/source/wall_tap.mp3": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/5209b3f6676b75cd3c94d3f08abca9a3e01db5673f422984288ce309ca36c1c5/Assets/Template/audio_v2/source/wall_tap.mp3",
+      "sha256": "sha256:5209b3f6676b75cd3c94d3f08abca9a3e01db5673f422984288ce309ca36c1c5",
+      "size": 8821,
+      "assetType": "audio",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/bombs/puff_bomb.webp": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/e87e0abe3c507d0374600a348eb96672c2bf8c5dd789232b41ec35106fb5a417/Assets/Template/bombs/puff_bomb.webp",
+      "sha256": "sha256:e87e0abe3c507d0374600a348eb96672c2bf8c5dd789232b41ec35106fb5a417",
+      "size": 68396,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/fonts/NotoSansSC-VF.subset.woff2": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/25/game-template/game-generic/2026.09.25-typography-v1/38f4c5f927f746b3dfa4c3a5d7edf0b7a3e828e27438418fa54f9e1565289412/assets/template/fonts/NotoSansSC-VF.subset.woff2",
+      "sha256": "sha256:38f4c5f927f746b3dfa4c3a5d7edf0b7a3e828e27438418fa54f9e1565289412",
+      "size": 1869368,
+      "assetType": "font",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/fonts/Nunito-VF.subset.woff2": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/25/game-template/game-puzzle/2026.09.25-typography-v1/b9b7ee104781deff4c3cb7c17f85f2cc73afd2683820e299eaec7a31fdbe24bb/assets/template/fonts/Nunito-VF.subset.woff2",
+      "sha256": "sha256:b9b7ee104781deff4c3cb7c17f85f2cc73afd2683820e299eaec7a31fdbe24bb",
+      "size": 49276,
+      "assetType": "font",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/fonts/display/CherryBombOne-Regular.subset.woff2": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/25/game-template/game-puzzle/2026.09.25-typography-v1/4fa668f163b5305d9531a829a470cef99fa9a159a6b252b5050696a95374bdb6/assets/template/fonts/display/CherryBombOne-Regular.subset.woff2",
+      "sha256": "sha256:4fa668f163b5305d9531a829a470cef99fa9a159a6b252b5050696a95374bdb6",
+      "size": 32188,
+      "assetType": "font",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/fonts/display/Fredoka-VF.subset.woff2": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/25/game-template/game-puzzle/2026.09.25-typography-v1/6a1f3a72c0594e2de603bc31d0150e6ff5900d57f11002b96df1d728402d40e1/assets/template/fonts/display/Fredoka-VF.subset.woff2",
+      "sha256": "sha256:6a1f3a72c0594e2de603bc31d0150e6ff5900d57f11002b96df1d728402d40e1",
+      "size": 68676,
+      "assetType": "font",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/fonts/display/ZCOOLKuaiLe-Regular.subset.woff2": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/25/game-template/game-puzzle/2026.09.25-typography-v1/67dfe1be9c8047dee25ad88a95e6a8eadf1ff52cff9bf2def2c56340faee77b2/assets/template/fonts/display/ZCOOLKuaiLe-Regular.subset.woff2",
+      "sha256": "sha256:67dfe1be9c8047dee25ad88a95e6a8eadf1ff52cff9bf2def2c56340faee77b2",
+      "size": 800572,
+      "assetType": "font",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/foregrounds/cabinet_trim.webp": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/ccb8ff465ec2f6ce66be8cf928cbe2cf5ebb3231df5a214a61bb0128337cfd33/Assets/Template/foregrounds/cabinet_trim.webp",
+      "sha256": "sha256:ccb8ff465ec2f6ce66be8cf928cbe2cf5ebb3231df5a214a61bb0128337cfd33",
+      "size": 9396,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/plushies/background/arcade.webp": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/0b4653c62f7d482fd5f58304dfe222246fa3ffa96e053fca1fdcddd331f4bee0/Assets/Template/plushies/background/arcade.webp",
+      "sha256": "sha256:0b4653c62f7d482fd5f58304dfe222246fa3ffa96e053fca1fdcddd331f4bee0",
+      "size": 41220,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/plushies/runtime/axolotl.webp": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/c14b0f33b0ff03686ba4aaf0ec612d3d51c93c4660bec413a7acf3d8beafd10d/Assets/Template/plushies/runtime/axolotl.webp",
+      "sha256": "sha256:c14b0f33b0ff03686ba4aaf0ec612d3d51c93c4660bec413a7acf3d8beafd10d",
+      "size": 66766,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/plushies/runtime/bunny.webp": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/d5e214e1eaa3def14af07468c796f360743cb2f5e6dc1ab8bee7d61cee3b2795/Assets/Template/plushies/runtime/bunny.webp",
+      "sha256": "sha256:d5e214e1eaa3def14af07468c796f360743cb2f5e6dc1ab8bee7d61cee3b2795",
+      "size": 54022,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/plushies/runtime/cat.webp": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/ddbf39d56ae669af168375afb8c3a59df3fadbb096440c7300162196fac71dc0/Assets/Template/plushies/runtime/cat.webp",
+      "sha256": "sha256:ddbf39d56ae669af168375afb8c3a59df3fadbb096440c7300162196fac71dc0",
+      "size": 48722,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/plushies/runtime/chick.webp": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/4b4abe023de0cf7e77c09f9abe47088230a9c4c7b0f4cf2a59e50cf120b27b29/Assets/Template/plushies/runtime/chick.webp",
+      "sha256": "sha256:4b4abe023de0cf7e77c09f9abe47088230a9c4c7b0f4cf2a59e50cf120b27b29",
+      "size": 48406,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/plushies/runtime/dragon.webp": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/45549479d66f4fa2fd341893254b26fa5fccc95f3136e6bf1788c27d7fb8e1e2/Assets/Template/plushies/runtime/dragon.webp",
+      "sha256": "sha256:45549479d66f4fa2fd341893254b26fa5fccc95f3136e6bf1788c27d7fb8e1e2",
+      "size": 52418,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/plushies/runtime/moth.webp": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/ff65daaf4c86f35c4cfad941cfc38046eba06ebb3c39f08237aeb8dc2665f027/Assets/Template/plushies/runtime/moth.webp",
+      "sha256": "sha256:ff65daaf4c86f35c4cfad941cfc38046eba06ebb3c39f08237aeb8dc2665f027",
+      "size": 54178,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/plushies/runtime/octo.webp": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/adec87835b08aee4f4ed4515dd3d78cfa935d8bacaf9f9e493fc1cb1bb05cb86/Assets/Template/plushies/runtime/octo.webp",
+      "sha256": "sha256:adec87835b08aee4f4ed4515dd3d78cfa935d8bacaf9f9e493fc1cb1bb05cb86",
+      "size": 66824,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/plushies/runtime/pup.webp": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/5caf93cbeec181500e9963d129b7bff3555621bbe4ac1d07d84917f161030be1/Assets/Template/plushies/runtime/pup.webp",
+      "sha256": "sha256:5caf93cbeec181500e9963d129b7bff3555621bbe4ac1d07d84917f161030be1",
+      "size": 65766,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/plushies/runtime/sheep.webp": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/aa28e527f2e795eee2adfa610132b070157329537bac71623991ab34fc520607/Assets/Template/plushies/runtime/sheep.webp",
+      "sha256": "sha256:aa28e527f2e795eee2adfa610132b070157329537bac71623991ab34fc520607",
+      "size": 54010,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/plushies/runtime/slime.webp": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/83793710549e23126bdd5c2e8166df650704ecf14e6f2234d5c85867957b3660/Assets/Template/plushies/runtime/slime.webp",
+      "sha256": "sha256:83793710549e23126bdd5c2e8166df650704ecf14e6f2234d5c85867957b3660",
+      "size": 64600,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/plushies/runtime/star.webp": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/1a1ba8faf946424e1ba448b8dde0b9c505313bcf9f2a55e48042fef42aa772e0/Assets/Template/plushies/runtime/star.webp",
+      "sha256": "sha256:1a1ba8faf946424e1ba448b8dde0b9c505313bcf9f2a55e48042fef42aa772e0",
+      "size": 63996,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/plushies/source/axolotl.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/1b379f36dcb45159c9daf8b9d674fee5474199344f6e556d9e8869fdaff5d071/Assets/Template/plushies/source/axolotl.png",
+      "sha256": "sha256:1b379f36dcb45159c9daf8b9d674fee5474199344f6e556d9e8869fdaff5d071",
+      "size": 5801277,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/plushies/source/bunny.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/0ba540dd1e30e8e2463243dfbe36a543bf2bf0118a9b26492492127fc5d626b9/Assets/Template/plushies/source/bunny.png",
+      "sha256": "sha256:0ba540dd1e30e8e2463243dfbe36a543bf2bf0118a9b26492492127fc5d626b9",
+      "size": 5496002,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/plushies/source/cat.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/21cb0074e321b027ae0744ca82ad9846cba86cb47fbc32835f7ad536cc9795bf/Assets/Template/plushies/source/cat.png",
+      "sha256": "sha256:21cb0074e321b027ae0744ca82ad9846cba86cb47fbc32835f7ad536cc9795bf",
+      "size": 5236991,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/plushies/source/chick.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/f7ed48442fba8004095e298878cdbc09f5559739c538100c0b68c0bef1041d11/Assets/Template/plushies/source/chick.png",
+      "sha256": "sha256:f7ed48442fba8004095e298878cdbc09f5559739c538100c0b68c0bef1041d11",
+      "size": 4714858,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/plushies/source/dragon.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/3120f900de4145f9f49ec99b2571d5a48dabbd2866b482983fbc987bb14d9d2e/Assets/Template/plushies/source/dragon.png",
+      "sha256": "sha256:3120f900de4145f9f49ec99b2571d5a48dabbd2866b482983fbc987bb14d9d2e",
+      "size": 5778885,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/plushies/source/moth.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/5e9a856ff0e5a65e8d4268e719f5ec3e9b33b979048da189bd06a8c6926663cf/Assets/Template/plushies/source/moth.png",
+      "sha256": "sha256:5e9a856ff0e5a65e8d4268e719f5ec3e9b33b979048da189bd06a8c6926663cf",
+      "size": 5035174,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/plushies/source/octo.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/abf1b05869b5cc160d5aabc48a6240eff0f887cc77143512547ee865a1a39f95/Assets/Template/plushies/source/octo.png",
+      "sha256": "sha256:abf1b05869b5cc160d5aabc48a6240eff0f887cc77143512547ee865a1a39f95",
+      "size": 6112255,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/plushies/source/pup.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/0d829f1b0444d64e83130ea5a6d2b1223b5d49e54020f5c7f198cfbffe48861f/Assets/Template/plushies/source/pup.png",
+      "sha256": "sha256:0d829f1b0444d64e83130ea5a6d2b1223b5d49e54020f5c7f198cfbffe48861f",
+      "size": 5428803,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/plushies/source/sheep.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/35bdd5f430215b62101e362d7462ed024a81da8b3d7a6de88b9603bd3b022819/Assets/Template/plushies/source/sheep.png",
+      "sha256": "sha256:35bdd5f430215b62101e362d7462ed024a81da8b3d7a6de88b9603bd3b022819",
+      "size": 5000225,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/plushies/source/slime.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/2235f1086afba093cb3828b7af227274e343e6a3d540c7e277d5cc1b4a638897/Assets/Template/plushies/source/slime.png",
+      "sha256": "sha256:2235f1086afba093cb3828b7af227274e343e6a3d540c7e277d5cc1b4a638897",
+      "size": 5678113,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/plushies/source/star.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/9ac2e34a25de8e329b93aa92cde3d18087ef1182952e0eb6038345ef10be7dca/Assets/Template/plushies/source/star.png",
+      "sha256": "sha256:9ac2e34a25de8e329b93aa92cde3d18087ef1182952e0eb6038345ef10be7dca",
+      "size": 5275199,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/source/aim_cursor.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/eb09da24aebe55ff1e1590c327f9ff882b4153cc2128d3e807b63622150a232d/Assets/Template/source/aim_cursor.png",
+      "sha256": "sha256:eb09da24aebe55ff1e1590c327f9ff882b4153cc2128d3e807b63622150a232d",
+      "size": 604874,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/source/arcade.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/51079cdd34a962d09e19563b88cee969546e76d27e8f894faeb76cca920f95a8/Assets/Template/source/arcade.png",
+      "sha256": "sha256:51079cdd34a962d09e19563b88cee969546e76d27e8f894faeb76cca920f95a8",
+      "size": 3596298,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/source/cursor.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/3a530a6f269295f64f6b6465fdb67d7ee029b7569a09200a32ac97daf8887b01/Assets/Template/source/cursor.png",
+      "sha256": "sha256:3a530a6f269295f64f6b6465fdb67d7ee029b7569a09200a32ac97daf8887b01",
+      "size": 1358862,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/source/foreground.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/f2cb18201c4b7fd784c98162aae81bfe9fca6372e27bed5459acb6c994ea2957/Assets/Template/source/foreground.png",
+      "sha256": "sha256:f2cb18201c4b7fd784c98162aae81bfe9fca6372e27bed5459acb6c994ea2957",
+      "size": 1406186,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/source/normalized/axolotl.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/f7bcb8c3f8ed2f20575a5e7317c435c55a9416203bbe19f5caae167b38c3dce2/Assets/Template/source/normalized/axolotl.png",
+      "sha256": "sha256:f7bcb8c3f8ed2f20575a5e7317c435c55a9416203bbe19f5caae167b38c3dce2",
+      "size": 351884,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/source/normalized/bunny.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/9bbf5df49a92a649b196eca4f1fbf55dcc6cb06637d1963b8e524bd5f0222526/Assets/Template/source/normalized/bunny.png",
+      "sha256": "sha256:9bbf5df49a92a649b196eca4f1fbf55dcc6cb06637d1963b8e524bd5f0222526",
+      "size": 308818,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/source/normalized/cat.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/a761e1ff93886df29415a3b2e02319e5d201a24b8162f1b74f0039ec1e8c2a3b/Assets/Template/source/normalized/cat.png",
+      "sha256": "sha256:a761e1ff93886df29415a3b2e02319e5d201a24b8162f1b74f0039ec1e8c2a3b",
+      "size": 333046,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/source/normalized/chick.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/290c3fd87d4a9693d7ba7b3bb434fef3e7b0653880262bbc76a6db063d2987ac/Assets/Template/source/normalized/chick.png",
+      "sha256": "sha256:290c3fd87d4a9693d7ba7b3bb434fef3e7b0653880262bbc76a6db063d2987ac",
+      "size": 289637,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/source/normalized/dragon.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/5e10c68de6eb5b2ae0772270876459d1b445723ceef59cd17640a9775342d46a/Assets/Template/source/normalized/dragon.png",
+      "sha256": "sha256:5e10c68de6eb5b2ae0772270876459d1b445723ceef59cd17640a9775342d46a",
+      "size": 318194,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/source/normalized/moth.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/461a2e3f90098e30410ccc2ca7ebba0432a9f9b12edcda47508a5b7d8c9a986c/Assets/Template/source/normalized/moth.png",
+      "sha256": "sha256:461a2e3f90098e30410ccc2ca7ebba0432a9f9b12edcda47508a5b7d8c9a986c",
+      "size": 283990,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/source/normalized/octo.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/527bc5ec106d416307e72b9dbd578afb2ef33641c1c9d88dc918e8acd2291911/Assets/Template/source/normalized/octo.png",
+      "sha256": "sha256:527bc5ec106d416307e72b9dbd578afb2ef33641c1c9d88dc918e8acd2291911",
+      "size": 370080,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/source/normalized/pup.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/76c07ac277e59bef08c900f3ede703b3f7cbb26232d4fe946b2709e07a0687a3/Assets/Template/source/normalized/pup.png",
+      "sha256": "sha256:76c07ac277e59bef08c900f3ede703b3f7cbb26232d4fe946b2709e07a0687a3",
+      "size": 346204,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/source/normalized/sheep.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/9455a1e076fe8b75403fb14e07e8d803f7915c262ea01508e912708ebb99d146/Assets/Template/source/normalized/sheep.png",
+      "sha256": "sha256:9455a1e076fe8b75403fb14e07e8d803f7915c262ea01508e912708ebb99d146",
+      "size": 318955,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/source/normalized/slime.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/bf98166fbc916bd73170a94a80fa8b0b290b8eda276034bd4e3c4bc19501e492/Assets/Template/source/normalized/slime.png",
+      "sha256": "sha256:bf98166fbc916bd73170a94a80fa8b0b290b8eda276034bd4e3c4bc19501e492",
+      "size": 341359,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/source/normalized/star.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/505581a7bdcaf4247805a7a7729d5c4d9fc3932848b44bdc1eecc0259d8885c1/Assets/Template/source/normalized/star.png",
+      "sha256": "sha256:505581a7bdcaf4247805a7a7729d5c4d9fc3932848b44bdc1eecc0259d8885c1",
+      "size": 328658,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/source/pause.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/028c1653c88de92218f0dce8ca913f27b1da31c2c03f404131058c3505f99e85/Assets/Template/source/pause.png",
+      "sha256": "sha256:028c1653c88de92218f0dce8ca913f27b1da31c2c03f404131058c3505f99e85",
+      "size": 3011909,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/source/puff_bomb.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/4a69496c9785663fc83cf587791f473b0ed87c6560fbdcd6391e54cec1760351/Assets/Template/source/puff_bomb.png",
+      "sha256": "sha256:4a69496c9785663fc83cf587791f473b0ed87c6560fbdcd6391e54cec1760351",
+      "size": 1993701,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/source/title.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/0bcb6422b3387077863354f7a500d43ba8ccc7483febe25b37c3d4ed1f617cba/Assets/Template/source/title.png",
+      "sha256": "sha256:0bcb6422b3387077863354f7a500d43ba8ccc7483febe25b37c3d4ed1f617cba",
+      "size": 2294443,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/ui/aim_cursor.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/7d8b8141a1b1cb6022d83df436c5257a64c79cd3024b4b5087d8d8f327c8fcfc/Assets/Template/ui/aim_cursor.png",
+      "sha256": "sha256:7d8b8141a1b1cb6022d83df436c5257a64c79cd3024b4b5087d8d8f327c8fcfc",
+      "size": 2206,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/ui/app-icon-192.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/e0147b61cd5972fd581ebc73aef9c1f1a72e37bc427b8fcb33d4d9b82deb121e/Assets/Template/ui/app-icon-192.png",
+      "sha256": "sha256:e0147b61cd5972fd581ebc73aef9c1f1a72e37bc427b8fcb33d4d9b82deb121e",
+      "size": 26328,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/ui/app-icon-512.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/c817eba5b88450a64dca6263d2813e927f2240661ebd327d0de196fdc6ca5c9c/Assets/Template/ui/app-icon-512.png",
+      "sha256": "sha256:c817eba5b88450a64dca6263d2813e927f2240661ebd327d0de196fdc6ca5c9c",
+      "size": 167512,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/ui/boot.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/c361b9142d2155dc2762db66df742f05437b63a58f3e91144611a7f1b19a18b8/Assets/Template/ui/boot.png",
+      "sha256": "sha256:c361b9142d2155dc2762db66df742f05437b63a58f3e91144611a7f1b19a18b8",
+      "size": 48273,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/ui/cursor.png": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/1e1382c32114e3fd5ec1082abaf1ca8d6ea9e0dda2d487b97f015ab8e491940d/Assets/Template/ui/cursor.png",
+      "sha256": "sha256:1e1382c32114e3fd5ec1082abaf1ca8d6ea9e0dda2d487b97f015ab8e491940d",
+      "size": 1802,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/ui/pause.webp": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/ed7d8fa97e97f69d482adc2adb542daa465a1b0d0eb05b7f6a80da8831fd37c4/Assets/Template/ui/pause.webp",
+      "sha256": "sha256:ed7d8fa97e97f69d482adc2adb542daa465a1b0d0eb05b7f6a80da8831fd37c4",
+      "size": 110226,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    },
+    "assets/template/ui/title.webp": {
+      "path": "https://d1oupeiobkpcny.cloudfront.net/assets/dashboard/materials/2026/09/08/game-template/game-puzzle-merge/2026.09.08-mushies-v1/d81c7912d0b9eb8294ad1278c2e35251c50f7b7aea904e6b452481bd473eb57b/Assets/Template/ui/title.webp",
+      "sha256": "sha256:d81c7912d0b9eb8294ad1278c2e35251c50f7b7aea904e6b452481bd473eb57b",
+      "size": 112198,
+      "assetType": "image",
+      "groupId": "template",
+      "used": true
+    }
+  }
+}

@@ -1,0 +1,9 @@
+[gd_resource type="FontVariation" load_steps=3 format=3]
+
+[ext_resource type="FontFile" path="res://assets/template/fonts/display/CherryBombOne-Regular.subset.woff2" id="1_cherry"]
+[ext_resource type="FontVariation" path="res://assets/template/fonts/display/mushies_kuaile.tres" id="2_kuaile"]
+
+[resource]
+resource_name = "Mushies logo: Cherry Bomb One -> ZCOOL KuaiLe -> Noto Sans SC"
+base_font = ExtResource("1_cherry")
+fallbacks = Array[Font]([ExtResource("2_kuaile")])

@@ -1,0 +1,10 @@
+[gd_resource type="FontVariation" load_steps=3 format=3]
+
+[ext_resource type="FontFile" path="res://assets/template/fonts/NotoSansSC-VF.subset.woff2" id="1_noto"]
+[ext_resource type="FontFile" path="res://assets/fonts/Jua-Subset.woff2" id="2_hangul"]
+
+[resource]
+resource_name = "Noto Sans SC medium (Chinese body companion)"
+base_font = ExtResource("1_noto")
+fallbacks = Array[Font]([ExtResource("2_hangul")])
+variation_opentype = {2003265652: 500}

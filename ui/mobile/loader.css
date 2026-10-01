@@ -1,0 +1,27 @@
+/* The shell owns the whole viewport; never inherit Godot's stock 64px status styling. */
+#status{position:fixed;inset:0;background:#f5e8de}
+#status-splash,#status-progress,#status-notice{display:none!important}
+#mushies-loader{position:fixed;inset:0;z-index:20;isolation:isolate;box-sizing:border-box;overflow:hidden;background:linear-gradient(180deg,#5fc8f2 0%,#c9f1ff 48%,#4fd1e0 50%,#f7e2ab 64%,#f0cf8c 100%);color:#1f3b4d;font:16px/1.4 "Noto Sans SC","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;touch-action:none}
+#mushies-loader[hidden]{display:none!important}
+#mushies-loader-ducks{position:absolute;inset:max(12px,env(safe-area-inset-top)) max(12px,env(safe-area-inset-right)) max(12px,env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left));overflow:hidden;pointer-events:none}
+#mushies-loader .mushies-loader-duck{position:absolute;left:var(--duck-x);top:var(--duck-y);display:block;width:var(--duck-size);height:var(--duck-size);object-fit:contain;border:0;margin:0;user-select:none;pointer-events:none;filter:drop-shadow(0 5px 3px rgba(116,78,54,.14));transform:rotate(var(--duck-angle));animation:mushies-duck-drop var(--duck-duration) cubic-bezier(.33,.05,.69,1) var(--duck-delay) both}
+#mushies-loader-card{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:max(22px,env(safe-area-inset-top)) max(20px,env(safe-area-inset-right)) max(22px,env(safe-area-inset-bottom)) max(20px,env(safe-area-inset-left));box-sizing:border-box;pointer-events:none}
+#mushies-loader-message{max-width:100%;margin:0;padding:.16em .35em;border-radius:.25em;background:rgba(255,248,237,.82);color:#1f3b4d;font-size:clamp(36px,9vw,112px);line-height:1.1;font-weight:900;letter-spacing:.025em;text-align:center;text-shadow:0 3px 0 rgba(255,255,255,.8);box-shadow:0 5px 25px rgba(90,60,60,.06);animation:mushies-loading-breathe 2s ease-in-out infinite}
+#mushies-loader-detail{max-width:32em;margin:0;text-align:center;font-size:16px;line-height:1.5}
+#mushies-loader-detail[hidden],#mushies-loader-retry[hidden]{display:none!important}
+#mushies-loader-progress{position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+#mushies-loader-retry{min-height:48px;padding:12px 26px;border:2px solid #d94c3a;border-radius:16px;background:#ff6b57;color:#1f3b4d;font-family:inherit;font-size:18px;font-weight:700;line-height:1.2;cursor:pointer;pointer-events:auto}
+#mushies-loader-retry:hover{background:#ff8a78}
+#mushies-loader-retry:focus-visible{outline:3px solid #1f3b4d;outline-offset:4px}
+#mushies-loader[data-state="failure"] #mushies-loader-card{background:rgba(255,248,237,.94)}
+#mushies-loader[data-state="failure"] #mushies-loader-message{font-size:clamp(26px,5vw,48px);animation:none;background:none;box-shadow:none;text-shadow:none}
+#mushies-loader[data-state="failure"] .mushies-loader-duck{animation-play-state:paused}
+@keyframes mushies-duck-drop{0%{transform:translateY(calc(-100vh - var(--duck-y))) rotate(calc(var(--duck-angle) - 18deg))}78%{transform:translateY(0) rotate(var(--duck-angle)) scale(1.06,.94)}90%{transform:translateY(-9px) rotate(var(--duck-angle)) scale(.98,1.02)}100%{transform:translateY(0) rotate(var(--duck-angle)) scale(1)}}
+@keyframes mushies-loading-breathe{0%,100%{opacity:1}50%{opacity:.76}}
+@media (prefers-reduced-motion:reduce){#mushies-loader .mushies-loader-duck,#mushies-loader-message{animation:none}}
+@media (max-height:360px){#mushies-loader-message{font-size:clamp(32px,12vh,64px)}#mushies-loader-card{gap:8px}}
+
+/* Fade the outer status layer; the engine title is already rendering below. */
+#status[data-mushies-fade="true"]{animation:mushies-loader-fade var(--mushies-fade-duration,360ms) ease-out both;pointer-events:auto}
+@keyframes mushies-loader-fade{from{opacity:1}to{opacity:0}}
+@media (prefers-reduced-motion:reduce){#status[data-mushies-fade="true"]{animation:none}}

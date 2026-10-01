@@ -1,0 +1,2265 @@
+{
+  "assets": {
+    "assets/fonts/Jua-Subset.woff2": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "unknown",
+      "referenceEvidence": [
+        "assets/fonts/jua_display.tres",
+        "assets/template/fonts/display/noto_sans_sc_bold.tres",
+        "assets/template/fonts/display/noto_sans_sc_medium.tres",
+        "assets/template/fonts/display/noto_sans_sc_regular.tres"
+      ],
+      "regions": [],
+      "sha256": "sha256:7b4288e89e473286cc1a9ce8c50fa2a8a4a637be129e8a9c6eed721406080694",
+      "shipped": true,
+      "size": 68004,
+      "source": {},
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [
+        "assets/fonts/jua_display.tres",
+        "assets/template/fonts/display/noto_sans_sc_bold.tres",
+        "assets/template/fonts/display/noto_sans_sc_medium.tres",
+        "assets/template/fonts/display/noto_sans_sc_regular.tres"
+      ],
+      "used": true,
+      "usedBy": []
+    },
+    "assets/share/favicon.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "unknown",
+      "referenceEvidence": [
+        "game-sharing.json",
+        "project.godot"
+      ],
+      "regions": [],
+      "sha256": "sha256:941e8dac4197f98b0c441d052a11dfc58eecac5a7f4cc75694ed03a14c5994e1",
+      "shipped": true,
+      "size": 37009,
+      "source": {},
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [
+        "game-sharing.json",
+        "project.godot"
+      ],
+      "used": true,
+      "usedBy": []
+    },
+    "assets/share/og.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "unknown",
+      "referenceEvidence": [
+        "game-sharing.json"
+      ],
+      "regions": [],
+      "sha256": "sha256:65e6d0637e2a5161579b8a289b89a89bf3b2446a71e270cf40dab149f3e6a9be",
+      "shipped": true,
+      "size": 1626965,
+      "source": {},
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [
+        "game-sharing.json"
+      ],
+      "used": true,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/runtime/bomb_pop.ogg": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:1612ed4ea50d9b33117ffefa20093a1b62c9e4ead3583406a1fba555bc7090f5",
+      "shipped": true,
+      "size": 12886,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/runtime/carriage_loop.ogg": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:e4f0fd2a1ed64c7834bf630fc87d823da0a3a2cfaa7624ec32056a9e308059f7",
+      "shipped": true,
+      "size": 26185,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/runtime/chain_bonus.ogg": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:7b468a8939190d5f2e9e94856ad7cd87f565c1b571505bca8fd515bc0ff5f057",
+      "shipped": true,
+      "size": 10490,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/runtime/claw_close.ogg": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:2b7034097725f467cc6c4f3493b3ed051fe17add2d575b0dfa30bf90e4fff95f",
+      "shipped": true,
+      "size": 9336,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/runtime/claw_open.ogg": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:8950f83d7cf63fec5a9b5daa3a7ff937fb398edd5341d1d88f71dd298c0e7f4a",
+      "shipped": true,
+      "size": 9756,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/runtime/cotton_candy_circuit.ogg": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:8df88b0ac99d1aa45bb67f06b5eeca7ce0db7ad28dce7481b3f08eb50e066770",
+      "shipped": true,
+      "size": 2044032,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/runtime/danger.ogg": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:cc60ae27fca22df3a00a88353cb88b5a95e9d82ad832313539cf6a7e15c71aa5",
+      "shipped": true,
+      "size": 15361,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/runtime/discovery.ogg": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:b2d0930cdf36c0d5504cd202f4314adb71a07767f19eb238cce4c8d2aec7b2af",
+      "shipped": true,
+      "size": 13227,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/runtime/dragon_arrival.ogg": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:465921608026171fd8ee2508f5db5f374ccda8bae3c58be29d356a9c1a0a1f1e",
+      "shipped": true,
+      "size": 19066,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/runtime/game_over.ogg": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:f39df9bb75a41c2c829faceefc1a5cb3db2aafdbb2dab7ce09423ea1b3becc06",
+      "shipped": true,
+      "size": 17484,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/runtime/impact_heavy.ogg": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:ee3e869f5d4ee68455c32e77aba7b171ed5bd031e328a5b1c5e2d0eb379de938",
+      "shipped": true,
+      "size": 11734,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/runtime/impact_soft_a.ogg": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:3257d996ef012e83a6f1a11c89e5d36f2a4fb295ca795f8cb7a73688d7c8ebfd",
+      "shipped": true,
+      "size": 8414,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/runtime/impact_soft_b.ogg": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:a6b2f38c515a6c32dd194a17de97f6cd57151c3d0e4ae3d63f424233f296546f",
+      "shipped": true,
+      "size": 9158,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/runtime/merge_large.ogg": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:d95b138a376ad3b79dec9d27302314c122b93a40a6cedb158ab8c6d5d89742bb",
+      "shipped": true,
+      "size": 15120,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/runtime/merge_small.ogg": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:e91eac5fe7d7d03ea98ed8a5634bd4b98660bfd5b21b40d382f2b5f60eb8e0fa",
+      "shipped": true,
+      "size": 12096,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/runtime/release_whoosh.ogg": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:edbbe491867849cc19e34a3991a05119cdebe52f2a4b0cb630e4957cbd6ba440",
+      "shipped": true,
+      "size": 8560,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/runtime/restart.ogg": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:c6c821f336cd4d7ca011d181237d7ccac7675566e45a402f63a783bd0d5c4629",
+      "shipped": true,
+      "size": 11948,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/runtime/ui_click.ogg": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:e9fa1c75f1311c8c8d597b17521bae1f84b6bf2ca62d20dca69ee7dc8cbcb4f7",
+      "shipped": true,
+      "size": 8199,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/runtime/ui_open.ogg": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:16a8519e5df0e129ce815b907191caeac4b8f72d0d03f39de212de05cc9160dd",
+      "shipped": true,
+      "size": 10572,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/runtime/wall_tap.ogg": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:54889bac26d85f413ea58aede6333ad505a6c6f69c0a4c4693d322f7fa66e2cc",
+      "shipped": true,
+      "size": 8810,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/source/bomb_pop.mp3": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:3bf23a6277428d2fdf1bede006d398a865c5cc6915f29d69d725e9ac30ff25c7",
+      "shipped": false,
+      "size": 11963,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/source/carriage_loop.mp3": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:7e940cb96b9ed00bc16939b08e3dab8e94c2451a182e8dbe587c53ac88ec84f3",
+      "shipped": false,
+      "size": 37242,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/source/chain_bonus.mp3": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:e5653b46e5c705abe2a4d9386190c87ec0eb3f31b21b4a2413f65da8f95626fb",
+      "shipped": false,
+      "size": 11328,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/source/claw_close.mp3": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:05562d094ecdb671d88cc23e7e81c7b18ec75bebc6637231d06f62ee65fe98f3",
+      "shipped": false,
+      "size": 9239,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/source/claw_open.mp3": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:0c70920007237d5851f2b036d5ae82f10a2167f95b9105626daf3d6bf73d6ed7",
+      "shipped": false,
+      "size": 9239,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/source/cotton_candy_circuit.mp3": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:7cd143dccfc79ea593b85f6410e858564fc0785794c13e9422328b18f5072c29",
+      "shipped": false,
+      "size": 2815725,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/source/danger.mp3": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:efe2cdcb83236fd0a4fc36cd3445b539dd4879e535e2cb370d0ae65546d3f0b6",
+      "shipped": false,
+      "size": 17180,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/source/discovery.mp3": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:f54dd615a4e49095c81eeb7b828cd8c25c32844bb03dd67195c9ae17924cafb1",
+      "shipped": false,
+      "size": 17180,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/source/dragon_arrival.mp3": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:7baece04293961378136d69325118c1f4353eefc2f702590a8d8dced58b3ed26",
+      "shipped": false,
+      "size": 29301,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/source/game_over.mp3": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:3b78dbb630ec178b5a6ca66a594a6707ce6fe3e254f321aeddb28a5c15366d30",
+      "shipped": false,
+      "size": 23031,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/source/impact_heavy.mp3": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:18e8dfbc632ba40c8f1273b944a50b70a0231c42328d30d7b8ebba9a50fa3a8b",
+      "shipped": false,
+      "size": 12582,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/source/impact_soft_a.mp3": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:1d0d633c0e4e859b6c928fd0310fa1d5fde1a291390072069b7ad25c2de518d4",
+      "shipped": false,
+      "size": 9239,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/source/impact_soft_b.mp3": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:7c6abb44701dd53b1748f94c1cac9645bdd3c7ea851909dad10b3df29cc9a19e",
+      "shipped": false,
+      "size": 9239,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/source/merge_large.mp3": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:21f1bf7850961bd3e28eb88b7373314c4c2a340faee0d1acd74b31d417363ae2",
+      "shipped": false,
+      "size": 18434,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/source/merge_small.mp3": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:e6cb3a62b7b87912d3ba90bd434de3a2da0f1308a34e8c62d51871a7fe300242",
+      "shipped": false,
+      "size": 12582,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/source/release_whoosh.mp3": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:2c2e1ca827dc645dc632ddb760c117f81a9d1d5387a4a95af28240b6dbaad591",
+      "shipped": false,
+      "size": 8821,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/source/restart.mp3": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:785018882cfc3b4da757aa229f4f29d198e64fbcd7ae9b9ba74c6b1b613e5de5",
+      "shipped": false,
+      "size": 15090,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/source/ui_click.mp3": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:614d8972ecca23afe97f264afc0b7049b8697f6c809bd3a74a186b11a33d2f0d",
+      "shipped": false,
+      "size": 8821,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/source/ui_open.mp3": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:17dcb75a3781f20d1f0cb33d395158d9e0561376dcdcd098c7581be4b1ab48f5",
+      "shipped": false,
+      "size": 10493,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/audio_v2/source/wall_tap.mp3": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:5209b3f6676b75cd3c94d3f08abca9a3e01db5673f422984288ce309ca36c1c5",
+      "shipped": false,
+      "size": 8821,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/bombs/puff_bomb.webp": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:e87e0abe3c507d0374600a348eb96672c2bf8c5dd789232b41ec35106fb5a417",
+      "shipped": true,
+      "size": 68396,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/fonts/NotoSansSC-VF.subset.woff2": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {
+        "id": "OFL-1.1",
+        "url": "https://openfontlicense.org/open-font-license-official-text/"
+      },
+      "origin": "template",
+      "referenceEvidence": [
+        "assets/template/fonts/display/noto_sans_sc_bold.tres",
+        "assets/template/fonts/display/noto_sans_sc_medium.tres",
+        "assets/template/fonts/display/noto_sans_sc_regular.tres"
+      ],
+      "regions": [],
+      "sha256": "sha256:38f4c5f927f746b3dfa4c3a5d7edf0b7a3e828e27438418fa54f9e1565289412",
+      "shipped": true,
+      "size": 1869368,
+      "source": {
+        "name": "NotoSansSC-VF.subset.woff2",
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [
+        "assets/template/fonts/display/noto_sans_sc_bold.tres",
+        "assets/template/fonts/display/noto_sans_sc_medium.tres",
+        "assets/template/fonts/display/noto_sans_sc_regular.tres"
+      ],
+      "used": true,
+      "usedBy": []
+    },
+    "assets/template/fonts/Nunito-VF.subset.woff2": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [
+        "assets/template/fonts/ui_bold.tres",
+        "assets/template/fonts/ui_medium.tres",
+        "assets/template/fonts/ui_regular.tres"
+      ],
+      "regions": [],
+      "sha256": "sha256:b9b7ee104781deff4c3cb7c17f85f2cc73afd2683820e299eaec7a31fdbe24bb",
+      "shipped": true,
+      "size": 49276,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [
+        "assets/template/fonts/ui_bold.tres",
+        "assets/template/fonts/ui_medium.tres",
+        "assets/template/fonts/ui_regular.tres"
+      ],
+      "used": true,
+      "usedBy": []
+    },
+    "assets/template/fonts/display/CherryBombOne-Regular.subset.woff2": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [
+        "assets/template/fonts/display/mushies_title.tres"
+      ],
+      "regions": [],
+      "sha256": "sha256:4fa668f163b5305d9531a829a470cef99fa9a159a6b252b5050696a95374bdb6",
+      "shipped": true,
+      "size": 32188,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [
+        "assets/template/fonts/display/mushies_title.tres"
+      ],
+      "used": true,
+      "usedBy": []
+    },
+    "assets/template/fonts/display/Fredoka-VF.subset.woff2": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [
+        "assets/template/fonts/display/mushies_heading.tres"
+      ],
+      "regions": [],
+      "sha256": "sha256:6a1f3a72c0594e2de603bc31d0150e6ff5900d57f11002b96df1d728402d40e1",
+      "shipped": true,
+      "size": 68676,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [
+        "assets/template/fonts/display/mushies_heading.tres"
+      ],
+      "used": true,
+      "usedBy": []
+    },
+    "assets/template/fonts/display/ZCOOLKuaiLe-Regular.subset.woff2": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [
+        "assets/template/fonts/display/mushies_kuaile.tres"
+      ],
+      "regions": [],
+      "sha256": "sha256:67dfe1be9c8047dee25ad88a95e6a8eadf1ff52cff9bf2def2c56340faee77b2",
+      "shipped": true,
+      "size": 800572,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [
+        "assets/template/fonts/display/mushies_kuaile.tres"
+      ],
+      "used": true,
+      "usedBy": []
+    },
+    "assets/template/foregrounds/cabinet_trim.webp": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:ccb8ff465ec2f6ce66be8cf928cbe2cf5ebb3231df5a214a61bb0128337cfd33",
+      "shipped": true,
+      "size": 9396,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/plushies/background/arcade.webp": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:0b4653c62f7d482fd5f58304dfe222246fa3ffa96e053fca1fdcddd331f4bee0",
+      "shipped": true,
+      "size": 41220,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/plushies/runtime/axolotl.webp": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:c14b0f33b0ff03686ba4aaf0ec612d3d51c93c4660bec413a7acf3d8beafd10d",
+      "shipped": true,
+      "size": 66766,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/plushies/runtime/bunny.webp": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:d5e214e1eaa3def14af07468c796f360743cb2f5e6dc1ab8bee7d61cee3b2795",
+      "shipped": true,
+      "size": 54022,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/plushies/runtime/cat.webp": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:ddbf39d56ae669af168375afb8c3a59df3fadbb096440c7300162196fac71dc0",
+      "shipped": true,
+      "size": 48722,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/plushies/runtime/chick.webp": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:4b4abe023de0cf7e77c09f9abe47088230a9c4c7b0f4cf2a59e50cf120b27b29",
+      "shipped": true,
+      "size": 48406,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/plushies/runtime/dragon.webp": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:45549479d66f4fa2fd341893254b26fa5fccc95f3136e6bf1788c27d7fb8e1e2",
+      "shipped": true,
+      "size": 52418,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/plushies/runtime/moth.webp": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:ff65daaf4c86f35c4cfad941cfc38046eba06ebb3c39f08237aeb8dc2665f027",
+      "shipped": true,
+      "size": 54178,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/plushies/runtime/octo.webp": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:adec87835b08aee4f4ed4515dd3d78cfa935d8bacaf9f9e493fc1cb1bb05cb86",
+      "shipped": true,
+      "size": 66824,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/plushies/runtime/pup.webp": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:5caf93cbeec181500e9963d129b7bff3555621bbe4ac1d07d84917f161030be1",
+      "shipped": true,
+      "size": 65766,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/plushies/runtime/sheep.webp": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:aa28e527f2e795eee2adfa610132b070157329537bac71623991ab34fc520607",
+      "shipped": true,
+      "size": 54010,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/plushies/runtime/slime.webp": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:83793710549e23126bdd5c2e8166df650704ecf14e6f2234d5c85867957b3660",
+      "shipped": true,
+      "size": 64600,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/plushies/runtime/star.webp": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:1a1ba8faf946424e1ba448b8dde0b9c505313bcf9f2a55e48042fef42aa772e0",
+      "shipped": true,
+      "size": 63996,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/plushies/source/axolotl.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:1b379f36dcb45159c9daf8b9d674fee5474199344f6e556d9e8869fdaff5d071",
+      "shipped": false,
+      "size": 5801277,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/plushies/source/bunny.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:0ba540dd1e30e8e2463243dfbe36a543bf2bf0118a9b26492492127fc5d626b9",
+      "shipped": false,
+      "size": 5496002,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/plushies/source/cat.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:21cb0074e321b027ae0744ca82ad9846cba86cb47fbc32835f7ad536cc9795bf",
+      "shipped": false,
+      "size": 5236991,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/plushies/source/chick.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:f7ed48442fba8004095e298878cdbc09f5559739c538100c0b68c0bef1041d11",
+      "shipped": false,
+      "size": 4714858,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/plushies/source/dragon.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:3120f900de4145f9f49ec99b2571d5a48dabbd2866b482983fbc987bb14d9d2e",
+      "shipped": false,
+      "size": 5778885,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/plushies/source/moth.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:5e9a856ff0e5a65e8d4268e719f5ec3e9b33b979048da189bd06a8c6926663cf",
+      "shipped": false,
+      "size": 5035174,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/plushies/source/octo.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:abf1b05869b5cc160d5aabc48a6240eff0f887cc77143512547ee865a1a39f95",
+      "shipped": false,
+      "size": 6112255,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/plushies/source/pup.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:0d829f1b0444d64e83130ea5a6d2b1223b5d49e54020f5c7f198cfbffe48861f",
+      "shipped": false,
+      "size": 5428803,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/plushies/source/sheep.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:35bdd5f430215b62101e362d7462ed024a81da8b3d7a6de88b9603bd3b022819",
+      "shipped": false,
+      "size": 5000225,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/plushies/source/slime.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:2235f1086afba093cb3828b7af227274e343e6a3d540c7e277d5cc1b4a638897",
+      "shipped": false,
+      "size": 5678113,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/plushies/source/star.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:9ac2e34a25de8e329b93aa92cde3d18087ef1182952e0eb6038345ef10be7dca",
+      "shipped": false,
+      "size": 5275199,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/source/aim_cursor.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:eb09da24aebe55ff1e1590c327f9ff882b4153cc2128d3e807b63622150a232d",
+      "shipped": false,
+      "size": 604874,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/source/arcade.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:51079cdd34a962d09e19563b88cee969546e76d27e8f894faeb76cca920f95a8",
+      "shipped": false,
+      "size": 3596298,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/source/cursor.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:3a530a6f269295f64f6b6465fdb67d7ee029b7569a09200a32ac97daf8887b01",
+      "shipped": false,
+      "size": 1358862,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/source/foreground.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:f2cb18201c4b7fd784c98162aae81bfe9fca6372e27bed5459acb6c994ea2957",
+      "shipped": false,
+      "size": 1406186,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/source/normalized/axolotl.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:f7bcb8c3f8ed2f20575a5e7317c435c55a9416203bbe19f5caae167b38c3dce2",
+      "shipped": false,
+      "size": 351884,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/source/normalized/bunny.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:9bbf5df49a92a649b196eca4f1fbf55dcc6cb06637d1963b8e524bd5f0222526",
+      "shipped": false,
+      "size": 308818,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/source/normalized/cat.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:a761e1ff93886df29415a3b2e02319e5d201a24b8162f1b74f0039ec1e8c2a3b",
+      "shipped": false,
+      "size": 333046,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/source/normalized/chick.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:290c3fd87d4a9693d7ba7b3bb434fef3e7b0653880262bbc76a6db063d2987ac",
+      "shipped": false,
+      "size": 289637,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/source/normalized/dragon.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:5e10c68de6eb5b2ae0772270876459d1b445723ceef59cd17640a9775342d46a",
+      "shipped": false,
+      "size": 318194,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/source/normalized/moth.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:461a2e3f90098e30410ccc2ca7ebba0432a9f9b12edcda47508a5b7d8c9a986c",
+      "shipped": false,
+      "size": 283990,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/source/normalized/octo.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:527bc5ec106d416307e72b9dbd578afb2ef33641c1c9d88dc918e8acd2291911",
+      "shipped": false,
+      "size": 370080,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/source/normalized/pup.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:76c07ac277e59bef08c900f3ede703b3f7cbb26232d4fe946b2709e07a0687a3",
+      "shipped": false,
+      "size": 346204,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/source/normalized/sheep.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:9455a1e076fe8b75403fb14e07e8d803f7915c262ea01508e912708ebb99d146",
+      "shipped": false,
+      "size": 318955,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/source/normalized/slime.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:bf98166fbc916bd73170a94a80fa8b0b290b8eda276034bd4e3c4bc19501e492",
+      "shipped": false,
+      "size": 341359,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/source/normalized/star.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:505581a7bdcaf4247805a7a7729d5c4d9fc3932848b44bdc1eecc0259d8885c1",
+      "shipped": false,
+      "size": 328658,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/source/pause.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:028c1653c88de92218f0dce8ca913f27b1da31c2c03f404131058c3505f99e85",
+      "shipped": false,
+      "size": 3011909,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/source/puff_bomb.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:4a69496c9785663fc83cf587791f473b0ed87c6560fbdcd6391e54cec1760351",
+      "shipped": false,
+      "size": 1993701,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/source/title.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:0bcb6422b3387077863354f7a500d43ba8ccc7483febe25b37c3d4ed1f617cba",
+      "shipped": false,
+      "size": 2294443,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/ui/aim_cursor.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:7d8b8141a1b1cb6022d83df436c5257a64c79cd3024b4b5087d8d8f327c8fcfc",
+      "shipped": true,
+      "size": 2206,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/ui/app-icon-192.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:e0147b61cd5972fd581ebc73aef9c1f1a72e37bc427b8fcb33d4d9b82deb121e",
+      "shipped": true,
+      "size": 26328,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/ui/app-icon-512.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:c817eba5b88450a64dca6263d2813e927f2240661ebd327d0de196fdc6ca5c9c",
+      "shipped": true,
+      "size": 167512,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/ui/boot.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [
+        "project.godot"
+      ],
+      "regions": [],
+      "sha256": "sha256:c361b9142d2155dc2762db66df742f05437b63a58f3e91144611a7f1b19a18b8",
+      "shipped": true,
+      "size": 48273,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [
+        "project.godot"
+      ],
+      "used": true,
+      "usedBy": []
+    },
+    "assets/template/ui/cursor.png": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:1e1382c32114e3fd5ec1082abaf1ca8d6ea9e0dda2d487b97f015ab8e491940d",
+      "shipped": true,
+      "size": 1802,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/ui/pause.webp": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:ed7d8fa97e97f69d482adc2adb542daa465a1b0d0eb05b7f6a80da8831fd37c4",
+      "shipped": true,
+      "size": 110226,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/template/ui/title.webp": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "template",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:d81c7912d0b9eb8294ad1278c2e35251c50f7b7aea904e6b452481bd473eb57b",
+      "shipped": true,
+      "size": 112198,
+      "source": {
+        "starterId": "game-puzzle-v60"
+      },
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    },
+    "assets/ui/loader-ball.webp": {
+      "declaredUseEvidence": [],
+      "generator": {},
+      "inputs": [],
+      "license": {},
+      "origin": "unknown",
+      "referenceEvidence": [],
+      "regions": [],
+      "sha256": "sha256:4e6cb1b08e3a597776d4847883f17132a1391d7711cf7e3072fbd80d597ce674",
+      "shipped": true,
+      "size": 9258,
+      "source": {},
+      "status": "present",
+      "transformations": [],
+      "useEvidence": [],
+      "used": false,
+      "usedBy": []
+    }
+  },
+  "discoveries": {},
+  "downloads": {},
+  "export": {
+    "coverage": "verified",
+    "hostMedia": [
+      {
+        "contentMatches": [],
+        "path": "index.apple-touch-icon.png",
+        "sha256": "sha256:30f4bcd527c38c60215cb159fe7ed4690303f9f83e86cd315dc0c283ac8710a2",
+        "size": 26446,
+        "sourcePaths": []
+      },
+      {
+        "contentMatches": [],
+        "path": "index.icon.png",
+        "sha256": "sha256:ca35fb4854dccc6d790b9d9b2f0da88d5ed6cb190ed6a95aa25cde04715c440a",
+        "size": 130376,
+        "sourcePaths": []
+      },
+      {
+        "contentMatches": [],
+        "path": "index.png",
+        "sha256": "sha256:dc78cf86c906c5c17a7829b9ed6e635f2abe1b66c2a4a80979a02a65f739baa0",
+        "size": 50156,
+        "sourcePaths": []
+      }
+    ],
+    "pckSha256": "sha256:2eae58adcf3fa8d1e702965a5f9c08f46c86807c449055f1a92bca89a27566ac",
+    "profile": "preview",
+    "sourceFingerprint": "sha256:ad1ffe217a7b9c8f0d6223d6808b0f0268efa8b520550bedd7b2c093c7b437c7"
+  },
+  "procedures": {},
+  "summary": {
+    "ancestry": {
+      "ai": {
+        "retained": 0,
+        "shipped": 0,
+        "used": 0
+      },
+      "catalog": {
+        "retained": 0,
+        "shipped": 0,
+        "used": 0
+      },
+      "procedural": {
+        "retained": 0,
+        "shipped": 0,
+        "used": 0
+      }
+    },
+    "derivatives": {
+      "retained": 0,
+      "shipped": 0,
+      "used": 0
+    },
+    "exportedHostMedia": {
+      "paths": 3,
+      "uniqueHashes": 3,
+      "unmatchedSourcePaths": 3
+    },
+    "files": {
+      "downloaded": 0,
+      "retained": 99,
+      "shipped": 50,
+      "used": 9
+    },
+    "origins": {
+      "ai": {
+        "retained": 0,
+        "shipped": 0,
+        "used": 0
+      },
+      "catalog": {
+        "retained": 0,
+        "shipped": 0,
+        "used": 0
+      },
+      "derivative": {
+        "retained": 0,
+        "shipped": 0,
+        "used": 0
+      },
+      "external": {
+        "retained": 0,
+        "shipped": 0,
+        "used": 0
+      },
+      "procedural": {
+        "retained": 0,
+        "shipped": 0,
+        "used": 0
+      },
+      "template": {
+        "retained": 95,
+        "shipped": 46,
+        "used": 6
+      },
+      "unknown": {
+        "retained": 4,
+        "shipped": 4,
+        "used": 3
+      }
+    },
+    "packs": {
+      "discovered": 0,
+      "downloaded": 0,
+      "shipped": 0,
+      "used": 0
+    },
+    "proceduralSystems": {
+      "retained": 0,
+      "used": 0
+    },
+    "spriteRegions": {
+      "retained": 0,
+      "shipped": 0,
+      "used": 0
+    },
+    "visualCoverage": {
+      "approvedRevision": 2,
+      "blueprintId": "gbp_c3f70e065891004d3e814f47",
+      "committedRoles": 6,
+      "expectedDigest": "95b8d39f2ec80d9653d005a5c8eff1cf097eb91534b4c34f7d10f1a4f1e0c910",
+      "fulfilledRoles": 0,
+      "roles": [
+        {
+          "id": "procedural_sports_balls",
+          "reasons": [
+            "unresolved"
+          ],
+          "status": "unresolved"
+        },
+        {
+          "id": "beach_ball_cart_container",
+          "reasons": [
+            "unresolved"
+          ],
+          "status": "unresolved"
+        },
+        {
+          "id": "beach_resort_background",
+          "reasons": [
+            "unresolved"
+          ],
+          "status": "unresolved"
+        },
+        {
+          "id": "merge_feedback_fx",
+          "reasons": [
+            "unresolved"
+          ],
+          "status": "unresolved"
+        },
+        {
+          "id": "aim_deadline_guides",
+          "reasons": [
+            "unresolved"
+          ],
+          "status": "unresolved"
+        },
+        {
+          "id": "evolution_preview_ui",
+          "reasons": [
+            "unresolved"
+          ],
+          "status": "unresolved"
+        }
+      ],
+      "search": {
+        "checkedPages": 0,
+        "outcomes": 0,
+        "overflowEvents": 0,
+        "requests": 0
+      },
+      "selectedButUnusedAssets": [],
+      "staleRenderedEvidence": [],
+      "status": "incomplete",
+      "unexplainedFallbacks": [],
+      "unresolvedRoles": [
+        "procedural_sports_balls",
+        "beach_ball_cart_container",
+        "beach_resort_background",
+        "merge_feedback_fx",
+        "aim_deadline_guides",
+        "evolution_preview_ui"
+      ],
+      "visualQuality": "requires_agent_review"
+    }
+  },
+  "version": 1,
+  "visualCoverage": {
+    "attempts": {},
+    "expected": {
+      "approvedRevision": 2,
+      "blueprintId": "gbp_c3f70e065891004d3e814f47",
+      "digest": "95b8d39f2ec80d9653d005a5c8eff1cf097eb91534b4c34f7d10f1a4f1e0c910",
+      "roles": [
+        {
+          "description": "당신이 지정한 탁구공부터 비치볼까지의 고정 진화 순서와 식별 무늬를 이미지 파일 없이 코드 기반 2D 드로잉으로 표현하고, 무늬가 물리 회전에 맞춰 함께 돌도록 합니다.",
+          "id": "procedural_sports_balls",
+          "label": "코드로 그리는 10단계 스포츠 공"
+        },
+        {
+          "description": "당신의 세로형 플레이 영역에서 충돌 경계와 데드라인을 명확히 읽을 수 있도록, 밝은 휴양지 분위기의 공 수납용 볼 카트 형태를 코드로 구성합니다.",
+          "id": "beach_ball_cart_container",
+          "label": "해변 테마 볼 카트 용기"
+        },
+        {
+          "description": "당신이 우선 지정한 해변과 파라솔 분위기를 밝고 캐주얼하게 표현하고, PC에서는 중앙 게임 영역 양옆까지 자연스럽게 이어지도록 코드 기반 배경으로 구성합니다.",
+          "id": "beach_resort_background",
+          "label": "해변 휴양지 배경"
+        },
+        {
+          "description": "당신의 합체 순간에 파티클, 점수 팝업, 새 공의 팝업 성장, 높은 단계의 약한 화면 흔들림, 비치볼 보너스의 큰 축하 연출을 코드 효과로 제공합니다.",
+          "id": "merge_feedback_fx",
+          "label": "합체·점수·축하 피드백"
+        },
+        {
+          "description": "당신의 투하 위치를 보여 주는 세로 점선과 평상시 용기 한계선, 2초 종료 위험 때 빨갛게 깜빡이는 경고 상태를 선명하게 표시합니다.",
+          "id": "aim_deadline_guides",
+          "label": "조준선과 데드라인 상태 표시"
+        },
+        {
+          "description": "당신의 다음 공 미리보기와 항상 보이는 10단계 아이콘 줄을 동일한 절차적 공 드로잉으로 축소 표현하고, 달성 단계와 미달성 단계를 밝기 차이로 구분합니다.",
+          "id": "evolution_preview_ui",
+          "label": "공 미리보기와 10단계 진화 표시"
+        }
+      ]
+    },
+    "overflowEvents": 0,
+    "resolutions": {},
+    "version": 1
+  }
+}

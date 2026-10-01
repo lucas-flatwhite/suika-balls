@@ -1,0 +1,455 @@
+{
+  "descriptors": [
+    {
+      "apply_mode": "LIVE",
+      "category": "UI",
+      "default": 1.0,
+      "description_key": "tweak.ui.hud.opacity.description",
+      "id": "ui.hud.opacity",
+      "integrity": "COSMETIC",
+      "label_key": "tweak.ui.hud.opacity.label",
+      "max": 1.0,
+      "min": 0.55,
+      "options": [],
+      "step": 0.05,
+      "tags": [
+        "ui"
+      ],
+      "type": "float",
+      "unit": "unit.number"
+    },
+    {
+      "apply_mode": "LIVE",
+      "category": "UI",
+      "default": 1.0,
+      "description_key": "tweak.ui.text.scale.description",
+      "id": "ui.text.scale",
+      "integrity": "COSMETIC",
+      "label_key": "tweak.ui.text.scale.label",
+      "max": 1.2,
+      "min": 0.9,
+      "options": [],
+      "step": 0.05,
+      "tags": [
+        "ui"
+      ],
+      "type": "float",
+      "unit": "unit.number"
+    },
+    {
+      "apply_mode": "LIVE",
+      "category": "UI",
+      "default": true,
+      "description_key": "tweak.ui.score.visible.description",
+      "id": "ui.score.visible",
+      "integrity": "COSMETIC",
+      "label_key": "tweak.ui.score.visible.label",
+      "max": 1.0,
+      "min": 0.0,
+      "options": [],
+      "step": 1.0,
+      "tags": [
+        "ui"
+      ],
+      "type": "bool",
+      "unit": "unit.number"
+    },
+    {
+      "apply_mode": "LIVE",
+      "category": "UI",
+      "default": false,
+      "description_key": "tweak.ui.reduced_motion.description",
+      "id": "ui.reduced_motion",
+      "integrity": "COSMETIC",
+      "label_key": "tweak.ui.reduced_motion.label",
+      "max": 1.0,
+      "min": 0.0,
+      "options": [],
+      "step": 1.0,
+      "tags": [
+        "ui"
+      ],
+      "type": "bool",
+      "unit": "unit.number"
+    },
+    {
+      "apply_mode": "NEXT_RUN",
+      "category": "GAMEPLAY",
+      "default": 180.0,
+      "description_key": "tweak.gameplay.time_limit.description",
+      "id": "gameplay.time_limit",
+      "integrity": "GAMEPLAY",
+      "label_key": "tweak.gameplay.time_limit.label",
+      "max": 300.0,
+      "min": 30.0,
+      "options": [],
+      "step": 15.0,
+      "tags": [
+        "gameplay"
+      ],
+      "type": "float",
+      "unit": "unit.seconds"
+    },
+    {
+      "apply_mode": "NEXT_RUN",
+      "category": "GAMEPLAY",
+      "default": 1.0,
+      "description_key": "tweak.gameplay.score.multiplier.description",
+      "id": "gameplay.score.multiplier",
+      "integrity": "SCORE_AFFECTING",
+      "label_key": "tweak.gameplay.score.multiplier.label",
+      "max": 3.0,
+      "min": 0.25,
+      "options": [],
+      "step": 0.25,
+      "tags": [
+        "gameplay"
+      ],
+      "type": "float",
+      "unit": "unit.number"
+    },
+    {
+      "apply_mode": "NEXT_RUN",
+      "category": "GAMEPLAY",
+      "default": 3.0,
+      "description_key": "tweak.gameplay.settle_seconds.description",
+      "id": "gameplay.settle_seconds",
+      "integrity": "GAMEPLAY",
+      "label_key": "tweak.gameplay.settle_seconds.label",
+      "max": 6.0,
+      "min": 2.0,
+      "options": [],
+      "step": 0.5,
+      "tags": [
+        "gameplay"
+      ],
+      "type": "float",
+      "unit": "unit.seconds"
+    },
+    {
+      "apply_mode": "NEXT_RUN",
+      "category": "GAMEPLAY",
+      "default": 2.8,
+      "description_key": "tweak.gameplay.overflow_seconds.description",
+      "id": "gameplay.overflow_seconds",
+      "integrity": "GAMEPLAY",
+      "label_key": "tweak.gameplay.overflow_seconds.label",
+      "max": 5.6,
+      "min": 1.4,
+      "options": [],
+      "step": 0.2,
+      "tags": [
+        "gameplay"
+      ],
+      "type": "float",
+      "unit": "unit.seconds"
+    },
+    {
+      "apply_mode": "LIVE",
+      "category": "AUDIO",
+      "default": 0.0,
+      "description_key": "tweak.audio.master.gain.description",
+      "id": "audio.master.gain",
+      "integrity": "COSMETIC",
+      "label_key": "tweak.audio.master.gain.label",
+      "max": 0.0,
+      "min": -24.0,
+      "options": [],
+      "step": 1.0,
+      "tags": [
+        "audio"
+      ],
+      "type": "float",
+      "unit": "unit.db"
+    },
+    {
+      "apply_mode": "LIVE",
+      "category": "AUDIO",
+      "default": 0.0,
+      "description_key": "tweak.audio.music.gain.description",
+      "id": "audio.music.gain",
+      "integrity": "COSMETIC",
+      "label_key": "tweak.audio.music.gain.label",
+      "max": 0.0,
+      "min": -24.0,
+      "options": [],
+      "step": 1.0,
+      "tags": [
+        "audio"
+      ],
+      "type": "float",
+      "unit": "unit.db"
+    },
+    {
+      "apply_mode": "LIVE",
+      "category": "AUDIO",
+      "default": 0.0,
+      "description_key": "tweak.audio.sfx.gain.description",
+      "id": "audio.sfx.gain",
+      "integrity": "COSMETIC",
+      "label_key": "tweak.audio.sfx.gain.label",
+      "max": 0.0,
+      "min": -24.0,
+      "options": [],
+      "step": 1.0,
+      "tags": [
+        "audio"
+      ],
+      "type": "float",
+      "unit": "unit.db"
+    },
+    {
+      "apply_mode": "LIVE",
+      "category": "AUDIO",
+      "default": 0.0,
+      "description_key": "tweak.audio.ui.gain.description",
+      "id": "audio.ui.gain",
+      "integrity": "COSMETIC",
+      "label_key": "tweak.audio.ui.gain.label",
+      "max": 0.0,
+      "min": -24.0,
+      "options": [],
+      "step": 1.0,
+      "tags": [
+        "audio"
+      ],
+      "type": "float",
+      "unit": "unit.db"
+    },
+    {
+      "apply_mode": "NEXT_ACTION",
+      "category": "PLAYER",
+      "default": 420.0,
+      "description_key": "tweak.player.aim.speed.description",
+      "id": "player.aim.speed",
+      "integrity": "GAMEPLAY",
+      "label_key": "tweak.player.aim.speed.label",
+      "max": 660.0,
+      "min": 180.0,
+      "options": [],
+      "step": 30.0,
+      "tags": [
+        "player"
+      ],
+      "type": "float",
+      "unit": "unit.speed"
+    },
+    {
+      "apply_mode": "NEXT_ACTION",
+      "category": "PLAYER",
+      "default": 0.18,
+      "description_key": "tweak.player.claw.open_seconds.description",
+      "id": "player.claw.open_seconds",
+      "integrity": "GAMEPLAY",
+      "label_key": "tweak.player.claw.open_seconds.label",
+      "max": 0.36,
+      "min": 0.12,
+      "options": [],
+      "step": 0.02,
+      "tags": [
+        "player"
+      ],
+      "type": "float",
+      "unit": "unit.seconds"
+    },
+    {
+      "apply_mode": "NEXT_ACTION",
+      "category": "PLAYER",
+      "default": 0.55,
+      "description_key": "tweak.player.claw.reload_seconds.description",
+      "id": "player.claw.reload_seconds",
+      "integrity": "GAMEPLAY",
+      "label_key": "tweak.player.claw.reload_seconds.label",
+      "max": 1.15,
+      "min": 0.35,
+      "options": [],
+      "step": 0.05,
+      "tags": [
+        "player"
+      ],
+      "type": "float",
+      "unit": "unit.seconds"
+    },
+    {
+      "apply_mode": "NEXT_ACTION",
+      "category": "PLAYER",
+      "default": 0.35,
+      "description_key": "tweak.player.release.spin.description",
+      "id": "player.release.spin",
+      "integrity": "GAMEPLAY",
+      "label_key": "tweak.player.release.spin.label",
+      "max": 0.7,
+      "min": 0.0,
+      "options": [],
+      "step": 0.05,
+      "tags": [
+        "player"
+      ],
+      "type": "float",
+      "unit": "unit.number"
+    },
+    {
+      "apply_mode": "NEXT_SPAWN",
+      "category": "ENEMIES",
+      "default": 0.46,
+      "description_key": "tweak.enemies.toy.bounce.description",
+      "id": "enemies.toy.bounce",
+      "integrity": "GAMEPLAY",
+      "label_key": "tweak.enemies.toy.bounce.label",
+      "max": 0.7,
+      "min": 0.1,
+      "options": [],
+      "step": 0.02,
+      "tags": [
+        "enemies"
+      ],
+      "type": "float",
+      "unit": "unit.number"
+    },
+    {
+      "apply_mode": "NEXT_SPAWN",
+      "category": "ENEMIES",
+      "default": 0.68,
+      "description_key": "tweak.enemies.toy.friction.description",
+      "id": "enemies.toy.friction",
+      "integrity": "GAMEPLAY",
+      "label_key": "tweak.enemies.toy.friction.label",
+      "max": 1.0,
+      "min": 0.2,
+      "options": [],
+      "step": 0.02,
+      "tags": [
+        "enemies"
+      ],
+      "type": "float",
+      "unit": "unit.number"
+    },
+    {
+      "apply_mode": "NEXT_SPAWN",
+      "category": "ENEMIES",
+      "default": 1.0,
+      "description_key": "tweak.enemies.toy.gravity.description",
+      "id": "enemies.toy.gravity",
+      "integrity": "GAMEPLAY",
+      "label_key": "tweak.enemies.toy.gravity.label",
+      "max": 1.5,
+      "min": 0.5,
+      "options": [],
+      "step": 0.1,
+      "tags": [
+        "enemies"
+      ],
+      "type": "float",
+      "unit": "unit.number"
+    },
+    {
+      "apply_mode": "LIVE",
+      "category": "ENEMIES",
+      "default": 0.5,
+      "description_key": "tweak.enemies.toy.squish.description",
+      "id": "enemies.toy.squish",
+      "integrity": "COSMETIC",
+      "label_key": "tweak.enemies.toy.squish.label",
+      "max": 1.0,
+      "min": 0.0,
+      "options": [],
+      "step": 0.1,
+      "tags": [
+        "enemies"
+      ],
+      "type": "float",
+      "unit": "unit.number"
+    },
+    {
+      "apply_mode": "LIVE",
+      "category": "ENVIRONMENT",
+      "default": true,
+      "description_key": "tweak.environment.filter.enabled.description",
+      "id": "environment.filter.enabled",
+      "integrity": "COSMETIC",
+      "label_key": "tweak.environment.filter.enabled.label",
+      "max": 1.0,
+      "min": 0.0,
+      "options": [],
+      "step": 1.0,
+      "tags": [
+        "environment"
+      ],
+      "type": "bool",
+      "unit": "unit.number"
+    },
+    {
+      "apply_mode": "LIVE",
+      "category": "ENVIRONMENT",
+      "default": 0.18,
+      "description_key": "tweak.environment.filter.intensity.description",
+      "id": "environment.filter.intensity",
+      "integrity": "COSMETIC",
+      "label_key": "tweak.environment.filter.intensity.label",
+      "max": 0.5,
+      "min": 0.0,
+      "options": [],
+      "step": 0.02,
+      "tags": [
+        "environment"
+      ],
+      "type": "float",
+      "unit": "unit.number"
+    },
+    {
+      "apply_mode": "LIVE",
+      "category": "ENVIRONMENT",
+      "default": 1.0,
+      "description_key": "tweak.environment.particles.description",
+      "id": "environment.particles",
+      "integrity": "COSMETIC",
+      "label_key": "tweak.environment.particles.label",
+      "max": 1.5,
+      "min": 0.0,
+      "options": [],
+      "step": 0.25,
+      "tags": [
+        "environment"
+      ],
+      "type": "float",
+      "unit": "unit.number"
+    },
+    {
+      "apply_mode": "LIVE",
+      "category": "ENVIRONMENT",
+      "default": true,
+      "description_key": "tweak.environment.ambient.description",
+      "id": "environment.ambient",
+      "integrity": "COSMETIC",
+      "label_key": "tweak.environment.ambient.label",
+      "max": 1.0,
+      "min": 0.0,
+      "options": [],
+      "step": 1.0,
+      "tags": [
+        "environment"
+      ],
+      "type": "bool",
+      "unit": "unit.number"
+    },
+    {
+      "apply_mode": "NEXT_RUN",
+      "category": "ENVIRONMENT",
+      "default": 354.0,
+      "description_key": "tweak.environment.danger.line.description",
+      "id": "environment.danger.line",
+      "integrity": "GAMEPLAY",
+      "label_key": "tweak.environment.danger.line.label",
+      "max": 394.0,
+      "min": 320.0,
+      "options": [],
+      "step": 2.0,
+      "tags": [
+        "environment"
+      ],
+      "type": "float",
+      "unit": "unit.pixels"
+    }
+  ],
+  "version": 1
+}
