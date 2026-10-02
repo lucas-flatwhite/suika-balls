@@ -54,6 +54,7 @@
 # 규칙 자동 테스트 (Godot 4.7)
 godot --headless --audio-driver Dummy --fixed-fps 60 --path . --script tests/test_ball_rules.gd
 godot --headless --audio-driver Dummy --fixed-fps 60 --path . --script tests/test_ball_i18n.gd
+godot --headless --audio-driver Dummy --fixed-fps 60 --path . --script tests/test_restart_score.gd
 # 웹 내보내기
 godot --headless --path . --export-release Web dist/index.html
 ```

@@ -575,7 +575,12 @@ func _process(delta: float) -> void:
 	if current_route == "gameplay" or current_route == "debrief":
 		var target: int = game.score
 		if _shown_score != target:
-			_shown_score = target if absi(target - _shown_score) < 2 or game.reduced_motion() else _shown_score + maxi(1, (target - _shown_score) / 4)
+			# 점수가 오를 때만 숫자를 굴려 보여 주고, 내려갈 때(다시 하기로 0점)는 바로 맞춥니다.
+			# 예전엔 내려갈 때도 maxi(1, …)로 +1씩 더해 목표에서 멀어지며 끝없이 올라갔어요.
+			if target < _shown_score or target - _shown_score < 2 or game.reduced_motion():
+				_shown_score = target
+			else:
+				_shown_score += maxi(1, (target - _shown_score) / 4)
 		_score_label.text = str(_shown_score)
 		_best_label.text = str(maxi(game.best_score, target))
 		_next_icon.tier = game.next_tier
