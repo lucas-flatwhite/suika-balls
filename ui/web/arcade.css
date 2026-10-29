@@ -1,0 +1,48 @@
+/* Keep the escape route outside Godot, including loading and error overlays. */
+:root { --arcade-bar-height: calc(52px + env(safe-area-inset-top)); }
+#arcade-bar {
+  position: fixed;
+  top: var(--mushies-viewport-top, 0px);
+  left: var(--mushies-viewport-left, 0px);
+  width: var(--mushies-viewport-width, 100vw);
+  height: var(--arcade-bar-height);
+  box-sizing: border-box;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: env(safe-area-inset-top) max(16px, env(safe-area-inset-right)) 0 max(16px, env(safe-area-inset-left));
+  border-bottom: 1px solid #8ebfc9;
+  background: #e8f8fc;
+  color: #1f3b4d;
+  font: 500 15px/1.4 system-ui, sans-serif;
+  touch-action: manipulation;
+}
+#arcade-back {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 8px;
+  color: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+}
+#arcade-back:hover { text-decoration: underline; }
+#arcade-back:focus-visible { outline: 3px solid #d94c3a; outline-offset: 1px; border-radius: 4px; }
+#arcade-bar span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#canvas, .mobile-device #canvas, .portrait-layout #canvas {
+  position: fixed;
+  left: var(--mushies-viewport-left, 0px) !important;
+  top: calc(var(--mushies-viewport-top, 0px) + var(--arcade-bar-height)) !important;
+  width: var(--mushies-viewport-width, 100vw) !important;
+  height: max(1px, calc(var(--mushies-viewport-height, 100dvh) - var(--arcade-bar-height))) !important;
+}
+#status, #mushies-loader, #portrait-guard {
+  top: calc(var(--mushies-viewport-top, 0px) + var(--arcade-bar-height));
+  bottom: auto;
+  height: max(1px, calc(var(--mushies-viewport-height, 100dvh) - var(--arcade-bar-height)));
+  box-sizing: border-box;
+}
+#resize-ended-banner {
+  top: calc(var(--mushies-viewport-top, 0px) + var(--arcade-bar-height) + 12px);
+}

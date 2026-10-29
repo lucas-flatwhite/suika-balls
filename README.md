@@ -10,6 +10,18 @@
 
 **언어: 한국어 / English** — 처음엔 브라우저 언어(한국어면 한국어, 그 밖엔 영어)를 따르고, 시작 화면 왼쪽 위 버튼이나 일시정지 메뉴에서 바꾸면 선택이 저장됩니다.
 
+## Arcade로 돌아가기
+
+웹 페이지 최상단의 `← Arcade` 링크는 `https://lucasflatwhite.com/arcade/`로 이동합니다. 게임과 독립된 HTML 상단 바로 제공하므로 로딩·실행 오류·일시정지·게임 종료·화면 회전 안내 중에도 사용할 수 있습니다. 모바일 전체 화면은 페이지 전체를 대상으로 하여 상단 바를 유지합니다.
+
+상단 바 스타일은 `ui/web/arcade.css`, 화면 높이 연동은 `ui/mobile/runtime.js`, HTML 생성은 `tools/prepare_web.py`에서 관리합니다. 수정 후 `python3 tools/build_web_shell.py`로 `ui/web/shell.html`을 재생성합니다. 기존 분석 설정을 유지하려면 같은 `MANUS_ANALYTICS_ENDPOINT`와 `MANUS_ANALYTICS_WEBSITE_ID` 환경 변수를 사용합니다.
+
+```sh
+python3 tests/test_arcade_navigation.py
+node tests/test_mobile_shell.js
+python3 tests/test_prepare_web_loader.py
+```
+
 ## 공 10단계
 
 | 단계 | 공 | English | 지름(용기 폭 대비) | 합체 점수 |

@@ -42,6 +42,7 @@ function profile(options = {}) {
     document.fullscreenElement = document.documentElement;
   };
   const elements = new Map();
+  if (options.headerHeight) elements.set('arcade-bar', {getBoundingClientRect: () => ({height: options.headerHeight})});
   document.body = {appendChild(element) { elements.set(element.id, element); }};
   document.createElement = () => ({setAttribute() {}});
   document.visibilityState = options.visibility || 'visible';
@@ -61,6 +62,11 @@ function profile(options = {}) {
 }
 
 async function run() {
+  const arcade = profile({headerHeight: 52, width: 390, height: 844});
+  assert.deepEqual(Array.from(arcade.state.viewport), [390,792], 'The engine viewport excludes the persistent Arcade header');
+  assert.deepEqual(Array.from(arcade.state.safeInsets), [0,0,0,34], 'The header already accounts for the top safe area');
+  arcade.window.fire('resize');
+  assert.deepEqual(Array.from(arcade.state.viewport), [390,792], 'Resizing must not subtract the header twice');
   const cancellation = profile();
   const cancelListeners = cancellation.document.listeners('touchcancel');
   assert.equal(cancelListeners.length, 1, 'The shell installs one touch cancellation bridge');
