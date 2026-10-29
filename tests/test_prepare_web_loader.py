@@ -47,19 +47,19 @@ with tempfile.TemporaryDirectory() as temporary:
     (root / 'localization').mkdir()
     (root / 'ui/mobile').mkdir(parents=True)
     (root / 'ui/web').mkdir(parents=True)
-    for name in ('loader-fonts.css', 'loader-fonts.json'):
+    for name in ('loader-fonts.css', 'loader-fonts.json', 'arcade.css'):
         shutil.copy2(REPO / 'ui/web' / name, root / 'ui/web' / name)
     (root / 'assets/template/ui').mkdir(parents=True)
-    for locale in ('en', 'zh_CN'):
+    for locale in ('ko', 'en', 'zh_CN'):
         catalogue = json.loads((REPO / 'localization' / f'{locale}.json').read_text())
         (root / 'localization' / f'{locale}.json').write_text(json.dumps(catalogue))
     for name in ('runtime.js', 'runtime.css', 'loader.js', 'loader.css'):
         shutil.copy2(REPO / 'ui/mobile' / name, root / 'ui/mobile' / name)
     for size in (192, 512):
         (root / 'assets/template/ui' / f'app-icon-{size}.png').write_bytes(b'fixture icon')
-    duck = root / 'assets/template/plushies/runtime/chick.webp'
+    duck = root / 'assets/ui/loader-ball.webp'
     duck.parent.mkdir(parents=True)
-    shutil.copy2(REPO / 'assets/template/plushies/runtime/chick.webp', duck)
+    shutil.copy2(REPO / 'assets/ui/loader-ball.webp', duck)
     shutil.copytree(REPO / 'assets/template/fonts', root / 'assets/template/fonts')
     index = root / 'web/index.html'
     index.write_text(FRESH_GODOT_INDEX)
@@ -88,7 +88,7 @@ with tempfile.TemporaryDirectory() as temporary:
     assert 'href="loader-duck.webp" as="image"' in first
     assert 'id="mushies-loader-title"' not in first and 'id="mushies-loader-mascot"' not in first
     assert 'id="mushies-loader-bar"' not in first
-    assert 'LOADING...' in first and '加载中…' in first
+    assert 'LOADING...' in first and '공을 준비하는 중…' in first
     assert 'role="progressbar"' in first and 'aria-live="polite"' in first
     assert 'window.MushiesLoader?.progress(current, total);' in first
     assert 'window.MushiesLoader?.begin();' in first
@@ -105,7 +105,7 @@ with tempfile.TemporaryDirectory() as temporary:
     assert 'loader.progress_label' in first and 'loader.retry' in first
     assert (root / 'web/app-icon-192.png').read_bytes() == b'fixture icon'
     assert (root / 'web/loader-duck.webp').read_bytes() == duck.read_bytes()
-    assert json.loads((root / 'web/mushies.webmanifest').read_text())['name'] == 'Mushies'
+    assert json.loads((root / 'web/mushies.webmanifest').read_text())['name'] == '비치볼 머지'
     subprocess.run(['node', str(REPO / 'tests/test_loader_handoff.js'), str(index)], check=True)
 
     managed = prepare_web.render_shell(FRESH_GODOT_INDEX, installable=False)

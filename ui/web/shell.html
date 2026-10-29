@@ -134,6 +134,54 @@ html,body{overscroll-behavior:none;overflow:hidden;width:100%;height:100%;margin
 #status[data-mushies-fade="true"]{animation:mushies-loader-fade var(--mushies-fade-duration,360ms) ease-out both;pointer-events:auto}
 @keyframes mushies-loader-fade{from{opacity:1}to{opacity:0}}
 @media (prefers-reduced-motion:reduce){#status[data-mushies-fade="true"]{animation:none}}
+/* Keep the escape route outside Godot, including loading and error overlays. */
+:root { --arcade-bar-height: calc(52px + env(safe-area-inset-top)); }
+#arcade-bar {
+  position: fixed;
+  top: var(--mushies-viewport-top, 0px);
+  left: var(--mushies-viewport-left, 0px);
+  width: var(--mushies-viewport-width, 100vw);
+  height: var(--arcade-bar-height);
+  box-sizing: border-box;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: env(safe-area-inset-top) max(16px, env(safe-area-inset-right)) 0 max(16px, env(safe-area-inset-left));
+  border-bottom: 1px solid #8ebfc9;
+  background: #e8f8fc;
+  color: #1f3b4d;
+  font: 500 15px/1.4 system-ui, sans-serif;
+  touch-action: manipulation;
+}
+#arcade-back {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 8px;
+  color: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+}
+#arcade-back:hover { text-decoration: underline; }
+#arcade-back:focus-visible { outline: 3px solid #d94c3a; outline-offset: 1px; border-radius: 4px; }
+#arcade-bar span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#canvas, .mobile-device #canvas, .portrait-layout #canvas {
+  position: fixed;
+  left: var(--mushies-viewport-left, 0px) !important;
+  top: calc(var(--mushies-viewport-top, 0px) + var(--arcade-bar-height)) !important;
+  width: var(--mushies-viewport-width, 100vw) !important;
+  height: max(1px, calc(var(--mushies-viewport-height, 100dvh) - var(--arcade-bar-height))) !important;
+}
+#status, #mushies-loader, #portrait-guard {
+  top: calc(var(--mushies-viewport-top, 0px) + var(--arcade-bar-height));
+  bottom: auto;
+  height: max(1px, calc(var(--mushies-viewport-height, 100dvh) - var(--arcade-bar-height)));
+  box-sizing: border-box;
+}
+#resize-ended-banner {
+  top: calc(var(--mushies-viewport-top, 0px) + var(--arcade-bar-height) + 12px);
+}
 </style>
 <script>
 const PLUSHIE_COPY={"ko": {"app.title": "비치볼 머지", "app.tagline": "같은 공 두 개를 붙여 더 큰 공으로!", "loader.loading": "공을 준비하는 중…", "loader.downloading": "게임을 내려받는 중…", "loader.preparing": "해변을 꾸미는 중…", "loader.preparing_detail": "곧 시작해요.", "loader.progress_unknown": "내려받기 진행률을 알 수 없어요.", "loader.progress_detail": "{percent}% · {current} / {total}", "loader.progress_label": "게임 내려받기 진행률", "loader.error": "게임을 시작하지 못했어요.", "loader.error_detail": "인터넷 연결을 확인하고 다시 시도해 주세요.", "loader.retry": "다시 시도", "loader.no_canvas": "이 브라우저는 게임을 지원하지 않아요.", "loader.no_js": "게임을 하려면 JavaScript를 켜 주세요.", "mobile.rotate_title": "세로로 돌려 주세요", "mobile.rotate_body": "모바일에서는 세로 화면으로 플레이해요. 기기를 세로로 돌리면 이어서 할 수 있어요.", "mobile.enter_portrait": "세로 화면으로", "loader.overlay_loading": "불러오는 중...", "loader.loading_notice": "아직 불러오는 중이에요. 기다리거나 다시 시도할 수 있어요.", "loader.stalled_notice": "불러오기가 멈춘 것 같아요. 기다리거나 다시 시도할 수 있어요."}, "en": {"app.title": "Beach Ball Merge", "app.tagline": "Join two matching balls to make a bigger one!", "loader.loading": "Getting the balls ready…", "loader.downloading": "Downloading the game…", "loader.preparing": "Setting up the beach…", "loader.preparing_detail": "Almost ready to play.", "loader.progress_unknown": "Download progress is unavailable.", "loader.progress_detail": "{percent}% · {current} of {total}", "loader.progress_label": "Game download progress", "loader.error": "The game could not start.", "loader.error_detail": "Check your connection, then try again.", "loader.retry": "Try again", "loader.no_canvas": "Your browser does not support this game.", "loader.no_js": "Enable JavaScript to play.", "mobile.rotate_title": "Turn to portrait", "mobile.rotate_body": "On mobile, this game plays in portrait. Turn your device upright to continue.", "mobile.enter_portrait": "Use portrait mode", "loader.overlay_loading": "LOADING...", "loader.loading_notice": "Still loading. You can keep waiting or retry.", "loader.stalled_notice": "No recent loading progress. You can keep waiting or retry."}};
@@ -197,7 +245,9 @@ document.addEventListener('DOMContentLoaded',()=>{
     const previous = JSON.stringify(state);
     state.visible = !pageHidden && document.visibilityState !== 'hidden' && document.hidden !== true;
     const view = viewport();
-    state.viewport = [view.width, view.height];
+    const headerHeight = document.getElementById('arcade-bar')?.getBoundingClientRect().height || 0;
+    // Godot's logical viewport must match the canvas below the HTML header.
+    state.viewport = [view.width, Math.max(1, Math.round(view.height - headerHeight))];
     const root = document.documentElement;
     for (const key of ['width', 'height', 'left', 'top']) {
       root.style.setProperty(`--mushies-viewport-${key}`, `${view[key]}px`);
@@ -213,6 +263,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     if (probe) {
       const style = getComputedStyle(probe);
       state.safeInsets = [style.paddingLeft, style.paddingTop, style.paddingRight, style.paddingBottom].map(value => parseFloat(value) || 0);
+      if (headerHeight > 0) state.safeInsets[1] = 0; // The header includes the top safe area.
     }
     // Orientation events can arrive after the canvas resize notification.
     if (previous !== JSON.stringify(state)) window.mushiesDeviceChanged?.();
@@ -477,6 +528,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 <!-- mushies:managed-head:end -->
 </head>
 	<body>
+<!-- arcade:navigation:start --><header id="arcade-bar"><a id="arcade-back" href="https://lucasflatwhite.com/arcade/">← Arcade</a><span>Beach Ball Merge</span></header><!-- arcade:navigation:end -->
 <!-- mushies:mobile:start --><section id="portrait-guard" role="dialog" aria-modal="true" aria-labelledby="portrait-title" hidden><div><h1 id="portrait-title"></h1><p id="portrait-body"></p><button id="portrait-action" type="button"></button></div></section><!-- mushies:mobile:end -->
 <canvas id="canvas">
 			Your browser does not support this game.

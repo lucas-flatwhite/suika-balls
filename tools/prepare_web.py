@@ -139,6 +139,7 @@ def render_shell(source: str, installable: bool = True, loader_image=None) -> st
     source = re.sub(r'<a id="sound-lab-link".*?</a>', '', source, flags=re.S)
     source = re.sub(r'<!-- mushies:mobile:start -->.*?<!-- mushies:mobile:end -->', '', source, flags=re.S)
     source = re.sub(r'<!-- mushies:loader:start -->.*?<!-- mushies:loader:end -->', '', source, flags=re.S)
+    source = re.sub(r'<!-- arcade:navigation:start -->.*?<!-- arcade:navigation:end -->', '', source, flags=re.S)
     source = source.replace("        document.getElementById('loading-label')?.remove();\n", '')
     dictionaries = {
         locale: json.loads((ROOT / 'localization' / f'{locale}.json').read_text()) for locale in ('en', 'zh_CN')
@@ -159,6 +160,7 @@ def render_shell(source: str, installable: bool = True, loader_image=None) -> st
         entries = json.loads((ROOT / 'localization' / f'{name}.json').read_text())
         return {key: value for key, value in entries.items() if key.startswith(('loader.', 'mobile.')) or key in ('app.title', 'app.tagline')}
     ui = {'ko': loader_copy('ko'), 'en': loader_copy('en')}
+    arcade_css = (ROOT / 'ui/web/arcade.css').read_text()
     mobile_css = (ROOT / 'ui/mobile/runtime.css').read_text()
     mobile_js = (ROOT / 'ui/mobile/runtime.js').read_text()
     loader_css = (ROOT / 'ui/mobile/loader.css').read_text()
@@ -190,6 +192,7 @@ html,body {{ margin:0; width:100%; height:100%; overflow:hidden; background:#bfe
 #status-splash {{ max-width:192px; object-fit:contain; }}
 {mobile_css}
 {loader_css}
+{arcade_css}
 </style>
 <script>
 const PLUSHIE_COPY={json.dumps(ui, ensure_ascii=False)};
@@ -221,7 +224,8 @@ document.addEventListener('DOMContentLoaded',()=>{{
     source = source.replace('</head>', head + '\n</head>', 1)
     source = re.sub(r'[ \t]*<canvas', '<canvas', source)
     guard = '<!-- mushies:mobile:start --><section id="portrait-guard" role="dialog" aria-modal="true" aria-labelledby="portrait-title" hidden><div><h1 id="portrait-title"></h1><p id="portrait-body"></p><button id="portrait-action" type="button"></button></div></section><!-- mushies:mobile:end -->'
-    source = source.replace('<canvas', guard + '\n<canvas', 1)
+    navigation = '<!-- arcade:navigation:start --><header id="arcade-bar"><a id="arcade-back" href="https://lucasflatwhite.com/arcade/">← Arcade</a><span>Beach Ball Merge</span></header><!-- arcade:navigation:end -->'
+    source = source.replace('<canvas', navigation + '\n' + guard + '\n<canvas', 1)
     loader = f"""{LOADER_START}<section id="mushies-loader" role="status" aria-live="polite" aria-atomic="true" hidden><div id="mushies-loader-ducks" aria-hidden="true"></div><div id="mushies-loader-card"><h1 id="mushies-loader-message"></h1><p id="mushies-loader-detail" hidden></p><div id="mushies-loader-progress" role="progressbar"></div><button id="mushies-loader-retry" type="button" hidden></button></div></section>{LOADER_END}"""
     source = re.sub(r'\s*(<img\b[^>]*\bid="status-splash"[^>]*>)', r'\n\1', source, count=1)
     source, count = re.subn(

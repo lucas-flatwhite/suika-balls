@@ -42,7 +42,9 @@
     const previous = JSON.stringify(state);
     state.visible = !pageHidden && document.visibilityState !== 'hidden' && document.hidden !== true;
     const view = viewport();
-    state.viewport = [view.width, view.height];
+    const headerHeight = document.getElementById('arcade-bar')?.getBoundingClientRect().height || 0;
+    // Godot's logical viewport must match the canvas below the HTML header.
+    state.viewport = [view.width, Math.max(1, Math.round(view.height - headerHeight))];
     const root = document.documentElement;
     for (const key of ['width', 'height', 'left', 'top']) {
       root.style.setProperty(`--mushies-viewport-${key}`, `${view[key]}px`);
@@ -58,6 +60,7 @@
     if (probe) {
       const style = getComputedStyle(probe);
       state.safeInsets = [style.paddingLeft, style.paddingTop, style.paddingRight, style.paddingBottom].map(value => parseFloat(value) || 0);
+      if (headerHeight > 0) state.safeInsets[1] = 0; // The header includes the top safe area.
     }
     // Orientation events can arrive after the canvas resize notification.
     if (previous !== JSON.stringify(state)) window.mushiesDeviceChanged?.();
