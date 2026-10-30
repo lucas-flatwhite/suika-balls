@@ -14,7 +14,7 @@ def run(name,command):
         print(output[-8000:]);raise SystemExit('FAILED: '+name)
     print('PASS: '+name,flush=True)
 run('import',[GODOT,'--headless','--editor','--path',str(ROOT),'--quit'])
-for name in ('ball_rules','ball_i18n','restart_score'):
+for name in ('ball_rules','ball_i18n','restart_score','frame_work','match_frame_work'):
     run(name,[GODOT,'--headless','--audio-driver','Dummy','--fixed-fps','60','--path',str(ROOT),'--script',f'tests/test_{name}.gd'])
 for name in ('arcade_navigation','standalone_web','version_web','prepare_web_loader','standalone_assets'):
     run(name,[sys.executable,f'tests/test_{name}.py'])

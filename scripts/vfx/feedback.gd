@@ -45,12 +45,16 @@ func clear() -> void:
 	popups.clear()
 	pulse = 0
 	clock = 0
+	queue_redraw()
 
 func _process(delta: float) -> void:
 	if paused: return
 	clock += delta
+	# Keep the cached canvas commands until there is something to animate.
+	if particles.is_empty() and popups.is_empty() and pulse <= 0.0: return
 	pulse = maxf(0, pulse - delta * 2)
-	for particle in particles:
+	for index in range(particles.size() - 1, -1, -1):
+		var particle: Dictionary = particles[index]
 		particle.p += particle.v * delta
 		if particle.get("confetti", false):
 			particle.v *= 0.985
@@ -60,11 +64,12 @@ func _process(delta: float) -> void:
 			particle.v *= 0.94
 			particle.v.y += 160 * delta
 		particle.life -= delta
-	particles = particles.filter(func(p: Dictionary) -> bool: return p.life > 0)
-	for item in popups:
+		if particle.life <= 0.0: particles.remove_at(index)
+	for index in range(popups.size() - 1, -1, -1):
+		var item: Dictionary = popups[index]
 		item.p.y -= 70.0 * delta
 		item.life -= delta
-	popups = popups.filter(func(p: Dictionary) -> bool: return p.life > 0)
+		if item.life <= 0.0: popups.remove_at(index)
 	queue_redraw()
 
 func _draw() -> void:
