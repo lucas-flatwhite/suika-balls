@@ -26,9 +26,7 @@ config/icon="res://assets/share/favicon.png"
 
 [autoload]
 
-TuningBridge="*res://scripts/manus/preview/tuning_adapter.gd"
-
-ManusFontTheme="*res://autoload/manus_font_theme.gd"
+GameTheme="*res://autoload/game_theme.gd"
 
 [display]
 
@@ -58,10 +56,6 @@ texture={
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 environment/defaults/default_clear_color=Color(0.97, 0.93, 0.89, 1)
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/mushies_export/plugin.cfg")
 
 [editor]
 import/use_multiple_threads=false

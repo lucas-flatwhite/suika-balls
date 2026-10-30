@@ -7,9 +7,5 @@ web/*
 !web/.gdignore
 dist/
 site/
-.manus/
-.manus-logs/
-.manus-webdev/
-.manus-game-tools/
 .work/
 .DS_Store

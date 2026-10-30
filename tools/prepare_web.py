@@ -3,14 +3,13 @@
 
 import argparse
 import base64
-import html
 import hashlib
 import io
 import json
-import os
 import re
 import shutil
 from pathlib import Path
+from version_web import version_export
 
 ROOT = Path(__file__).resolve().parents[1]
 START = '<!-- mushies:managed-head:start -->'
@@ -165,15 +164,10 @@ def render_shell(source: str, installable: bool = True, loader_image=None) -> st
     mobile_js = (ROOT / 'ui/mobile/runtime.js').read_text()
     loader_css = (ROOT / 'ui/mobile/loader.css').read_text()
     loader_js = (ROOT / 'ui/mobile/loader.js').read_text()
-    endpoint = os.environ.get('MANUS_ANALYTICS_ENDPOINT', '').strip().rstrip('/')
-    website = os.environ.get('MANUS_ANALYTICS_WEBSITE_ID', '').strip()
-    tracker = '<!-- Manus analytics pending provisioning -->'
-    if endpoint and website:
-        tracker = f'<script defer src="{html.escape(endpoint, quote=True)}/script.js" data-website-id="{html.escape(website, quote=True)}"></script>'
     source = re.sub(r'<title>.*?</title>', '<title>비치볼 머지 · Beach Ball Merge</title>', source, flags=re.S)
     head = f"""{START}
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="manus-game-loading-screen" content="1">
+<meta name="beachball-game-loading-screen" content="1">
 <meta name="theme-color" content="#7fd6f2">
 <meta name="description" content="비치볼 머지: 같은 스포츠 공 2개를 붙여 더 큰 공으로! 해변에서 즐기는 물리 합체 퍼즐. Beach Ball Merge: merge matching sports balls on the beach.">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -182,7 +176,7 @@ def render_shell(source: str, installable: bool = True, loader_image=None) -> st
 <link rel="manifest" href="mushies.webmanifest">
 <link rel="preload" href="loader-duck.webp" as="image" type="image/webp">
 <!-- Embedded font: Noto Sans SC loader subset (SIL Open Font License 1.1).
-License text: assets/template/fonts/NotoSansSC-OFL.txt; the export's Open Source Licenses page lists it.
+License text: assets/template/fonts/NotoSansSC-OFL.txt (bundled in the game resources).
 -->
 <style>
 {font_css}
@@ -218,13 +212,12 @@ document.addEventListener('DOMContentLoaded',()=>{{
 {mobile_js}
 {loader_js}
 </script>
-{tracker}
 {END}"""
     source = re.sub(r'\s*</head>', '\n</head>', source)
     source = source.replace('</head>', head + '\n</head>', 1)
     source = re.sub(r'[ \t]*<canvas', '<canvas', source)
     guard = '<!-- mushies:mobile:start --><section id="portrait-guard" role="dialog" aria-modal="true" aria-labelledby="portrait-title" hidden><div><h1 id="portrait-title"></h1><p id="portrait-body"></p><button id="portrait-action" type="button"></button></div></section><!-- mushies:mobile:end -->'
-    navigation = '<!-- arcade:navigation:start --><header id="arcade-bar"><a id="arcade-back" href="https://lucasflatwhite.com/arcade/">← Arcade</a><span>Beach Ball Merge</span></header><!-- arcade:navigation:end -->'
+    navigation = '<!-- arcade:navigation:start --><header id="arcade-bar"><a id="arcade-back" href="https://www.lucasflatwhite.com/arcade/">← Arcade</a><span>Beach Ball Merge</span></header><!-- arcade:navigation:end -->'
     source = source.replace('<canvas', navigation + '\n' + guard + '\n<canvas', 1)
     loader = f"""{LOADER_START}<section id="mushies-loader" role="status" aria-live="polite" aria-atomic="true" hidden><div id="mushies-loader-ducks" aria-hidden="true"></div><div id="mushies-loader-card"><h1 id="mushies-loader-message"></h1><p id="mushies-loader-detail" hidden></p><div id="mushies-loader-progress" role="progressbar"></div><button id="mushies-loader-retry" type="button" hidden></button></div></section>{LOADER_END}"""
     source = re.sub(r'\s*(<img\b[^>]*\bid="status-splash"[^>]*>)', r'\n\1', source, count=1)
@@ -283,7 +276,8 @@ def main() -> None:
     retired = index.parent / 'sfx'
     if retired.is_dir():
         shutil.rmtree(retired)
-    print('Prepared localized Mushies shell:', index)
+    version = version_export(index.parent)
+    print('Prepared Beach Ball Merge shell:', index, 'release:', version or 'shell-only')
 
 
 if __name__ == '__main__':
