@@ -18,7 +18,7 @@ for name in ('ball_rules','ball_i18n','restart_score'):
     run(name,[GODOT,'--headless','--audio-driver','Dummy','--fixed-fps','60','--path',str(ROOT),'--script',f'tests/test_{name}.gd'])
 for name in ('arcade_navigation','standalone_web','version_web','prepare_web_loader','standalone_assets'):
     run(name,[sys.executable,f'tests/test_{name}.py'])
-for name in ('mobile_shell','loader_shell'):
+for name in ('mobile_shell','loader_shell','release_cache'):
     run(name,['node',f'tests/test_{name}.js'])
 run('generated-shell',[sys.executable,'tools/build_web_shell.py','--check'])
 print('Native game and standalone shell checks passed. Run npm run build for Web export; browser acceptance is separate.')

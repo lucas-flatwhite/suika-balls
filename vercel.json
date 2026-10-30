@@ -28,5 +28,11 @@
         }
       ]
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/releases/:path*",
+      "destination": "/api/release-not-found"
+    }
   ]
 }
