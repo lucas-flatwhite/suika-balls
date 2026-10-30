@@ -112,13 +112,12 @@ func _physics_process(delta: float) -> void:
 			board.set_active(true)
 		_publish_state()
 	elif state.status == "playing":
-		var a: Dictionary = boards[0].snapshot()
-		var b: Dictionary = boards[1].snapshot()
-		var a_lost := str(a.get("outcome", "")) == "defeat"
-		var b_lost := str(b.get("outcome", "")) == "defeat"
+		# Result checks need scalar authority state, not a serialized copy of every ball.
+		var a_lost: bool = boards[0].session.outcome == "defeat"
+		var b_lost: bool = boards[1].session.outcome == "defeat"
 		if (a_lost and b_lost) or _elapsed >= _ends_at:
-			var score_a := int(a.get("score", 0))
-			var score_b := int(b.get("score", 0))
+			var score_a: int = boards[0].score
+			var score_b: int = boards[1].score
 			_finish(-1 if score_a == score_b else (1 if score_a > score_b else 2), "overflow" if a_lost and b_lost else "time")
 			return
 	_snapshot_accumulator += delta

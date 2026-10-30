@@ -646,6 +646,7 @@ func _apply_presentation() -> void:
     feedback.reduced_motion = reduced_motion()
     if reduced_motion():
         feedback.particles.clear()
+        feedback.queue_redraw()
         for toy in get_board_toys():
             toy.visual_scale = Vector2.ONE
             toy.halo = 0
