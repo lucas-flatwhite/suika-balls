@@ -9,3 +9,6 @@ dist/
 site/
 .work/
 .DS_Store
+
+# Superpowers docs
+docs/superpowers/
