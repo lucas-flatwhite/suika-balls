@@ -9,7 +9,7 @@ func run() -> void:
     await process_frame
     game.start_stage(0)
     var active: Variant = game.tweaks.value("gameplay.time_limit")
-    check(game.tweaks.apply_preview_patch({"gameplay.time_limit": active + 30}), "Valid Apply accepted")
+    check(game.tweaks.apply_patch({"gameplay.time_limit": active + 30}), "Valid Apply accepted")
     check(game.tweaks.value("gameplay.time_limit") == active, "Next-run value stays pending")
     check(not game.is_frozen(), "Apply does not pause the game")
     game.tweaks.begin_run()

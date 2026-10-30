@@ -12,15 +12,23 @@
 
 ## Arcade로 돌아가기
 
-웹 페이지 최상단의 `← Arcade` 링크는 `https://lucasflatwhite.com/arcade/`로 이동합니다. 게임과 독립된 HTML 상단 바로 제공하므로 로딩·실행 오류·일시정지·게임 종료·화면 회전 안내 중에도 사용할 수 있습니다. 모바일 전체 화면은 페이지 전체를 대상으로 하여 상단 바를 유지합니다.
+웹 페이지 최상단의 `← Arcade` 링크는 `https://www.lucasflatwhite.com/arcade/`로 이동합니다. 게임과 독립된 HTML 상단 바로 제공하므로 로딩·실행 오류·일시정지·게임 종료·화면 회전 안내 중에도 사용할 수 있습니다. 모바일 전체 화면은 페이지 전체를 대상으로 하여 상단 바를 유지합니다.
 
-상단 바 스타일은 `ui/web/arcade.css`, 화면 높이 연동은 `ui/mobile/runtime.js`, HTML 생성은 `tools/prepare_web.py`에서 관리합니다. 수정 후 `python3 tools/build_web_shell.py`로 `ui/web/shell.html`을 재생성합니다. 기존 분석 설정을 유지하려면 같은 `MANUS_ANALYTICS_ENDPOINT`와 `MANUS_ANALYTICS_WEBSITE_ID` 환경 변수를 사용합니다.
+상단 바 스타일은 `ui/web/arcade.css`, 화면 높이 연동은 `ui/mobile/runtime.js`, HTML 생성은 `tools/prepare_web.py`에서 관리합니다. 수정 후 `python3 tools/build_web_shell.py`로 `ui/web/shell.html`을 재생성합니다. 분석 스크립트와 외부 런타임 연결은 사용하지 않습니다.
 
 ```sh
 python3 tests/test_arcade_navigation.py
 node tests/test_mobile_shell.js
 python3 tests/test_prepare_web_loader.py
+python3 tests/test_standalone_web.py
+python3 tests/test_version_web.py
 ```
+
+## 독립 빌드와 캐시
+
+Godot 4.7.2와 Web export template을 설치한 뒤 `npm run build`로 `dist/`를 생성합니다. `godot`이 PATH에 없으면 `GODOT_BIN`으로 실행 파일을 지정할 수 있습니다. `npm run verify`는 현재 게임 규칙·언어·재시작과 웹 셸 회귀 검사를 실행합니다. `npm run dev`는 빌드된 게임을 로컬에서 제공합니다.
+
+웹 내보내기 후 `tools/prepare_web.py --directory dist`가 로딩 화면과 복귀 바를 만들고 `tools/version_web.py`를 통해 JS/WASM/PCK와 보조 파일을 `releases/<콘텐츠 해시>/`에 복사합니다. 진입 HTML은 새 버전을 확인하고, 해시 경로의 에셋에만 `max-age=31536000, immutable`을 적용합니다. 게임을 수정하면 경로도 바뀌므로 새 코드와 오래된 팩이 섞이지 않습니다. 기존 Vercel의 Godot 내보내기 → `prepare_web.py` 후처리 구성에도 동일하게 적용됩니다.
 
 ## 공 10단계
 
@@ -68,7 +76,7 @@ godot --headless --audio-driver Dummy --fixed-fps 60 --path . --script tests/tes
 godot --headless --audio-driver Dummy --fixed-fps 60 --path . --script tests/test_ball_i18n.gd
 godot --headless --audio-driver Dummy --fixed-fps 60 --path . --script tests/test_restart_score.gd
 # 웹 내보내기
-godot --headless --path . --export-release Web dist/index.html
+npm run build
 ```
 
-Manus GameDev 퍼즐 스타터(Mushies)를 바탕으로 만들었습니다. 원본 템플릿 문서는 [`docs/template-README.md`](docs/template-README.md)에 있습니다.
+원본 제작은 Manus GameDev 퍼즐 스타터(Mushies)에서 출발했습니다. 현재 실행 코드에는 해당 플랫폼의 분석·미리보기·런타임 의존성이 없습니다. 원본 에셋 출처 기록과 글꼴·엔진 라이선스는 보존합니다.

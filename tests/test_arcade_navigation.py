@@ -22,7 +22,7 @@ for installable in (False, True):
     rendered = render_shell(source, installable=installable)
     parser = Navigation(); parser.feed(rendered)
     assert len(parser.links) == 1, 'Every export must contain one persistent header link'
-    assert parser.links[0]['href'] == 'https://lucasflatwhite.com/arcade/'
+    assert parser.links[0]['href'] == 'https://www.lucasflatwhite.com/arcade/'
     assert 'onclick' not in parser.links[0], 'Returning must work even if JavaScript or Godot fails'
     assert render_shell(rendered, installable=installable) == rendered, 'Regeneration must not duplicate navigation'
 print('PASS: persistent navigation in fresh/managed/installable exports, canonical URL and idempotence')

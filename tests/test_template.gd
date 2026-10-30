@@ -180,7 +180,7 @@ func run() -> void:
     var release_tuning := Tweaks.new(false); release_tuning.begin_run()
     check(release_tuning.value("gameplay.score.multiplier") == 1.0 and not release_tuning.request("gameplay.score.multiplier",2.0),"Release cannot apply owner draft")
     var before_invalid_patch := tuning.requested.duplicate(true)
-    check(not tuning.apply_preview_patch({"ui.hud.opacity":0.8,"unknown":2}),"Invalid batch is rejected")
+    check(not tuning.apply_patch({"ui.hud.opacity":0.8,"unknown":2}),"Invalid batch is rejected")
     check(tuning.requested == before_invalid_patch,"Invalid batch cannot partially apply")
     game = load("res://scenes/main.tscn").instantiate()
     root.add_child(game)

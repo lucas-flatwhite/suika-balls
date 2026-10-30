@@ -115,7 +115,7 @@ with tempfile.TemporaryDirectory() as temporary:
     assert prepare_web.render_shell(first, installable=False) == managed, (
         'Installable output must convert to the same managed shell.'
     )
-    assert '<meta name="manus-game-loading-screen" content="1">' in managed
+    assert '<meta name="beachball-game-loading-screen" content="1">' in managed
     assert '<link rel="manifest"' not in managed
     assert 'loader-duck.webp' not in managed, 'Managed exports must not depend on a separately copied duck image.'
     embedded = re.search(r"duck\.src\s*=\s*(['\"])(data:image/webp;base64,([^'\"]+))\1", managed)

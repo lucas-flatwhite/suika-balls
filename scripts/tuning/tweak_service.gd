@@ -9,15 +9,15 @@ var enabled := false
 var tainted := false
 var running := false
 
-func _init(owner_preview := false) -> void:
-    enabled = owner_preview
+func _init(developer_controls := false) -> void:
+    enabled = developer_controls
     for descriptor in descriptors:
         by_id[descriptor.id] = descriptor
         requested[descriptor.id] = descriptor.default
         active[descriptor.id] = descriptor.default
 
 static func owner_build() -> bool:
-    return OS.is_debug_build() and not OS.has_feature("release") and not OS.has_feature("checkpoint")
+    return OS.is_debug_build() and not OS.has_feature("release")
 
 func valid(id: String, value: Variant) -> bool:
     if not by_id.has(id): return false
@@ -67,7 +67,7 @@ func marker() -> String:
         if descriptor.integrity != "COSMETIC": simulation[descriptor.id] = active[descriptor.id]
     return ("tuned-" if tainted else "baseline-") + JSON.stringify(simulation).sha256_text().left(12)
 
-func apply_preview_patch(patch: Dictionary) -> bool:
+func apply_patch(patch: Dictionary) -> bool:
     if not enabled: return false
     for id: String in patch:
         if not valid(id,patch[id]): return false
