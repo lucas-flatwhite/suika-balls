@@ -134,53 +134,90 @@ html,body{overscroll-behavior:none;overflow:hidden;width:100%;height:100%;margin
 #status[data-mushies-fade="true"]{animation:mushies-loader-fade var(--mushies-fade-duration,360ms) ease-out both;pointer-events:auto}
 @keyframes mushies-loader-fade{from{opacity:1}to{opacity:0}}
 @media (prefers-reduced-motion:reduce){#status[data-mushies-fade="true"]{animation:none}}
-/* Keep the escape route outside Godot, including loading and error overlays. */
-:root { --arcade-bar-height: calc(52px + env(safe-area-inset-top)); }
-#arcade-bar {
-  position: fixed;
-  top: var(--mushies-viewport-top, 0px);
-  left: var(--mushies-viewport-left, 0px);
-  width: var(--mushies-viewport-width, 100vw);
-  height: var(--arcade-bar-height);
-  box-sizing: border-box;
-  z-index: 200;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: env(safe-area-inset-top) max(16px, env(safe-area-inset-right)) 0 max(16px, env(safe-area-inset-left));
-  border-bottom: 1px solid #8ebfc9;
-  background: #e8f8fc;
-  color: #1f3b4d;
-  font: 500 15px/1.4 system-ui, sans-serif;
-  touch-action: manipulation;
+/* Keep the way back to the lobby outside Godot, so it works while loading, paused, over or broken. */
+/*
+ * Anybody (SIL Open Font License 1.1, ui/web/Anybody-OFL.txt), cut to the word "Arcade" at
+ * weight 600 and width 105 by tools/arcade_chip_font.py.
+ */
+@font-face {
+  font-family: 'Anybody Variable';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 105%;
+  src: url(data:font/woff2;base64,d09GMgABAAAAAATgABAAAAAACLAAAASEAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhYbgTIcKgZgP1NUQVRMAEwRCAqEcIQgATYCJAMcCxAABCAFhGoHIAwHGzgHIB6D426JyRJLLCWX2xS/P+Lh+7q+zn2ZWUL8anDGKwnVY9RuzCZWWg3AHYH6KS//pQAdcNLsbMVP+0zdzPyHLRy6pi4Sh8O60hFtZpn4AXS0SorUET3w46IpwebPw2igAfJsrg2X/VyneQISrU4i0AAkIZSEQM3qImjstEtRFZiccSyWwEQOv4y6009UJNDjMsolMlQkO5yZ/XTQVsCw4RN06POB/BqhKExyhVJgypTKkJN8JrpYHrTjmvy0dgkyPs/3T3W0KXr57Vh4K5wedky6DvbCZjsflFkKF2xPKcX8vzKozEy3UKvPlxe7ACsLSqIVGXo0sBaNc07ADAGcczKDCUKcema7QFjSkOsgBFFOU4BMkqIHECAhQ4+mQI+WzYCaiiTZXjuSMoSpXqcTwo8PN1pm/iNIIcSQNkIZtFDHg8TqAOSAJAlJkir5mh0H7fGTTVpFvXl4u7450Og72rB5MPveG29MONhQ+7LXX69NffXVVw86lsuuT3vtNRoH49LXUN6fevf51+OyN15YZJpu5m0HM+71D7n9am2qS/85B/fvvt6Y/mm6/LNu84JG/zGzX8Uhl2rg+pe9rE19k741iFmHlFC/Bg82zGxBdylxxSHWyYNerU6OOd7sxXDfu/h2j+/25AXNybdrUz90sJt5z23qHlJLX1uut0P1Qc5X85bAXeu+Pi3r/w1G6v2ZzoOQvLjXtvM/f7Hiymv/H/Yg9aDn4uJTRyzrbStMy/Zv6w3MrR8Oy+JrY5aKN3meXZ48revU1Dl9B+z0uP5YxEFmv1bZPSHBI//ewa2IA9/vcFTaDF9Ta2N+/bdz6b/jioFFG8Yndh95/uUNN0+ZWLZc+6r/juzM+frXmC3swwO87KPhdEtp1ZVA+4SZV9/c6Cl00XTyzuWDVyzb+ebrhTdMDt65lLxoKtro1v0fvt1gda+3MVbVHlhYc0Rt4+ufp/Tr6+YuKN8/Lc9g39R922vWc52xdubq1I3mr1qwynvCvA1z1qfcf3IPtxrrmV+YV2Dd/b+ol2vjc++aTXeg3IIP23z+pPLFisFu3MJNwwP1qvBs95Uuprz/HFyMQEz8Hp91QPvodtJvlaz8Iryz68F1AHxRHzkfIoZfteeVVgVKEgg+jLTiVRtIV3C1BqDltJeu4jyPSZVTaNug2EFqsau0wtQJCJRt4rAJJjWtkIm8ituZgjDWAZC0PAky67jbm6uBwhaRg5KxsY21ZZM4pCCoxXQBoRELQVknVoARRnHndj0G8agdIbJ+ChaNgbmJEDawbqpIObldOkm/DkiXfm7KKBAOqRNWMalhjEGhivg5G4XJVBKECkVjG1XrEGJIIqJQ2ct2ImEkRbtgVfrJSMHBuUqDzQf5U94gfxVLUoFEUxO0U4QLES5cpETZqmQqlWiuDZbVeEIXYiESt+YSOfWtEESg0ihMiHghIkRrdto4AbxKZ5JZGZ5GQrbjBSEp25gWqlSOIrVYXTBGLdIrEVGJJGJlhOFUIfNh7QS+U0UqL9ZOogkM19EG2ffHsLVmAAAA) format('woff2');
 }
-#arcade-back {
+/* Copied from flatwhite-arcade src/shared/arcade-chip.css. Change both together. */
+/* arcade-chip:start */
+.arcade-chip {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  min-height: 44px;
-  padding: 0 8px;
-  color: inherit;
+  justify-content: center;
+  gap: 6px;
+  box-sizing: border-box;
+  width: 96px;
+  height: 36px;
+  border: 1px solid rgba(23, 23, 23, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 1px 2px rgba(23, 23, 23, 0.08);
+  color: #171717;
+  font: 600 14px/1 'Anybody Variable', system-ui, sans-serif;
+  font-stretch: 105%;
   text-decoration: none;
   white-space: nowrap;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
-#arcade-back:hover { text-decoration: underline; }
-#arcade-back:focus-visible { outline: 3px solid #d94c3a; outline-offset: 1px; border-radius: 4px; }
-#arcade-bar span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* The chip draws 36px tall; the finger gets 44px. */
+.arcade-chip::after {
+  content: '';
+  position: absolute;
+  inset: -4px 0;
+}
+.arcade-chip svg {
+  flex: none;
+  width: 16px;
+  height: 16px;
+}
+.arcade-chip:hover {
+  border-color: #171717;
+}
+.arcade-chip:active {
+  background: #f1f0ec;
+  box-shadow: none;
+  transform: translateY(1px);
+}
+.arcade-chip:focus-visible {
+  outline: 2px solid #171717;
+  outline-offset: 3px;
+}
+/* On a phone the arrow stays and the word goes, so the game's HUD keeps its room. */
+@media (max-width: 479.98px) {
+  .arcade-chip {
+    width: 44px;
+  }
+  .arcade-chip-label {
+    display: none;
+  }
+}
+/* arcade-chip:end */
+/* The chip floats over the game's top-left corner; Godot keeps its HUD out of that rectangle. */
+#arcade-back {
+  position: fixed;
+  left: calc(var(--mushies-viewport-left, 0px) + max(12px, env(safe-area-inset-left)));
+  top: calc(var(--mushies-viewport-top, 0px) + max(8px, env(safe-area-inset-top)));
+  z-index: 200;
+}
 #canvas, .mobile-device #canvas, .portrait-layout #canvas {
   position: fixed;
   left: var(--mushies-viewport-left, 0px) !important;
-  top: calc(var(--mushies-viewport-top, 0px) + var(--arcade-bar-height)) !important;
+  top: var(--mushies-viewport-top, 0px) !important;
   width: var(--mushies-viewport-width, 100vw) !important;
-  height: max(1px, calc(var(--mushies-viewport-height, 100dvh) - var(--arcade-bar-height))) !important;
-}
-#status, #mushies-loader, #portrait-guard {
-  top: calc(var(--mushies-viewport-top, 0px) + var(--arcade-bar-height));
-  bottom: auto;
-  height: max(1px, calc(var(--mushies-viewport-height, 100dvh) - var(--arcade-bar-height)));
-  box-sizing: border-box;
+  height: var(--mushies-viewport-height, 100dvh) !important;
 }
 #resize-ended-banner {
-  top: calc(var(--mushies-viewport-top, 0px) + var(--arcade-bar-height) + 12px);
+  top: calc(var(--mushies-viewport-top, 0px) + max(8px, env(safe-area-inset-top)) + 44px);
 }
 </style>
 <script>
@@ -209,7 +246,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   const handheld = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
     || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
     || navigator.userAgentData?.mobile === true;
-  const state = window.MushiesDevice = {mobile: handheld, portraitBlocked: false, safeInsets: [0, 0, 0, 0], viewport: [innerWidth, innerHeight], visible: true};
+  const state = window.MushiesDevice = {mobile: handheld, portraitBlocked: false, safeInsets: [0, 0, 0, 0], arcadeChip: [0, 0, 0, 0], viewport: [innerWidth, innerHeight], visible: true};
   let pageHidden = false;
   let guardLocale = navigator.language || 'en';
   let probe;
@@ -245,13 +282,15 @@ document.addEventListener('DOMContentLoaded',()=>{
     const previous = JSON.stringify(state);
     state.visible = !pageHidden && document.visibilityState !== 'hidden' && document.hidden !== true;
     const view = viewport();
-    const headerHeight = document.getElementById('arcade-bar')?.getBoundingClientRect().height || 0;
-    // Godot's logical viewport must match the canvas below the HTML header.
-    state.viewport = [view.width, Math.max(1, Math.round(view.height - headerHeight))];
+    state.viewport = [view.width, view.height];
     const root = document.documentElement;
     for (const key of ['width', 'height', 'left', 'top']) {
       root.style.setProperty(`--mushies-viewport-${key}`, `${view[key]}px`);
     }
+    // The Arcade chip floats over the canvas; Godot keeps its HUD out of this rectangle.
+    const chip = document.getElementById('arcade-back')?.getBoundingClientRect();
+    state.arcadeChip = chip && chip.width > 0
+      ? [chip.left - view.left, chip.top - view.top, chip.width, chip.height].map(Math.round) : [0, 0, 0, 0];
     const landscape = screen.orientation?.type
       ? screen.orientation.type.startsWith('landscape') : innerWidth > innerHeight;
     state.portraitBlocked = state.mobile && landscape;
@@ -263,7 +302,6 @@ document.addEventListener('DOMContentLoaded',()=>{
     if (probe) {
       const style = getComputedStyle(probe);
       state.safeInsets = [style.paddingLeft, style.paddingTop, style.paddingRight, style.paddingBottom].map(value => parseFloat(value) || 0);
-      if (headerHeight > 0) state.safeInsets[1] = 0; // The header includes the top safe area.
     }
     // Orientation events can arrive after the canvas resize notification.
     if (previous !== JSON.stringify(state)) window.mushiesDeviceChanged?.();
@@ -527,7 +565,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 <!-- mushies:managed-head:end -->
 </head>
 	<body>
-<!-- arcade:navigation:start --><header id="arcade-bar"><a id="arcade-back" href="https://www.lucasflatwhite.com/arcade/">← Arcade</a><span>Beach Ball Merge</span></header><!-- arcade:navigation:end -->
+<!-- arcade:navigation:start --><a id="arcade-back" class="arcade-chip" href="https://www.lucasflatwhite.com/arcade/" aria-label="Back to Arcade"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M13 8H3.5M7.5 3.5 3 8l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="arcade-chip-label">Arcade</span></a><!-- arcade:navigation:end -->
 <!-- mushies:mobile:start --><section id="portrait-guard" role="dialog" aria-modal="true" aria-labelledby="portrait-title" hidden><div><h1 id="portrait-title"></h1><p id="portrait-body"></p><button id="portrait-action" type="button"></button></div></section><!-- mushies:mobile:end -->
 <canvas id="canvas">
 			Your browser does not support this game.

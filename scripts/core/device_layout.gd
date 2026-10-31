@@ -3,6 +3,7 @@ extends RefCounted
 var mobile := false
 var force_mobile := -1
 var safe_insets := Vector4.ZERO # left, top, right, bottom in viewport pixels
+var arcade_chip := Rect2() # the HTML link back to the Arcade lobby, floating over the canvas
 var portrait_blocked := false
 var css_viewport := Vector2i.ZERO
 var app_visible := true
@@ -23,9 +24,18 @@ func refresh(view: Vector2) -> void:
             var inset = data.get("safeInsets",[0,0,0,0])
             if inset is Array and inset.size() == 4:
                 safe_insets = Vector4(float(inset[0]),float(inset[1]),float(inset[2]),float(inset[3]))
+            var chip = data.get("arcadeChip",[0,0,0,0])
+            if chip is Array and chip.size() == 4:
+                arcade_chip = Rect2(float(chip[0]),float(chip[1]),float(chip[2]),float(chip[3]))
     if force_mobile >= 0: mobile = force_mobile == 1
     portrait_blocked = mobile and view.x > view.y
     if browser_blocked is bool and force_mobile < 0: portrait_blocked = browser_blocked
+
+## Where a row spanning `row` may start so it stays clear of the Arcade chip.
+func clear_of_chip(row: Rect2,gap := 8.0) -> float:
+    if not arcade_chip.has_area(): return row.position.x
+    var keep_out := arcade_chip.grow_individual(0,0,gap,gap)
+    return maxf(row.position.x,keep_out.end.x) if keep_out.intersects(row) else row.position.x
 
 func use_mobile_hud(view: Vector2) -> bool:
     # Portrait previews and desktop-UA tablets need the same full-height playfield.

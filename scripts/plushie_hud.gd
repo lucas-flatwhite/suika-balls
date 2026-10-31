@@ -1,6 +1,7 @@
 extends Control
 ## 비치볼 머지 화면 구성(모두 한국어):
-## 시작 화면(제목·시작·플레이 방법), 게임 HUD(점수·최고·다음 공·일시정지·소리·진화 순서·NEW 알림),
+## 시작 화면(제목·시작·플레이 방법), 게임 HUD(점수·최고·다음 공·일시정지·진화 순서·NEW 알림),
+## 소리는 일시정지 메뉴와 M 키에 있어요. 왼쪽 위 Arcade 칩(HTML) 자리는 비워 둡니다.
 ## 일시정지, 게임오버(최종/최고 점수·가장 큰 공·다시하기·공유), 세로 화면 안내.
 const Balls := preload("res://data/balls.gd")
 const BallIcon := preload("res://scripts/ui/ball_icon.gd")
@@ -166,8 +167,11 @@ func _panel(parent: Node, rect: Rect2, color := CARD) -> VBoxContainer:
 	body.add_theme_constant_override("separation", int(12 * u))
 	body.alignment = BoxContainer.ALIGNMENT_CENTER
 	panel.add_child(body)
+	# rebuild()가 패널을 먼저 지울 수 있어요. 지워진 객체를 붙잡지 않도록 ID로 찾습니다.
+	var panel_id := panel.get_instance_id()
 	get_tree().process_frame.connect(func() -> void:
-		if is_instance_valid(panel): panel.size = Vector2(maxf(rect.size.x, panel.get_combined_minimum_size().x), 0), CONNECT_ONE_SHOT)
+		var live := instance_from_id(panel_id) as PanelContainer
+		if live: live.size = Vector2(maxf(rect.size.x, live.get_combined_minimum_size().x), 0), CONNECT_ONE_SHOT)
 	# 줄바꿈 문구는 처음엔 한 줄 폭으로 잡혀 패널을 넓힐 수 있어요. 최소 크기가 줄면 원래 폭으로 되돌립니다.
 	panel.minimum_size_changed.connect(func() -> void:
 		panel.set_deferred("size", Vector2(maxf(rect.size.x, panel.get_combined_minimum_size().x), 0)))
@@ -230,8 +234,9 @@ func _build_gameplay(view: Vector2) -> void:
 	var bar_h := 64.0 * u
 	var top := column.position.y + 8.0 * u
 	var bar := HBoxContainer.new()
-	bar.position = Vector2(column.position.x + pad, top)
-	bar.size = Vector2(column.size.x - pad * 2, bar_h)
+	var bar_left: float = game.device.clear_of_chip(Rect2(column.position.x + pad, top, column.size.x - pad * 2, bar_h))
+	bar.position = Vector2(bar_left, top)
+	bar.size = Vector2(column.end.x - pad - bar_left, bar_h)
 	bar.add_theme_constant_override("separation", int(8 * u))
 	bar.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	surface.add_child(bar)
@@ -251,10 +256,6 @@ func _build_gameplay(view: Vector2) -> void:
 		game.audio.play_ui("open")
 		game.toggle_pause())
 	pause.tooltip_text = t("ui.pause")
-	var sound := _icon_button(bar, "", func() -> void: game.toggle_audio())
-	sound.custom_minimum_size.x = 64 * u
-	sound.add_theme_font_size_override("font_size", int(15 * u))
-	_sound_buttons.append(sound)
 	_blockers.append(bar)
 	# Evolution row: 10 icons, made this run = bright, not yet = faded.
 	var evo_y := top + bar_h + 8.0 * u
@@ -396,14 +397,14 @@ func _build_title(view: Vector2) -> void:
 	sound.position = Vector2(column.end.x - 84 * u, column.position.y + 4 * u)
 	sound.reset_size()
 	_sound_buttons.append(sound)
-	# 언어 전환(한국어 ↔ English): 시작 화면 왼쪽 위.
+	# 언어 전환(한국어 ↔ English): 시작 화면 오른쪽 위, 소리 버튼 왼쪽. 왼쪽 위는 Arcade 칩 자리예요.
 	var language := _icon_button(surface, t("ui.language_switch"), func() -> void: game.toggle_language())
 	language.name = "LanguageButton"
 	language.tooltip_text = t("ui.language_label")
 	language.custom_minimum_size = Vector2(84, 44) * u
 	language.add_theme_font_size_override("font_size", int(15 * u))
-	language.position = Vector2(column.position.x + 12 * u, column.position.y + 4 * u)
 	language.reset_size()
+	language.position = Vector2(sound.position.x - 8 * u - language.size.x, column.position.y + 4 * u)
 
 func _build_pause(_view: Vector2) -> void:
 	var surface := _surface("pause")

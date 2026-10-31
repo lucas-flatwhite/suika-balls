@@ -3,7 +3,7 @@
   const handheld = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
     || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
     || navigator.userAgentData?.mobile === true;
-  const state = window.MushiesDevice = {mobile: handheld, portraitBlocked: false, safeInsets: [0, 0, 0, 0], viewport: [innerWidth, innerHeight], visible: true};
+  const state = window.MushiesDevice = {mobile: handheld, portraitBlocked: false, safeInsets: [0, 0, 0, 0], arcadeChip: [0, 0, 0, 0], viewport: [innerWidth, innerHeight], visible: true};
   let pageHidden = false;
   let guardLocale = navigator.language || 'en';
   let probe;
@@ -42,13 +42,15 @@
     const previous = JSON.stringify(state);
     state.visible = !pageHidden && document.visibilityState !== 'hidden' && document.hidden !== true;
     const view = viewport();
-    const headerHeight = document.getElementById('arcade-bar')?.getBoundingClientRect().height || 0;
-    // Godot's logical viewport must match the canvas below the HTML header.
-    state.viewport = [view.width, Math.max(1, Math.round(view.height - headerHeight))];
+    state.viewport = [view.width, view.height];
     const root = document.documentElement;
     for (const key of ['width', 'height', 'left', 'top']) {
       root.style.setProperty(`--mushies-viewport-${key}`, `${view[key]}px`);
     }
+    // The Arcade chip floats over the canvas; Godot keeps its HUD out of this rectangle.
+    const chip = document.getElementById('arcade-back')?.getBoundingClientRect();
+    state.arcadeChip = chip && chip.width > 0
+      ? [chip.left - view.left, chip.top - view.top, chip.width, chip.height].map(Math.round) : [0, 0, 0, 0];
     const landscape = screen.orientation?.type
       ? screen.orientation.type.startsWith('landscape') : innerWidth > innerHeight;
     state.portraitBlocked = state.mobile && landscape;
@@ -60,7 +62,6 @@
     if (probe) {
       const style = getComputedStyle(probe);
       state.safeInsets = [style.paddingLeft, style.paddingTop, style.paddingRight, style.paddingBottom].map(value => parseFloat(value) || 0);
-      if (headerHeight > 0) state.safeInsets[1] = 0; // The header includes the top safe area.
     }
     // Orientation events can arrive after the canvas resize notification.
     if (previous !== JSON.stringify(state)) window.mushiesDeviceChanged?.();

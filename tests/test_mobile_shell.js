@@ -42,7 +42,7 @@ function profile(options = {}) {
     document.fullscreenElement = document.documentElement;
   };
   const elements = new Map();
-  if (options.headerHeight) elements.set('arcade-bar', {getBoundingClientRect: () => ({height: options.headerHeight})});
+  if (options.chip) elements.set('arcade-back', {getBoundingClientRect: () => options.chip});
   document.body = {appendChild(element) { elements.set(element.id, element); }};
   document.createElement = () => ({setAttribute() {}});
   document.visibilityState = options.visibility || 'visible';
@@ -62,11 +62,13 @@ function profile(options = {}) {
 }
 
 async function run() {
-  const arcade = profile({headerHeight: 52, width: 390, height: 844});
-  assert.deepEqual(Array.from(arcade.state.viewport), [390,792], 'The engine viewport excludes the persistent Arcade header');
-  assert.deepEqual(Array.from(arcade.state.safeInsets), [0,0,0,34], 'The header already accounts for the top safe area');
-  arcade.window.fire('resize');
-  assert.deepEqual(Array.from(arcade.state.viewport), [390,792], 'Resizing must not subtract the header twice');
+  const arcade = profile({chip: {left: 12, top: 44, width: 44, height: 36}, width: 390, height: 844});
+  assert.deepEqual(Array.from(arcade.state.viewport), [390,844], 'The Arcade chip floats over the game, so the engine keeps the whole viewport');
+  assert.deepEqual(Array.from(arcade.state.safeInsets), [0,44,0,34], 'Godot owns the top safe area now that no header covers it');
+  assert.deepEqual(Array.from(arcade.state.arcadeChip), [12,44,44,36], 'Godot receives the chip rectangle to keep its HUD clear');
+  const panned = profile({chip: {left: 30.4, top: 128, width: 96, height: 36}, visual: {width: 360, height: 600, offsetLeft: 18, offsetTop: 120, scale: 1}});
+  assert.deepEqual(Array.from(panned.state.arcadeChip), [12,8,96,36], 'The chip rectangle is measured from the visible canvas corner');
+  assert.deepEqual(Array.from(profile().state.arcadeChip), [0,0,0,0], 'Without a chip nothing is reserved');
   const cancellation = profile();
   const cancelListeners = cancellation.document.listeners('touchcancel');
   assert.equal(cancelListeners.length, 1, 'The shell installs one touch cancellation bridge');
