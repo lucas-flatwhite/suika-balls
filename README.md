@@ -8,16 +8,19 @@
 
 수박게임처럼 위에서 공을 떨어뜨리고, **같은 공 2개가 닿으면 한 단계 더 큰 공**으로 합쳐지는 2D 물리 퍼즐 웹게임입니다. 해변 테마, 스포츠 공 10종, 최종 목표는 비치볼. Godot 4.7 웹 빌드로 모바일·PC 브라우저에서 설치 없이 플레이합니다.
 
-**언어: 한국어 / English** — 처음엔 브라우저 언어(한국어면 한국어, 그 밖엔 영어)를 따르고, 시작 화면 왼쪽 위 버튼이나 일시정지 메뉴에서 바꾸면 선택이 저장됩니다.
+**언어: 한국어 / English** — 처음엔 브라우저 언어(한국어면 한국어, 그 밖엔 영어)를 따르고, 시작 화면 오른쪽 위 버튼이나 일시정지 메뉴에서 바꾸면 선택이 저장됩니다.
 
 ## Arcade로 돌아가기
 
-웹 페이지 최상단의 `← Arcade` 링크는 `https://www.lucasflatwhite.com/arcade/`로 이동합니다. 게임과 독립된 HTML 상단 바로 제공하므로 로딩·실행 오류·일시정지·게임 종료·화면 회전 안내 중에도 사용할 수 있습니다. 모바일 전체 화면은 페이지 전체를 대상으로 하여 상단 바를 유지합니다.
+화면 왼쪽 위의 Arcade 칩은 `https://www.lucasflatwhite.com/arcade/`로 이동합니다. Flatwhite Arcade의 모든 게임이 같은 칩을 같은 자리(왼쪽 12px, 위 8px, 안전 영역 포함)에 둡니다. 폭 480px 이상에서는 `← Arcade`, 그보다 좁으면 화살표만 보이며 스크린 리더는 “Back to Arcade”로 읽습니다.
 
-상단 바 스타일은 `ui/web/arcade.css`, 화면 높이 연동은 `ui/mobile/runtime.js`, HTML 생성은 `tools/prepare_web.py`에서 관리합니다. 수정 후 `python3 tools/build_web_shell.py`로 `ui/web/shell.html`을 재생성합니다. 분석 스크립트와 외부 런타임 연결은 사용하지 않습니다.
+칩은 게임 위에 떠 있는 HTML 링크라 로딩·실행 오류·일시정지·게임 종료·화면 회전 안내 중에도 누를 수 있고, 게임 화면은 뷰포트 전체를 씁니다. `ui/mobile/runtime.js`가 칩의 실제 사각형을 `MushiesDevice.arcadeChip`으로 넘기면, Godot HUD 줄(`scripts/plushie_hud.gd`)과 2인 대전 제목(`scripts/multiplayer/multiplayer_screen.gd`)은 칩과 겹칠 때만 칩 오른쪽에서 시작합니다. 그래서 게임 HUD 줄에는 점수·최고·다음 공·일시정지만 있고, 소리는 일시정지 메뉴와 M 키에서 바꿉니다.
+
+칩 규칙은 flatwhite-arcade의 `src/shared/arcade-chip.css`에서 `ui/web/arcade.css`로 그대로 복사합니다(`arcade-chip:start`/`end` 사이). 라벨 글꼴은 Anybody(SIL OFL 1.1, `ui/web/Anybody-OFL.txt`)를 “Arcade” 여섯 글자로 줄여 CSS에 넣었고, `python3 tools/arcade_chip_font.py <anybody-latin-wdth-normal.woff2>`로 다시 만듭니다. HTML 생성은 `tools/prepare_web.py`에서 관리하며, 수정 후 `python3 tools/build_web_shell.py`로 `ui/web/shell.html`을 재생성합니다. 분석 스크립트와 외부 런타임 연결은 사용하지 않습니다.
 
 ```sh
 python3 tests/test_arcade_navigation.py
+godot --headless --audio-driver Dummy --fixed-fps 60 --path . --script tests/test_arcade_chip.gd
 node tests/test_mobile_shell.js
 python3 tests/test_prepare_web_loader.py
 python3 tests/test_standalone_web.py

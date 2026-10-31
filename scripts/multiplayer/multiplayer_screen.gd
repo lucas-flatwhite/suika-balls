@@ -358,6 +358,10 @@ func _rebuild() -> void:
 	var heading := _row(page)
 	heading.position = Vector2(32 if match_visible else 24,12 if match_visible else 24)
 	heading.size = Vector2(size.x-(64 if match_visible else 48),ceilf(game.locale.font.get_height(MATCH_FONT_SIZE))+8 if match_visible else 40)
+	# The Arcade chip floats over the top-left corner; the heading starts after it.
+	var heading_left: float = game.device.clear_of_chip(Rect2(heading.position,heading.size))
+	heading.size.x -= heading_left-heading.position.x
+	heading.position.x = heading_left
 	heading.name = "MultiplayerScreenHeading"
 	var title := _label(heading,"",MATCH_FONT_SIZE/2 if match_visible else 14)
 	if match_visible:

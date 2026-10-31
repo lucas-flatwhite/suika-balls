@@ -217,7 +217,8 @@ document.addEventListener('DOMContentLoaded',()=>{{
     source = source.replace('</head>', head + '\n</head>', 1)
     source = re.sub(r'[ \t]*<canvas', '<canvas', source)
     guard = '<!-- mushies:mobile:start --><section id="portrait-guard" role="dialog" aria-modal="true" aria-labelledby="portrait-title" hidden><div><h1 id="portrait-title"></h1><p id="portrait-body"></p><button id="portrait-action" type="button"></button></div></section><!-- mushies:mobile:end -->'
-    navigation = '<!-- arcade:navigation:start --><header id="arcade-bar"><a id="arcade-back" href="https://www.lucasflatwhite.com/arcade/">← Arcade</a><span>Beach Ball Merge</span></header><!-- arcade:navigation:end -->'
+    arrow = '<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M13 8H3.5M7.5 3.5 3 8l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+    navigation = f'<!-- arcade:navigation:start --><a id="arcade-back" class="arcade-chip" href="https://www.lucasflatwhite.com/arcade/" aria-label="Back to Arcade">{arrow}<span class="arcade-chip-label">Arcade</span></a><!-- arcade:navigation:end -->'
     source = source.replace('<canvas', navigation + '\n' + guard + '\n<canvas', 1)
     loader = f"""{LOADER_START}<section id="mushies-loader" role="status" aria-live="polite" aria-atomic="true" hidden><div id="mushies-loader-ducks" aria-hidden="true"></div><div id="mushies-loader-card"><h1 id="mushies-loader-message"></h1><p id="mushies-loader-detail" hidden></p><div id="mushies-loader-progress" role="progressbar"></div><button id="mushies-loader-retry" type="button" hidden></button></div></section>{LOADER_END}"""
     source = re.sub(r'\s*(<img\b[^>]*\bid="status-splash"[^>]*>)', r'\n\1', source, count=1)
