@@ -164,14 +164,14 @@ def render_shell(source: str, installable: bool = True, loader_image=None) -> st
     mobile_js = (ROOT / 'ui/mobile/runtime.js').read_text()
     loader_css = (ROOT / 'ui/mobile/loader.css').read_text()
     loader_js = (ROOT / 'ui/mobile/loader.js').read_text()
-    source = re.sub(r'<title>.*?</title>', '<title>비치볼 머지 · Beach Ball Merge</title>', source, flags=re.S)
+    source = re.sub(r'<title>.*?</title>', '<title>Beach Ball Merge · 비치볼 머지</title>', source, flags=re.S)
     head = f"""{START}
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="beachball-game-loading-screen" content="1">
 <meta name="theme-color" content="#7fd6f2">
-<meta name="description" content="비치볼 머지: 같은 스포츠 공 2개를 붙여 더 큰 공으로! 해변에서 즐기는 물리 합체 퍼즐. Beach Ball Merge: merge matching sports balls on the beach.">
+<meta name="description" content="Beach Ball Merge: merge matching sports balls on the beach. 비치볼 머지: 같은 스포츠 공 2개를 붙여 더 큰 공으로! 해변에서 즐기는 물리 합체 퍼즐.">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="비치볼 머지">
+<meta name="apple-mobile-web-app-title" content="Beach Ball Merge">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="manifest" href="mushies.webmanifest">
 <link rel="preload" href="loader-duck.webp" as="image" type="image/webp">
@@ -265,8 +265,8 @@ def main() -> None:
     (index.parent / 'mushies.webmanifest').write_text(
         json.dumps(
             {
-                'name': '비치볼 머지',
-                'short_name': '비치볼 머지',
+                'name': 'Beach Ball Merge',
+                'short_name': 'Beach Ball',
                 'start_url': './',
                 'display': 'fullscreen',
                 'orientation': 'portrait',

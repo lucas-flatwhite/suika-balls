@@ -105,7 +105,7 @@ with tempfile.TemporaryDirectory() as temporary:
     assert 'loader.progress_label' in first and 'loader.retry' in first
     assert (root / 'web/app-icon-192.png').read_bytes() == b'fixture icon'
     assert (root / 'web/loader-duck.webp').read_bytes() == duck.read_bytes()
-    assert json.loads((root / 'web/mushies.webmanifest').read_text())['name'] == '비치볼 머지'
+    assert json.loads((root / 'web/mushies.webmanifest').read_text())['name'] == 'Beach Ball Merge'
     subprocess.run(['node', str(REPO / 'tests/test_loader_handoff.js'), str(index)], check=True)
 
     managed = prepare_web.render_shell(FRESH_GODOT_INDEX, installable=False)
