@@ -154,7 +154,7 @@ def render_shell(source: str, installable: bool = True, loader_image=None) -> st
     # The cached loader face covers the template copy; Korean loader text uses the
     # device's Korean system font through the CSS fallback list below.
     font_css = font_styles(ui)
-    # Game locales: Korean (default) and English, matching localization/ko.json and en.json.
+    # Game locales: English (default) and Korean, matching localization/en.json and ko.json.
     def loader_copy(name):
         entries = json.loads((ROOT / 'localization' / f'{name}.json').read_text())
         return {key: value for key, value in entries.items() if key.startswith(('loader.', 'mobile.')) or key in ('app.title', 'app.tagline')}
@@ -190,13 +190,18 @@ html,body {{ margin:0; width:100%; height:100%; overflow:hidden; background:#bfe
 </style>
 <script>
 const PLUSHIE_COPY={json.dumps(ui, ensure_ascii=False)};
-let plushieLocale = String((navigator.languages && navigator.languages[0]) || navigator.language || '').toLowerCase().startsWith('ko') ? 'ko' : 'en';
-try {{ const saved = localStorage.getItem('plushie_locale'); if(saved in PLUSHIE_COPY) plushieLocale=saved; }} catch {{}}
+// Start language: the choice made anywhere on lucasflatwhite.com, then this game's own, then English.
+const plushieKnown = value => typeof value === 'string' && Object.prototype.hasOwnProperty.call(PLUSHIE_COPY, value);
+let plushieLocale = 'en';
+try {{
+ const site = localStorage.getItem('lucas-flatwhite:locale'), saved = localStorage.getItem('plushie_locale');
+ if (plushieKnown(site)) plushieLocale = site; else if (plushieKnown(saved)) plushieLocale = saved;
+}} catch {{}}
 function t(key, placeholders={{}}) {{ let value=PLUSHIE_COPY[plushieLocale][key] ?? PLUSHIE_COPY.ko[key] ?? key; for(const [name,text] of Object.entries(placeholders)) value=value.replaceAll('{{'+name+'}}',String(text)); return value; }}
 document.documentElement.lang=plushieLocale;
 document.title=t('app.title');
 window.mushiesSetLocale = locale => {{
- if (locale in PLUSHIE_COPY) plushieLocale=locale;
+ if (plushieKnown(locale)) plushieLocale=locale;
  document.title=t('app.title');
  document.documentElement.lang=plushieLocale;
  for (const [id,key] of Object.entries({{'portrait-title':'mobile.rotate_title','portrait-body':'mobile.rotate_body','portrait-action':'mobile.enter_portrait'}})) {{

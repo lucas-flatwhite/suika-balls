@@ -45,22 +45,27 @@ func _run() -> void:
 	check(mismatched.is_empty(), "자리표시자 일치 %s" % [mismatched])
 	check(hangul_in_en.is_empty(), "영어 문구에 한글 없음 %s" % [hangul_in_en])
 
-	# 2. 첫 실행 언어 감지와 저장값 검증
-	check(Settings.detect_locale("ko_KR") == "ko" and Settings.detect_locale("ko") == "ko", "ko* → 한국어")
-	check(Settings.detect_locale("en_US") == "en" and Settings.detect_locale("ja_JP") == "en" and Settings.detect_locale("") == "en", "그 밖의 언어 → 영어")
+	# 2. 시작 언어: 사이트에서 고른 언어 → 이 게임에 저장된 선택 → 영어 (브라우저·OS 언어는 따르지 않음)
+	check(Settings.SITE_LOCALE_KEY == "lucas-flatwhite:locale", "사이트 공용 언어 키")
 	var s := Settings.new()
 	s.path = "user://test_i18n_settings.json"
 	if FileAccess.file_exists(s.path): DirAccess.remove_absolute(ProjectSettings.globalize_path(s.path))
 	s.load_data()
-	s.apply_detected_locale("en_US")
-	check(s.values.locale == "en" and not s.locale_saved, "저장된 선택이 없으면 감지값 사용")
+	s.apply_site_locale("")
+	check(s.values.locale == "en" and not s.locale_saved, "아무도 고르지 않았으면 영어로 시작")
+	s.apply_site_locale("ko")
+	check(s.values.locale == "ko" and not s.locale_saved, "사이트에서 고른 한국어를 따르되 게임 저장값은 만들지 않음")
+	s.apply_site_locale("zh_CN")
+	check(s.values.locale == "en", "모르는 사이트 값은 무시하고 영어")
 	check(not s.set_value("locale", "zh_CN"), "지원하지 않는 언어 거부")
 	check(s.set_value("locale", "ko"), "언어 선택 저장")
 	var again := Settings.new()
 	again.path = s.path
 	again.load_data()
-	again.apply_detected_locale("en_US")
-	check(again.values.locale == "ko" and again.locale_saved, "다시 불러와도 저장된 선택(한국어)이 감지값보다 우선")
+	again.apply_site_locale("")
+	check(again.values.locale == "ko" and again.locale_saved, "사이트 값이 없으면 게임에 저장된 선택(한국어)")
+	again.apply_site_locale("en")
+	check(again.values.locale == "en", "사이트에서 고른 언어가 게임 저장값보다 우선")
 
 	# 3. 번역 서비스와 공 이름
 	var loc := Localization.new()
