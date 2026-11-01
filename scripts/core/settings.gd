@@ -22,11 +22,15 @@ func load_data() -> void:
         if not raw.has(key): continue
         if set_value(key, raw[key], false) and key == "locale": locale_saved = true
 
-## 시작 언어: 사이트에서 고른 언어(site_locale) → 이 게임에 저장된 선택 → 영어.
-## 브라우저·OS 언어는 따르지 않습니다. 누가 고르기 전까지는 영어로 시작합니다.
-func apply_site_locale(site_locale: String) -> void:
+## 브라우저·OS의 첫 언어(ko_KR, ko-KR, en_US …)를 지원 언어로. 한국어만 한국어, 그 밖은 영어.
+static func detect_locale(system_locale: String) -> String:
+    return "ko" if system_locale.to_lower().begins_with("ko") else "en"
+
+## 시작 언어: 사이트에서 고른 언어(site_locale) → 이 게임에 저장된 선택 → 브라우저·OS 언어(한국어면 한국어) → 영어.
+## 사이트 값과 감지한 언어는 저장하지 않습니다(플레이어가 직접 고를 때만 저장).
+func apply_start_locale(site_locale: String, system_locale: String) -> void:
     if site_locale in SUPPORTED_LOCALES: values.locale = site_locale
-    elif not locale_saved: values.locale = DEFAULTS.locale
+    elif not locale_saved: values.locale = detect_locale(system_locale)
 
 func set_value(key: String, value: Variant, persist := true) -> bool:
     if not DEFAULTS.has(key): return false

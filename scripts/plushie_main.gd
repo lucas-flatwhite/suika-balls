@@ -113,8 +113,8 @@ func _ready() -> void:
     discovered.resize(Balls.count())
     discovered.fill(false)
     settings.load_data()
-    # 사이트에서 고른 언어 → 이 게임에 저장된 선택 → 영어.
-    settings.apply_site_locale(_site_locale())
+    # 사이트에서 고른 언어 → 이 게임에 저장된 선택 → 브라우저·OS 언어(한국어면 한국어) → 영어.
+    settings.apply_start_locale(_site_locale(), OS.get_locale())
     locale.set_locale(String(settings.values.locale))
     _sync_web_locale()
     leaderboard.load_data()

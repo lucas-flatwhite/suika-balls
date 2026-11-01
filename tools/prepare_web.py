@@ -190,9 +190,10 @@ html,body {{ margin:0; width:100%; height:100%; overflow:hidden; background:#bfe
 </style>
 <script>
 const PLUSHIE_COPY={json.dumps(ui, ensure_ascii=False)};
-// Start language: the choice made anywhere on lucasflatwhite.com, then this game's own, then English.
+// Start language: the choice made anywhere on lucasflatwhite.com, then this game's own,
+// then the browser's first language (Korean only), then English.
 const plushieKnown = value => typeof value === 'string' && Object.prototype.hasOwnProperty.call(PLUSHIE_COPY, value);
-let plushieLocale = 'en';
+let plushieLocale = String((navigator.languages && navigator.languages[0]) || navigator.language || '').toLowerCase().startsWith('ko') ? 'ko' : 'en';
 try {{
  const site = localStorage.getItem('lucas-flatwhite:locale'), saved = localStorage.getItem('plushie_locale');
  if (plushieKnown(site)) plushieLocale = site; else if (plushieKnown(saved)) plushieLocale = saved;

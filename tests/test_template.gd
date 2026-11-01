@@ -109,23 +109,25 @@ func run() -> void:
     settings.load_data()
     check(settings.values.locale == "en" and settings.values.music == 0.8,"Malformed settings preserve baseline")
     check(settings.values.name.length() == 20,"Names are bounded")
-    # Start language: the language chosen on lucasflatwhite.com, then the game's saved choice, then English.
-    # The OS/browser locale is not used.
+    # Start language: the language chosen on lucasflatwhite.com, then the game's saved choice,
+    # then the OS/browser locale (Korean only), then English.
     var fresh := Settings.new()
     fresh.path = "user://template-test-locale-fresh.json"
     if FileAccess.file_exists(fresh.path): DirAccess.remove_absolute(ProjectSettings.globalize_path(fresh.path))
     fresh.load_data()
-    fresh.apply_site_locale("")
+    fresh.apply_start_locale("","ja_JP")
     check(not fresh.locale_saved and fresh.values.locale == "en","A first launch without any choice starts in English")
-    fresh.apply_site_locale("ko")
+    fresh.apply_start_locale("","ko_KR")
+    check(not fresh.locale_saved and fresh.values.locale == "ko","A first launch in a Korean browser starts in Korean")
+    fresh.apply_start_locale("ko","en_US")
     check(not fresh.locale_saved and fresh.values.locale == "ko","A first launch follows the language chosen on the site")
     check(fresh.set_value("locale","ko") and fresh.locale_saved,"Choosing a language persists it")
     var reloaded := Settings.new()
     reloaded.path = fresh.path
     reloaded.load_data()
-    reloaded.apply_site_locale("")
+    reloaded.apply_start_locale("","en_US")
     check(reloaded.locale_saved and reloaded.values.locale == "ko","A saved language is used without a site choice")
-    reloaded.apply_site_locale("en")
+    reloaded.apply_start_locale("en","ko_KR")
     check(reloaded.values.locale == "en","The site choice wins over the saved language")
     DirAccess.remove_absolute(ProjectSettings.globalize_path(fresh.path))
     var board := Board.new()
