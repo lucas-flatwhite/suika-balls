@@ -113,8 +113,8 @@ func _ready() -> void:
     discovered.resize(Balls.count())
     discovered.fill(false)
     settings.load_data()
-    # 저장된 언어 선택 → 없으면 브라우저/OS 언어(ko*면 한국어, 그 밖은 영어).
-    settings.apply_detected_locale(OS.get_locale())
+    # 사이트에서 고른 언어 → 이 게임에 저장된 선택 → 브라우저·OS 언어(한국어면 한국어) → 영어.
+    settings.apply_start_locale(_site_locale(), OS.get_locale())
     locale.set_locale(String(settings.values.locale))
     _sync_web_locale()
     leaderboard.load_data()
@@ -616,18 +616,26 @@ func set_language(code: String) -> void:
     var next := Localization.normalize(code)
     settings.set_value("locale", next)
     locale.set_locale(next)
-    _sync_web_locale()
+    _sync_web_locale(true)
     if is_instance_valid(_resize_banner): _resize_banner.message = t("ui.resize_ended")
     if is_instance_valid(_hud): _hud.rebuild()
     if multiplayer_active() and _multiplayer_screen.has_method("refresh_language"):
         _multiplayer_screen.refresh_language()
     if is_instance_valid(audio) and not audio_muted: audio.play_ui("toggle")
 
+## lucasflatwhite.com에서 고른 언어(사이트 공용 키). 없거나 Web이 아니면 "".
+func _site_locale() -> String:
+    if not OS.has_feature("web"): return ""
+    var stored = JavaScriptBridge.eval("(function(){try{return localStorage.getItem('%s')||''}catch(e){return ''}})()" % Settings.SITE_LOCALE_KEY, true)
+    return String(stored) if stored is String else ""
+
 ## Web 로더 문구와 다음 접속의 로딩 화면 언어를 게임 언어와 맞춥니다.
-func _sync_web_locale() -> void:
+## remember: 플레이어가 직접 고른 경우에만 사이트 공용 키에도 적어, 사이트의 다른 페이지(AI Timeline Log 등)도 그 언어로 엽니다.
+func _sync_web_locale(remember := false) -> void:
     if not OS.has_feature("web"): return
     var code := locale.locale
-    JavaScriptBridge.eval("try{localStorage.setItem('plushie_locale','%s')}catch(e){};if(window.mushiesSetLocale)window.mushiesSetLocale('%s');" % [code, code], true)
+    var site: String = "localStorage.setItem('%s','%s');" % [Settings.SITE_LOCALE_KEY, code] if remember else ""
+    JavaScriptBridge.eval("try{localStorage.setItem('plushie_locale','%s');%s}catch(e){};if(window.mushiesSetLocale)window.mushiesSetLocale('%s');" % [code, site, code], true)
 
 func toggle_audio() -> void:
     setting("muted",not audio_muted)

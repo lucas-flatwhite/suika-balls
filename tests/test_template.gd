@@ -109,23 +109,26 @@ func run() -> void:
     settings.load_data()
     check(settings.values.locale == "en" and settings.values.music == 0.8,"Malformed settings preserve baseline")
     check(settings.values.name.length() == 20,"Names are bounded")
-    # First-launch language follows the OS/browser locale; a saved choice always wins.
-    for pair in [["zh_CN","zh_CN"],["zh-Hans-CN","zh_CN"],["zh_TW","zh_CN"],["ZH","zh_CN"],["en_US","en"],["ja_JP","en"],["","en"]]:
-        check(Settings.detect_locale(pair[0]) == pair[1],"Locale detection maps "+pair[0]+" to "+pair[1])
+    # Start language: the language chosen on lucasflatwhite.com, then the game's saved choice,
+    # then the OS/browser locale (Korean only), then English.
     var fresh := Settings.new()
     fresh.path = "user://template-test-locale-fresh.json"
     if FileAccess.file_exists(fresh.path): DirAccess.remove_absolute(ProjectSettings.globalize_path(fresh.path))
     fresh.load_data()
-    fresh.apply_detected_locale("zh_CN")
-    check(not fresh.locale_saved and fresh.values.locale == "zh_CN","A first launch without a saved language follows a Chinese system locale")
-    fresh.apply_detected_locale("en_GB")
-    check(fresh.values.locale == "en","A first launch without a saved language follows a non-Chinese system locale")
-    check(fresh.set_value("locale","zh_CN") and fresh.locale_saved,"Choosing a language persists it")
+    fresh.apply_start_locale("","ja_JP")
+    check(not fresh.locale_saved and fresh.values.locale == "en","A first launch without any choice starts in English")
+    fresh.apply_start_locale("","ko_KR")
+    check(not fresh.locale_saved and fresh.values.locale == "ko","A first launch in a Korean browser starts in Korean")
+    fresh.apply_start_locale("ko","en_US")
+    check(not fresh.locale_saved and fresh.values.locale == "ko","A first launch follows the language chosen on the site")
+    check(fresh.set_value("locale","ko") and fresh.locale_saved,"Choosing a language persists it")
     var reloaded := Settings.new()
     reloaded.path = fresh.path
     reloaded.load_data()
-    reloaded.apply_detected_locale("en_US")
-    check(reloaded.locale_saved and reloaded.values.locale == "zh_CN","A saved language wins over the system locale")
+    reloaded.apply_start_locale("","en_US")
+    check(reloaded.locale_saved and reloaded.values.locale == "ko","A saved language is used without a site choice")
+    reloaded.apply_start_locale("en","ko_KR")
+    check(reloaded.values.locale == "en","The site choice wins over the saved language")
     DirAccess.remove_absolute(ProjectSettings.globalize_path(fresh.path))
     var board := Board.new()
     board.path = "user://template-test-board.json"

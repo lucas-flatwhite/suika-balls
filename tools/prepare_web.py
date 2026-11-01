@@ -154,7 +154,7 @@ def render_shell(source: str, installable: bool = True, loader_image=None) -> st
     # The cached loader face covers the template copy; Korean loader text uses the
     # device's Korean system font through the CSS fallback list below.
     font_css = font_styles(ui)
-    # Game locales: Korean (default) and English, matching localization/ko.json and en.json.
+    # Game locales: English (default) and Korean, matching localization/en.json and ko.json.
     def loader_copy(name):
         entries = json.loads((ROOT / 'localization' / f'{name}.json').read_text())
         return {key: value for key, value in entries.items() if key.startswith(('loader.', 'mobile.')) or key in ('app.title', 'app.tagline')}
@@ -164,14 +164,14 @@ def render_shell(source: str, installable: bool = True, loader_image=None) -> st
     mobile_js = (ROOT / 'ui/mobile/runtime.js').read_text()
     loader_css = (ROOT / 'ui/mobile/loader.css').read_text()
     loader_js = (ROOT / 'ui/mobile/loader.js').read_text()
-    source = re.sub(r'<title>.*?</title>', '<title>비치볼 머지 · Beach Ball Merge</title>', source, flags=re.S)
+    source = re.sub(r'<title>.*?</title>', '<title>Beach Ball Merge · 비치볼 머지</title>', source, flags=re.S)
     head = f"""{START}
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="beachball-game-loading-screen" content="1">
 <meta name="theme-color" content="#7fd6f2">
-<meta name="description" content="비치볼 머지: 같은 스포츠 공 2개를 붙여 더 큰 공으로! 해변에서 즐기는 물리 합체 퍼즐. Beach Ball Merge: merge matching sports balls on the beach.">
+<meta name="description" content="Beach Ball Merge: merge matching sports balls on the beach. 비치볼 머지: 같은 스포츠 공 2개를 붙여 더 큰 공으로! 해변에서 즐기는 물리 합체 퍼즐.">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="비치볼 머지">
+<meta name="apple-mobile-web-app-title" content="Beach Ball Merge">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="manifest" href="mushies.webmanifest">
 <link rel="preload" href="loader-duck.webp" as="image" type="image/webp">
@@ -190,13 +190,19 @@ html,body {{ margin:0; width:100%; height:100%; overflow:hidden; background:#bfe
 </style>
 <script>
 const PLUSHIE_COPY={json.dumps(ui, ensure_ascii=False)};
+// Start language: the choice made anywhere on lucasflatwhite.com, then this game's own,
+// then the browser's first language (Korean only), then English.
+const plushieKnown = value => typeof value === 'string' && Object.prototype.hasOwnProperty.call(PLUSHIE_COPY, value);
 let plushieLocale = String((navigator.languages && navigator.languages[0]) || navigator.language || '').toLowerCase().startsWith('ko') ? 'ko' : 'en';
-try {{ const saved = localStorage.getItem('plushie_locale'); if(saved in PLUSHIE_COPY) plushieLocale=saved; }} catch {{}}
+try {{
+ const site = localStorage.getItem('lucas-flatwhite:locale'), saved = localStorage.getItem('plushie_locale');
+ if (plushieKnown(site)) plushieLocale = site; else if (plushieKnown(saved)) plushieLocale = saved;
+}} catch {{}}
 function t(key, placeholders={{}}) {{ let value=PLUSHIE_COPY[plushieLocale][key] ?? PLUSHIE_COPY.ko[key] ?? key; for(const [name,text] of Object.entries(placeholders)) value=value.replaceAll('{{'+name+'}}',String(text)); return value; }}
 document.documentElement.lang=plushieLocale;
 document.title=t('app.title');
 window.mushiesSetLocale = locale => {{
- if (locale in PLUSHIE_COPY) plushieLocale=locale;
+ if (plushieKnown(locale)) plushieLocale=locale;
  document.title=t('app.title');
  document.documentElement.lang=plushieLocale;
  for (const [id,key] of Object.entries({{'portrait-title':'mobile.rotate_title','portrait-body':'mobile.rotate_body','portrait-action':'mobile.enter_portrait'}})) {{
@@ -260,8 +266,8 @@ def main() -> None:
     (index.parent / 'mushies.webmanifest').write_text(
         json.dumps(
             {
-                'name': '비치볼 머지',
-                'short_name': '비치볼 머지',
+                'name': 'Beach Ball Merge',
+                'short_name': 'Beach Ball',
                 'start_url': './',
                 'display': 'fullscreen',
                 'orientation': 'portrait',
